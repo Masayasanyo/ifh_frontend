@@ -1,0 +1,9 @@
+body {
+    margin: 0px;
+    font-family: "Lato", serif;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+}

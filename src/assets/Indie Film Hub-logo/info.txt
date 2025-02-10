@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: Jomhuria-Regular
+font link: https://fonts.google.com/specimen/Jomhuria
+font author: KB Studio
+font author site: http://tarobish.github.io/Jomhuria/
+
+
+icon designer: Erik Vullings
+icon designer link: /erikvullings
+        
+{"bg":"#481C3E","icon":"#C6565B","font":"#C6565B","slogan":"#da6a6f"}
+      
