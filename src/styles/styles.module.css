@@ -7,3 +7,12 @@ body {
     display: flex;
     gap: 20px;
 }
+
+.main {
+    padding-top: 50px;
+    padding-left: 350px;
+    padding-right: 350px;
+    background-color: #F2E5BF;
+    height: 100vh;
+    width: 100%;
+}

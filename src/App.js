@@ -11,6 +11,7 @@ import Login from './pages/login/Login';
 import SignUp from './pages/sign_up/SignUp';
 import Trailer from './pages/trailer/Trailer';
 import Account from './pages/account/Account';
+import Movie from './pages/movie/Movie';
 
 function App() {
   return (
@@ -18,15 +19,18 @@ function App() {
       <Router>
         <div className={styles.container}>
           <Header />
-          <Routes>
-            <Route path='/' element={<PrivateRoute><Home /></PrivateRoute>} />
-            <Route path='/upload' element={<PrivateRoute><Upload /></PrivateRoute>} />
-            <Route path='/trailer' element={<PrivateRoute><Trailer /></PrivateRoute>} />
-            <Route path='/theatre' element={<PrivateRoute><Theatre /></PrivateRoute>} />
-            <Route path='/account' element={<PrivateRoute><Account /></PrivateRoute>} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/sign_up' element={<SignUp />} />
-          </Routes>
+          <div className={styles.main}>
+            <Routes>
+              <Route path='/' element={<PrivateRoute><Home /></PrivateRoute>} />
+              <Route path='/upload' element={<PrivateRoute><Upload /></PrivateRoute>} />
+              <Route path='/trailer' element={<PrivateRoute><Trailer /></PrivateRoute>} />
+              <Route path='/movie' element={<PrivateRoute><Movie /></PrivateRoute>} />
+              <Route path='/theatre' element={<PrivateRoute><Theatre /></PrivateRoute>} />
+              <Route path='/account' element={<PrivateRoute><Account /></PrivateRoute>} />
+              <Route path='/login' element={<Login />} />
+              <Route path='/sign_up' element={<SignUp />} />
+            </Routes>
+          </div>
         </div>
       </Router>
     </AuthProvider>

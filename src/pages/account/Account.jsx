@@ -54,6 +54,7 @@ function Account() {
                     value={formData.username}
                     onChange={handleChange}>
                 </input>
+                <button>Update username</button>
             </form>
 
             <hr />

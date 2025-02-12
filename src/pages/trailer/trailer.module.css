@@ -1,0 +1,27 @@
+.trailerContainer {
+    list-style: none;
+    padding: 0px;
+}
+
+.trailer {
+    /* border: 5px solid #FD8B51; */
+    /* border-radius: 20px; */
+    /* background-color: #FD8B51; */
+    /* padding: 0px 10px 10px 10px; */
+    /* color: white; */
+    width: 320px;
+}
+
+.trailer p {
+    font-size: 1.5rem;
+    margin: 0px;
+    padding-left: 10px;
+}
+
+.trailer img { 
+    width: 320px;
+    height: 180px;
+    object-fit: contain;
+    /* border: 5px solid #B2A5FF; */
+    border-radius: 20px;
+}
