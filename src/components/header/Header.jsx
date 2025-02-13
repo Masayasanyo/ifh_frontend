@@ -7,6 +7,7 @@ import UploadIcon from '../icons/UploadIcon';
 import AccountIcon from '../icons/AccountIcon';
 import CinemaIcon from '../icons/CinemaIcon';
 import Play from '../icons/PlayIcon';
+import ShopIcon from '../icons/ShopIcon';
 
 function Header() {
 
@@ -33,6 +34,10 @@ function Header() {
                 <Link to='/theatre' className={`${styles.link} ${location.pathname === '/theatre' ? styles.active : ''}`}>
                     <CinemaIcon />
                     <h2>Theatre</h2>
+                </Link>
+                <Link to='/shop' className={`${styles.link} ${location.pathname === '/shop' ? styles.active : ''}`}>
+                    <ShopIcon />
+                    <h2>Shop</h2>
                 </Link>
                 <Link to='/account' className={`${styles.link} ${location.pathname === '/account' ? styles.active : ''}`}>
                     <AccountIcon />

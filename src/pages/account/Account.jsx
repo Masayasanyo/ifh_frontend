@@ -45,6 +45,7 @@ function Account() {
 
     return (
         <div className={styles.container} >
+            <h1>Account</h1>
             <form onSubmit={handleSubmit}>
                 <h2>Username</h2>
                 <input

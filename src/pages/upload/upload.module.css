@@ -1,7 +1,6 @@
 .uploadForm {
     display: flex;
-    flex-direction: column;
-    gap: 30px;
+    gap: 50px;
 }
 
 .uploadForm label {
@@ -22,11 +21,19 @@
     border-radius: 5px;
 }
 
-.uploadForm button {
+.container form > button {
     width: 100px;
     height: 40px;
     border-radius: 10px;
     background-color: #CB6040;
     color: aliceblue;
     font-size: 1rem;
+    border: none;
+    margin-top: 30px;
+}
+
+.uploadFormLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }

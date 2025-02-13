@@ -12,6 +12,8 @@ import SignUp from './pages/sign_up/SignUp';
 import Trailer from './pages/trailer/Trailer';
 import Account from './pages/account/Account';
 import Movie from './pages/movie/Movie';
+import Shop from './pages/shop/Shop';
+import Live from './pages/live/Live';
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
               <Route path='/trailer' element={<PrivateRoute><Trailer /></PrivateRoute>} />
               <Route path='/movie' element={<PrivateRoute><Movie /></PrivateRoute>} />
               <Route path='/theatre' element={<PrivateRoute><Theatre /></PrivateRoute>} />
+              <Route path='/live' element={<PrivateRoute><Live /></PrivateRoute>} />
+              <Route path='/shop' element={<PrivateRoute><Shop /></PrivateRoute>} />
               <Route path='/account' element={<PrivateRoute><Account /></PrivateRoute>} />
               <Route path='/login' element={<Login />} />
               <Route path='/sign_up' element={<SignUp />} />

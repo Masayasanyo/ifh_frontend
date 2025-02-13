@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import styles from './upload.module.css';
+import Crew from './crew/Crew';
 
 
 function Upload() {
@@ -105,33 +106,38 @@ function Upload() {
 
 
     return (
-        <div>
+        <div className={styles.container} >
             <h1>Upload your movie!</h1>
-            <form onSubmit={handleUpload} className={styles.uploadForm}>
-                <label>
-                    Movie 
-                    <input type="file" name="movie" onChange={handleFileChange} />
-                </label>
+            <form onSubmit={handleUpload} >
+                <div className={styles.uploadForm}>
+                    <div className={styles.uploadFormLeft} >
+                        <label>
+                            Movie 
+                            <input type="file" name="movie" onChange={handleFileChange} />
+                        </label>
 
-                <label>
-                    Trailer
-                    <input type="file" name="trailer" onChange={handleFileChange} />
-                </label>
+                        <label>
+                            Trailer
+                            <input type="file" name="trailer" onChange={handleFileChange} />
+                        </label>
 
-                <label>
-                    Thumbnail
-                    <input type="file" name="thumbnail" onChange={handleFileChange} />
-                </label>
+                        <label>
+                            Thumbnail
+                            <input type="file" name="thumbnail" onChange={handleFileChange} />
+                        </label>
 
-                <label>
-                    Title
-                    <input className={styles.input} type="text" name="title" value={formData.title} onChange={handleChange} />
-                </label>
+                        <label>
+                            Title
+                            <input className={styles.input} type="text" name="title" value={formData.title} onChange={handleChange} />
+                        </label>
 
-                <label>
-                    Description
-                    <textarea type="text" name="description" value={formData.description} onChange={handleChange} />
-                </label>
+                        <label>
+                            Description
+                            <textarea type="text" name="description" value={formData.description} onChange={handleChange} />
+                        </label>
+                    </div>
+                    <Crew />
+                </div>
                 <button type='submit'>Submit</button>
             </form>
         </div>

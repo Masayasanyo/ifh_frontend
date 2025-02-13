@@ -1,0 +1,71 @@
+.crewContainer p {
+    margin: 0px;
+}
+
+.crewHeader {
+    display: flex;
+    gap: 20px;
+}
+
+.crewInputContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: #F2E5BF;
+    border-radius: 20px;
+}
+
+.crewInputContainer input {
+    width: 200px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+.crewInputContainer textarea {
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.crewInputContainer button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-left: auto;
+    background-color: #CB6040;
+    color: aliceblue;
+    font-size: 1rem;
+    border: none;
+}
+
+.crewInput {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+.suggestionList {
+    /* position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white; */
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 10;
+}
+
+.suggestionList li {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.suggestionList li:hover {
+    background: #f0f0f0;
+}

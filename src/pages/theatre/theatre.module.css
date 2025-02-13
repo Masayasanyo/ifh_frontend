@@ -1,0 +1,44 @@
+.whatsOnContainer {
+    list-style: none;
+    padding: 0px;
+}
+
+.movie {
+    /* width: 320px; */
+    display: flex;
+    gap: 50px;
+}
+
+.movie p {
+    margin: 0px;
+}
+
+.movie img { 
+    width: 480px;
+    height: 270px;
+    object-fit: contain;
+    border: 3px solid #F2E5BF;
+    border-radius: 20px;
+}
+
+.scheduleContainer {
+    list-style: none;
+    padding: 0px;
+}
+
+.toLiveButton {
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #CB6040;
+    color: aliceblue;
+    font-size: 1rem;
+    border: none;
+    margin-top: 30px;
+}
+
+.liveNowContainer {
+    /* display: flex;
+    flex-direction: column;
+    gap: 50px; */
+}
