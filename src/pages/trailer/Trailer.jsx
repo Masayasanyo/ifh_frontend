@@ -38,13 +38,13 @@ function Trailer() {
     return (
         <div>
             <h1>Trailer</h1>
+            <hr />
             <ul className={styles.trailerContainer}>
                 {movies.length > 0 ? (
                     movies.map((video, index) => (
                         <li key={video.id} onClick={() => openMovie(video.id)} className={styles.trailer}>
-                            {/* <ReactPlayer url={`http://localhost:3001${video.trailer_path}`} playing /> */}
-                            <img src={`http://localhost:3001${video.thumbnail_path}`} alt={video.title} />
                             <p>{video.title}</p>
+                            <img src={`http://localhost:3001${video.thumbnail_path}`} alt={video.title} />
                         </li>
                     ))
                 ) : (

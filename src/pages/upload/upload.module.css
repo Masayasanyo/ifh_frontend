@@ -7,6 +7,8 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+    border: 1px solid #dfd8d8;
+    padding: 20px;
 }
 
 .input {
@@ -25,15 +27,27 @@
     width: 100px;
     height: 40px;
     border-radius: 10px;
-    background-color: #CB6040;
-    color: aliceblue;
     font-size: 1rem;
     border: none;
     margin-top: 30px;
+    font-weight: bold;
 }
 
 .uploadFormLeft {
     display: flex;
     flex-direction: column;
     gap: 30px;
+}
+
+.container hr {
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.uploadForm select {
+    width: 200px;
+    border-radius: 5px;
+    height: 30px;
+    padding-left: 5px;
+    background-color: white;
 }

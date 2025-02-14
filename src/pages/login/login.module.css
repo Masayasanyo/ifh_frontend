@@ -1,11 +1,36 @@
-.emailContainer {
-    /* display: flex; */
-}
-
-.passwordContainer {
-    /* display: flex; */
-}
-
 .toSignUp {
-    color: #B2A5FF;
+    color: rgb(41, 110, 219);
+}
+
+
+
+
+
+.inputForm {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border: 1px solid #dfd8d8;
+    padding: 20px;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 300px;
+}
+
+.inputForm button {
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 1rem;
+    border: none;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.loginContainer {
+    width: 500px;
 }

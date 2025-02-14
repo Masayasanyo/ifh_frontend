@@ -1,0 +1,36 @@
+.container {
+    width: 500px;
+}
+
+.inputForm {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border: 1px solid #dfd8d8;
+    padding: 20px;
+}
+
+.inputForm label {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 300px;
+}
+
+.inputForm button {
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    border: none;
+}
+
+.logoutButton {
+    color: red;
+}

@@ -1,3 +1,8 @@
+.crewContainer {
+    padding: 20px;
+    border: 1px solid #dfd8d8;
+}
+
 .crewContainer p {
     margin: 0px;
 }
@@ -9,41 +14,68 @@
 
 .crewInputContainer {
     display: flex;
-    flex-direction: column;
-    background-color: #F2E5BF;
-    border-radius: 20px;
+    gap: 10px;
+    padding: 20px;
+    border: 1px solid #dfd8d8;
+    border-radius: 10px;
 }
 
 .crewInputContainer input {
-    width: 200px;
+    width: 220px;
     height: 20px;
     border-radius: 5px;
 }
 
 .crewInputContainer textarea {
-    width: 200px;
+    width: 220px;
     height: 40px;
     border-radius: 5px;
 }
 
 .crewInputContainer button {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     margin-left: auto;
-    background-color: #CB6040;
-    color: aliceblue;
-    font-size: 1rem;
+    color: grey;
+    font-size: 1.3rem;
     border: none;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .crewInput {
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 
+.crewInput select {
+    width: 220px;
+    border-radius: 5px;
+    height: 30px;
+    padding-left: 5px;
+    background-color: white;
+}
 
+.crewMain {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+}
 
+.new {
+    width: 30px;
+    height: 30px;
+    /* border-radius: 50%; */
+    border-radius: 10px;
+    color: grey;
+    font-size: 1.3rem;
+    border: none;
+    /* margin-top: auto;
+    margin-bottom: auto; */
+}
 
 
 .suggestionList {

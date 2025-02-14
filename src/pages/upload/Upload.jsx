@@ -28,11 +28,14 @@ function Upload() {
         movieFilePath: '', 
         thumbnailFilePath: '', 
         title: "", 
-        description: "",
+        description: "", 
+        genre: "",
+        crew: [],
     });
 
     const handleChange = (event) => {
         const { name, value } = event.target;
+        console.log(value);
         setFormData({
             ...formData,
             [name]: value, 
@@ -58,14 +61,15 @@ function Upload() {
     const handleUpload = async (event) => {
         event.preventDefault();
 
-        if (!videoForm.movie ||!videoForm.trailer || !videoForm.thumbnail || !formData.title || !formData.description ) {
+        if (!videoForm.movie ||!videoForm.trailer || !videoForm.thumbnail || !formData.title || !formData.description || !formData.genre || !formData.crew) {
+            console.log(formData.genre);
             alert("Please fill in the blanks.");
             return;
         }
 
-        console.log("movie:", videoForm.movie);
-        console.log("trailer:", videoForm.trailer);
-        console.log("thumbnail:", videoForm.thumbnail);
+        // console.log("movie:", videoForm.movie);
+        // console.log("trailer:", videoForm.trailer);
+        // console.log("thumbnail:", videoForm.thumbnail);
 
         const movieData = await uploadFile(videoForm.movie, "movie");
         const trailerData = await uploadFile(videoForm.trailer, "trailer");
@@ -83,6 +87,8 @@ function Upload() {
             thumbnailFilePath: thumbnailData.filePath,
             title: formData.title,
             description: formData.description,
+            genre: formData.genre,
+            crew: formData.crew,
         };
 
         try {
@@ -108,6 +114,7 @@ function Upload() {
     return (
         <div className={styles.container} >
             <h1>Upload your movie!</h1>
+            <hr />
             <form onSubmit={handleUpload} >
                 <div className={styles.uploadForm}>
                     <div className={styles.uploadFormLeft} >
@@ -135,8 +142,29 @@ function Upload() {
                             Description
                             <textarea type="text" name="description" value={formData.description} onChange={handleChange} />
                         </label>
+
+                        <label>
+                            Genre
+                            <select name="genre" onChange={handleChange}>
+                                <option value="action">Action</option>
+                                <option value="adventure">Adventure</option>
+                                <option value="comedy">Comedy</option>
+                                <option value="drama">Drama</option>
+                                <option value="horror">Horror</option>
+                                <option value="sci-fi">Sci-Fi</option>
+                                <option value="fantasy">Fantasy</option>
+                                <option value="romance">Romance</option>
+                                <option value="thriller">Thriller</option>
+                                <option value="mystery">Mystery</option>
+                                <option value="crime">Crime</option>
+                                <option value="war">War</option>
+                                <option value="western">Western</option>
+                                <option value="anime">Anime</option>
+                                <option value="family">Family</option>
+                            </select>
+                        </label>
                     </div>
-                    <Crew />
+                    <Crew formData={formData} setFormData={setFormData}/>
                 </div>
                 <button type='submit'>Submit</button>
             </form>

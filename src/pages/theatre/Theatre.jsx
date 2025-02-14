@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './theatre.module.css'
 import { useNavigate } from 'react-router-dom';
+import FilmCrew from './film_crew/FilmCrew';
 
 function Theatre() {
 
@@ -53,8 +54,6 @@ function Theatre() {
         fetchMovies();
     }, []);
 
-    console.log(publishedMovie);
-
     return (
         <div>
             <h1>What's on</h1>
@@ -67,6 +66,9 @@ function Theatre() {
                     <div>
                         <h3>{publishedMovie[0].title}</h3>
                         <p>{publishedMovie[0].description}</p>
+                        <hr />
+                        <FilmCrew movie={publishedMovie[0]} />
+
                     </div>
                 </div>
                 ) : (

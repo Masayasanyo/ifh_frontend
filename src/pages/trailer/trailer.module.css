@@ -1,6 +1,9 @@
 .trailerContainer {
+    display: flex;
+    flex-wrap: wrap;
     list-style: none;
     padding: 0px;
+    gap: 20px;
 }
 
 .trailer {
@@ -9,11 +12,16 @@
     /* background-color: #FD8B51; */
     /* padding: 0px 10px 10px 10px; */
     /* color: white; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     width: 320px;
+    border: 1px solid #dfd8d8;
+    padding: 10px;
 }
 
 .trailer p {
-    font-size: 1.5rem;
+    font-size: 1.0rem;
     margin: 0px;
     padding-left: 10px;
 }

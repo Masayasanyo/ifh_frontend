@@ -56,10 +56,10 @@ function Login() {
     }
 
     return (
-        <div>
+        <div className={styles.loginContainer}>
             <h1>Log in</h1>
-            <form onSubmit={handleSubmit}>
-                <div className={styles.emailContainer}>
+            <form className={styles.inputForm} onSubmit={handleSubmit}>
+                <div className={styles.inputContainer}>
                     <p>Email</p>
                     <input 
                         type="email"
@@ -68,7 +68,7 @@ function Login() {
                         onChange={handleChange}>
                     </input>
                 </div>
-                <div className={styles.passwordContainer}>
+                <div className={styles.inputContainer}>
                     <p>Password</p>
                     <input
                         type="password"
@@ -79,7 +79,6 @@ function Login() {
                 </div>
                 <button type='submit'>Continue</button>
             </form>
-            <hr />
             <p>Don't have an account? <span onClick={toSignUp} className={styles.toSignUp}>Sign Up</span></p>
         </div>
     )

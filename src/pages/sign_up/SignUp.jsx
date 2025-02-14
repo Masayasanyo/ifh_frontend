@@ -10,7 +10,9 @@ function SignUp() {
     const navigate = useNavigate();
     
     const [formData, setFormData] = useState({
-        userbame: "", 
+        username: "", 
+        firstName: "", 
+        familyName: "", 
         email: "", 
         password: "",
     });
@@ -25,7 +27,7 @@ function SignUp() {
     
     const handleSubmit = async (event) => {
         event.preventDefault();
-        if (formData.userName !== '' && formData.email !== '' && formData.password !== '') {
+        if (formData.username !== '' && formData.email !== '' && formData.password !== '' && formData.firstName !== '' && formData.familyName !== '') {
             try {
                 const response = await fetch(`${process.env.REACT_APP_API_URL}/signup`, {
                     method: 'POST',
@@ -57,11 +59,12 @@ function SignUp() {
     }
 
     return (
-        <div>
+        <div className={styles.signUpContainer} >
             <h1>Sign Up</h1>
-            <form onSubmit={handleSubmit} >
-                <div className={styles.usernameContainer}>
-                    <p>Username</p>
+            <form className={styles.inputForm} onSubmit={handleSubmit} >
+
+                <label className={styles.inputContainer}>
+                    Username
                     <input 
                         type="text"
                         name="username"
@@ -69,9 +72,32 @@ function SignUp() {
                         onChange={handleChange}
                     >
                     </input>
-                </div>
-                <div className={styles.emailContainer}>
-                    <p>Email</p>
+                </label>
+
+                <label className={styles.inputContainer}>
+                    First Name
+                    <input 
+                        type="text"
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={handleChange}
+                    >
+                    </input>
+                </label>
+
+                <label className={styles.inputContainer}>
+                    Family Name
+                    <input 
+                        type="text"
+                        name="familyName"
+                        value={formData.familyName}
+                        onChange={handleChange}
+                    >
+                    </input>
+                </label>
+
+                <label className={styles.inputContainer}>
+                    Email
                     <input 
                         type="email"
                         name="email"
@@ -79,9 +105,10 @@ function SignUp() {
                         onChange={handleChange}
                     >
                     </input>
-                </div>
-                <div className={styles.passwordContainer}>
-                    <p>Password</p>
+                </label>
+
+                <label className={styles.inputContainer}>
+                    Password
                     <input 
                         type="password"
                         name="password"
@@ -89,8 +116,10 @@ function SignUp() {
                         onChange={handleChange}
                     >
                     </input>
-                </div>
+                </label>
+
                 <button type='submit'>Continue</button>
+
             </form>
             <p>If you already have an account? <span onClick={toLogin} className={styles.toLogin}>Log in</span></p>
         </div>

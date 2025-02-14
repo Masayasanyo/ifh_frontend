@@ -14,11 +14,11 @@
 }
 
 .movie img { 
-    width: 480px;
+    /* width: 480px; */
     height: 270px;
     object-fit: contain;
-    border: 3px solid #F2E5BF;
-    border-radius: 20px;
+    border: 3px solid rgb(42, 53, 71);
+    border-radius: 10px;
 }
 
 .scheduleContainer {
@@ -27,14 +27,14 @@
 }
 
 .toLiveButton {
-    width: 100px;
+    width: 130px;
     height: 40px;
     border-radius: 10px;
-    background-color: #CB6040;
-    color: aliceblue;
-    font-size: 1rem;
+    font-size: 1.0rem;
     border: none;
     margin-top: 30px;
+    font-weight: bold;
+    padding: 0px 10px 0px 10px;
 }
 
 .liveNowContainer {
