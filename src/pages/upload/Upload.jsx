@@ -113,13 +113,13 @@ function Upload() {
 
     return (
         <div className={styles.container} >
-            <h1>Upload your movie!</h1>
+            <h1>Upload your film</h1>
             <hr />
             <form onSubmit={handleUpload} >
                 <div className={styles.uploadForm}>
                     <div className={styles.uploadFormLeft} >
                         <label>
-                            Movie 
+                            Film 
                             <input type="file" name="movie" onChange={handleFileChange} />
                         </label>
 

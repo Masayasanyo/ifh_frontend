@@ -1,3 +1,5 @@
+import styles from './film_crew.module.css';
+
 function FilmCrew({crew}) {
 
     const directorList = crew.filter(member => member.role === "director") || [];
@@ -16,21 +18,30 @@ function FilmCrew({crew}) {
     const composerList = crew.filter(member => member.role === "composer");
     const otherList = crew.filter(member => member.role === "other");
 
+    console.log(directorList);
 
     return (
-        <div>
+        <div className={styles.container}>
             <h2>Cast & Crew</h2>
+            {directorList.length > 0 && (
             <div>
                 <h3>Director</h3>
                 <ul>
                 {directorList.map((member, index) => (
-                    <li key={member.id} >
+                    <li key={member.id} className={styles.member} >
+                        {member.crew_username ? (
+                            <img />
+                        ):
+                            <img src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={member.first_name}/>
+                        }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
                 ))}
                 </ul>
             </div>
+            )}
 
+            {producerList.length > 0 && (
             <div>
                 <h3>Producer</h3>
                 <ul>
@@ -41,7 +52,9 @@ function FilmCrew({crew}) {
                 ))}
                 </ul>
             </div>
+            )}
 
+            {screenwriterList.length > 0 && (
             <div>
                 <h3>Screenwriter</h3>
                 <ul>
@@ -52,7 +65,9 @@ function FilmCrew({crew}) {
                 ))}
                 </ul>
             </div>
+            )}
 
+            {actorList.length > 0 && (
             <div>
                 <h3>Actor</h3>
                 <ul>
@@ -63,7 +78,9 @@ function FilmCrew({crew}) {
                 ))}
                 </ul>
             </div>
+            )}
 
+            {cinematographerList.length > 0 && (
             <div>
                 <h3>Cinematographer</h3>
                 <ul>
@@ -74,7 +91,9 @@ function FilmCrew({crew}) {
                 ))}
                 </ul>
             </div>
+            )}
 
+            {editorList.length > 0 && (
             <div>
                 <h3>Editor</h3>
                 <ul>
@@ -85,7 +104,9 @@ function FilmCrew({crew}) {
                 ))}
                 </ul>
             </div>
+            )}
 
+            {cameraList.length > 0 && (
             <div>
                 <h3>Camera Operator</h3>
                 <ul>
@@ -96,7 +117,9 @@ function FilmCrew({crew}) {
                 ))}
                 </ul>
             </div>
+            )}
 
+            {gafferList.length > 0 && (
             <div>
                 <h3>Gaffer</h3>
                 <ul>
@@ -107,7 +130,9 @@ function FilmCrew({crew}) {
                 ))}
                 </ul>
             </div>
+            )}
 
+            {soundList.length > 0 && (
             <div>
                 <h3>Sound Designer</h3>
                 <ul>
@@ -118,7 +143,9 @@ function FilmCrew({crew}) {
                 ))}
                 </ul>
             </div>
+            )}
 
+            {makeupList.length > 0 && (
             <div>
                 <h3>Makeup Artist</h3>
                 <ul>
@@ -129,7 +156,9 @@ function FilmCrew({crew}) {
                 ))}
                 </ul>
             </div>
+            )}
 
+            {costumeList.length > 0 && (
             <div>
                 <h3>Costume Designer</h3>
                 <ul>
@@ -140,7 +169,9 @@ function FilmCrew({crew}) {
                 ))}
                 </ul>
             </div>
+            )}
 
+            {vfxList.length > 0 && (
             <div>
                 <h3>VFX Artist</h3>
                 <ul>
@@ -151,7 +182,9 @@ function FilmCrew({crew}) {
                 ))}
                 </ul>
             </div>
+            )}
 
+            {stuntList.length > 0 && (
             <div>
                 <h3>Stunt Coordinator</h3>
                 <ul>
@@ -162,7 +195,9 @@ function FilmCrew({crew}) {
                 ))}
                 </ul>
             </div>
+            )}
 
+            {composerList.length > 0 && (
             <div>
                 <h3>Composer</h3>
                 <ul>
@@ -173,7 +208,9 @@ function FilmCrew({crew}) {
                 ))}
                 </ul>
             </div>
+            )}
 
+            {otherList.length > 0 && (
             <div>
                 <h3>Other</h3>
                 <ul>
@@ -184,6 +221,7 @@ function FilmCrew({crew}) {
                 ))}
                 </ul>
             </div>
+            )}
         </div>      
     )
 }

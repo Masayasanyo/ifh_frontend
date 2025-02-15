@@ -1,3 +1,20 @@
 .container {
-    width: 640px;
+    /* width: 640px; */
 }
+
+.containerUp {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.filmInfo {
+    width: 500px;
+}
+
+.video {
+    border: 10px solid rgb(175, 165, 165);
+    border-radius: 20px;
+    padding: 3px;
+}
+

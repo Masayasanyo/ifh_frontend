@@ -63,10 +63,7 @@ function Account() {
                             onChange={handleChange}>
                         </input>
                     </label>
-                    <button>Update username</button>
-                </form>
 
-                <form onSubmit={handleSubmit} className={styles.inputContainer}>
                     <label>
                     First Name
                         <input
@@ -77,10 +74,7 @@ function Account() {
                             onChange={handleChange}>
                         </input>
                     </label>
-                    <button>Update first name</button>
-                </form>
 
-                <form onSubmit={handleSubmit} className={styles.inputContainer}>
                     <label>
                     Family Name
                         <input
@@ -91,10 +85,7 @@ function Account() {
                             onChange={handleChange}>
                         </input>
                     </label>
-                    <button>Update family name</button>
-                </form>
 
-                <form onSubmit={handleSubmit} className={styles.inputContainer}>
                     <label>
                         Email
                         <input 
@@ -105,10 +96,7 @@ function Account() {
                             onChange={handleChange}>
                         </input>
                     </label>
-                    <button>Update email address</button>
-                </form>
 
-                <form onSubmit={handleSubmit} className={styles.inputContainer}>
                     <label>
                         Password
                         <input 
@@ -126,7 +114,8 @@ function Account() {
                             onChange={handleChange}>
                         </input>
                     </label>
-                    <button>Update password</button>
+
+                    <button>Submit</button>
                 </form>
 
                 <div>

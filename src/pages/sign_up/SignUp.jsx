@@ -24,17 +24,57 @@ function SignUp() {
             [name]: value, 
         });
     }
+
+    const [fileForm, setFileForm] = useState(null);
+    const [imageUrl, setImageUrl] = useState(null);
+
+    const handleFileChange = (event) => {
+        setFileForm(event.target.files[0]);
+        if (event.target.files[0]) {
+            const url = URL.createObjectURL(event.target.files[0]);
+            setImageUrl(url);
+        }
+    };
+
+    const uploadFile = async (file, endpoint) => {
+        const fileFormData = new FormData();
+        fileFormData.append(endpoint, file);
+
+        try {
+            const response = await fetch(`http://localhost:3001/upload/${endpoint}`, {
+                method: "POST",
+                body: fileFormData,
+            });
+            return await response.json();
+        } catch (error) {
+            console.error(`Upload ${endpoint} error: `, error);
+            return null;
+        }
+    }
     
     const handleSubmit = async (event) => {
         event.preventDefault();
+
+        const profileImageData = await uploadFile(fileForm, "profile_image");
+
         if (formData.username !== '' && formData.email !== '' && formData.password !== '' && formData.firstName !== '' && formData.familyName !== '') {
+            
+            const newFormData = {
+                username: formData.username, 
+                firstName: formData.firstName, 
+                familyName: formData.familyName, 
+                email: formData.email, 
+                password: formData.password,
+                imagePath: profileImageData.filePath,
+            }
+
             try {
                 const response = await fetch(`${process.env.REACT_APP_API_URL}/signup`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     }, 
-                    body: JSON.stringify(formData), 
+                    body: JSON.stringify(newFormData), 
                 });
                 if (response.ok) {
                     const data = await response.json();
@@ -72,6 +112,12 @@ function SignUp() {
                         onChange={handleChange}
                     >
                     </input>
+                </label>
+
+                <label className={styles.inputContainer}>
+                    Profile picture 
+                    <input type="file" name="picture" onChange={handleFileChange} />
+                    <img src={imageUrl} alt='Preview' />
                 </label>
 
                 <label className={styles.inputContainer}>

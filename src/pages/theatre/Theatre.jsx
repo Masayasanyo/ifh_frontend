@@ -59,14 +59,12 @@ function Theatre() {
             <h1>What's on</h1>
             <hr />
             <div className={styles.liveNowContainer} >
-                <h2>Live Now</h2>
                 {publishedMovie.length > 0 ? (
                 <div onClick={() => openMovie(publishedMovie[0].id)} className={styles.movie}>
                     <img src={`http://localhost:3001${publishedMovie[0].thumbnail_path}`} alt={publishedMovie[0].title} />
                     <div>
-                        <h3>{publishedMovie[0].title}</h3>
+                        <h2>{publishedMovie[0].title}</h2>
                         <p>{publishedMovie[0].description}</p>
-                        <hr />
                         <FilmCrew movie={publishedMovie[0]} />
 
                     </div>

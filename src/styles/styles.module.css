@@ -4,6 +4,9 @@ body {
     font-family: "Lora", serif;
     font-optical-sizing: auto;
     color: rgb(42, 53, 71);
+    color: aliceblue;
+    background-color: #1A1A1A;
+    color: #ffffff;
 }
 
 .container {
@@ -15,7 +18,6 @@ body {
     padding-top: 50px;
     padding-left: 400px;
     padding-right: 200px;
-    /* background-color: #F2E5BF; */
     /* height: 100vh; */
     width: 100%;
     margin-bottom: 100px

@@ -14,10 +14,12 @@
 }
 
 .movie img { 
-    /* width: 480px; */
+    width: 480px;
     height: 270px;
+    /* width: 400px;
+    height: 225px; */
     object-fit: contain;
-    border: 3px solid rgb(42, 53, 71);
+    border: 10px solid rgb(160, 157, 157);
     border-radius: 10px;
 }
 
@@ -38,7 +40,10 @@
 }
 
 .liveNowContainer {
-    /* display: flex;
-    flex-direction: column;
-    gap: 50px; */
+    margin-top: 30px;
+}
+
+.liveNowContainer h2 {
+    margin: 0px;
+    margin-bottom: 20px;
 }

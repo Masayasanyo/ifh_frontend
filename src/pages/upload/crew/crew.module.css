@@ -1,6 +1,7 @@
 .crewContainer {
     padding: 20px;
     border: 1px solid #dfd8d8;
+    border-radius: 10px;
 }
 
 .crewContainer p {

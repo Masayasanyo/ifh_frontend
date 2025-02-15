@@ -3,23 +3,13 @@ to do
 -live streaming
 -get tickets
 -get food or drink tickets
--
+-most popular users 
 
 
+2025-02-15
+-add like and dislike function
+-add profile picture
+-add trending films
+-add latest films
 
-<select id="roleSelect">
-    <option value="director">Director（監督）</option>
-    <option value="producer">Producer（プロデューサー）</option>
-    <option value="screenwriter">Screenwriter（脚本家）</option>
-    <option value="actor">Actor（俳優）</option>
-    <option value="cinematographer">Cinematographer（撮影監督）</option>
-    <option value="editor">Editor（編集者）</option>
-    <option value="camera">Camera Operator（カメラオペレーター）</option>
-    <option value="gaffer">Gaffer（照明技師）</option>
-    <option value="sound">Sound Designer（音響デザイナー）</option>
-    <option value="makeup">Makeup Artist（メイクアップアーティスト）</option>
-    <option value="costume">Costume Designer（衣装デザイナー）</option>
-    <option value="vfx">VFX Artist（VFXアーティスト）</option>
-    <option value="stunt">Stunt Coordinator（スタントコーディネーター）</option>
-    <option value="composer">Composer（作曲家）</option>
-</select>
+

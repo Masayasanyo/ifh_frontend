@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import ReactPlayer from 'react-player'
 import styles from './movie.module.css';
 import FilmCrew from './film_crew/FilmCrew';
+import Checkbox from '../../components/button/LikeButton';
+import { AuthContext } from '../../context/AuthContext';
 
 function Movie() {
+    const { user } = useContext(AuthContext);
 
     const location = useLocation();
     const { movie } = location.state || {};
@@ -36,10 +39,18 @@ function Movie() {
 
     return (
         <div className={styles.container}>
-            <h1>{movie[0].title}</h1>
-            <h2>({year}) {movie[0].genre}</h2>
-            <ReactPlayer url={`http://localhost:3001${movie[0].trailer_path}`} controls/>
-            <h2>{movie[0].description}</h2>
+            <div className={styles.containerUp}>
+                <div className={styles.filmInfo}>
+                    <h1>{movie[0].title}</h1>
+                    <h2>({year}) {movie[0].genre}</h2>
+                    <p>{movie[0].description}</p>
+                    <Checkbox user={user} movie={movie[0]} />
+                </div>
+                <div className={styles.video}>                
+                <ReactPlayer url={`http://localhost:3001${movie[0].trailer_path}`} controls/>
+                </div>
+            </div>
+            
             <hr />
             <FilmCrew crew={crew} />   
         </div>

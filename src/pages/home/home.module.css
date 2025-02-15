@@ -1,0 +1,12 @@
+.btn {
+    color: blue;
+    text-decoration: none;
+    margin-right: 50px;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+

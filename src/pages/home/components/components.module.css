@@ -1,0 +1,55 @@
+.filmContainer {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0px;
+}
+
+.filmContainer img {
+    width: 160px;
+    height: 90px;
+    width: 240px;
+    height: 135px;
+    object-fit: contain;
+    border: 1px solid #dfd8d8;
+    border-radius: 10px;
+}
+
+.film {
+    padding: 0px;
+    width: 240px;
+}
+
+.film p {
+    text-align: center;
+}
+
+.filmmakerContainer {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0px;
+}
+
+.filmmaker {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px;
+    padding: 10px;
+    width: 160px;
+    /* border: 1px solid #dfd8d8; */
+    text-align: center;
+}
+
+.filmmaker img {
+    width: 100px;
+    height: 100px;
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: aliceblue;
+    object-fit: cover;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
