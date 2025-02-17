@@ -27,3 +27,19 @@
     list-style: none;
     padding: 0px;
 }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 30px 50px 30px 50px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    gap: 20px;
+}
+
+.roleContainer {
+    border: 5px solid #001F3F;
+    border-radius: 20px;
+    padding: 20px;
+}

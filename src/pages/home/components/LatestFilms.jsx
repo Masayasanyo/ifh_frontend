@@ -8,8 +8,7 @@ function LatestFilms() {
     const navigate = useNavigate();
 
     const openMovie = (id) => {
-        const movie = movies.filter(movie => movie.id === id);
-        navigate("/movie", { state: { movie } });
+        navigate(`/movie/${id}`);
     };
 
     useEffect(() => {
@@ -30,7 +29,7 @@ function LatestFilms() {
     }, []);
 
     return (
-        <div>
+        <div className={styles.section}>
             <h2>🆕 Latest Releases</h2>
             <ul className={styles.filmContainer}>
                 {movies.length > 0 ? (

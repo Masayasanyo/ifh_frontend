@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
 import styles from './upload.module.css';
 import Crew from './crew/Crew';
@@ -7,6 +8,7 @@ import Crew from './crew/Crew';
 function Upload() {
 
     const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const [videoForm, setVideoForm] = useState({
         trailer: null, 
@@ -101,6 +103,7 @@ function Upload() {
             });
             if (response.ok) {
                 const data = await response.json();
+                navigate('/');
                 console.log(data);
             } else {
                 alert('Failed');
@@ -114,7 +117,6 @@ function Upload() {
     return (
         <div className={styles.container} >
             <h1>Upload your film</h1>
-            <hr />
             <form onSubmit={handleUpload} >
                 <div className={styles.uploadForm}>
                     <div className={styles.uploadFormLeft} >

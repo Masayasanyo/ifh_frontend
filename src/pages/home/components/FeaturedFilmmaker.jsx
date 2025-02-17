@@ -8,10 +8,10 @@ function FeaturedFilmmaker() {
     const [users, setUsers] = useState([]);
     const navigate = useNavigate();
 
-    // const openMovie = (id) => {
-    //     const movie = movies.filter(movie => movie.id === id);
-    //     navigate("/movie", { state: { movie } });
-    // };
+    const openUser = (id) => {
+        const userInfo = users.filter(user => user.id === id);
+        navigate("/user", { state: { userInfo } });
+    };
 
     useEffect(() => {
         const fetchFilms = async () => {
@@ -33,12 +33,12 @@ function FeaturedFilmmaker() {
     console.log(users);
 
     return (
-        <div>
+        <div className={styles.section}>
             <h2>🎬 Most popular users</h2>
             <ul className={styles.filmmakerContainer}>
                 {users.length > 0 ? (
                     users.map((user, index) => (
-                        <li key={user.id} className={styles.filmmaker}>
+                        <li key={user.id} className={styles.filmmaker} onClick={() => openUser(user.id)} >
                             {user.profile_image_url ? (
                             <img src={`http://localhost:3001${user.profile_image_url}`} alt={user.first_name} />
                             ):(

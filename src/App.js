@@ -14,22 +14,24 @@ import Account from './pages/account/Account';
 import Movie from './pages/movie/Movie';
 import Shop from './pages/shop/Shop';
 import Live from './pages/live/Live';
+import User from './pages/user/User';
 
 function App() {
   return (
     <AuthProvider>
       <Router>
-        <div className={styles.container}>
+        <div className={styles.app}>
           <Header />
           <div className={styles.main}>
             <Routes>
               <Route path='/' element={<PrivateRoute><Home /></PrivateRoute>} />
               <Route path='/upload' element={<PrivateRoute><Upload /></PrivateRoute>} />
               <Route path='/trailer' element={<PrivateRoute><Trailer /></PrivateRoute>} />
-              <Route path='/movie' element={<PrivateRoute><Movie /></PrivateRoute>} />
+              <Route path='/movie/:filmId' element={<PrivateRoute><Movie /></PrivateRoute>} />
               <Route path='/theatre' element={<PrivateRoute><Theatre /></PrivateRoute>} />
               <Route path='/live' element={<PrivateRoute><Live /></PrivateRoute>} />
               <Route path='/shop' element={<PrivateRoute><Shop /></PrivateRoute>} />
+              <Route path='/user' element={<PrivateRoute><User /></PrivateRoute>} />
               <Route path='/account' element={<PrivateRoute><Account /></PrivateRoute>} />
               <Route path='/login' element={<Login />} />
               <Route path='/sign_up' element={<SignUp />} />

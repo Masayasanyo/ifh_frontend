@@ -48,7 +48,6 @@ function Account() {
     return (
         <div className={styles.container} >
             <h1>Account</h1>
-            <hr />
 
             <div className={styles.inputForm}>
 

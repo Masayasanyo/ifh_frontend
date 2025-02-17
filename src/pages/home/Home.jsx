@@ -6,21 +6,9 @@ import { Link } from 'react-router-dom';
 import LatestFilms from './components/LatestFilms';
 import TrendingFilms from './components/TrendingFilms';
 import FeaturedFilmmaker from './components/FeaturedFilmmaker';
+import News from './components/News';
 
-function Home() {
-
-    const { user } = useContext(AuthContext);
-
-    const [movies, setMovies] = useState([]);
-    const navigate = useNavigate();
-
-    const openMovie = (id) => {
-        const movie = movies.filter(movie => movie.id === id);
-        console.log(movie);
-        navigate("/movie", { state: { movie } });
-    };
-
-    
+function Home() {   
 
     return (
         <div>
@@ -38,13 +26,8 @@ function Home() {
                 <TrendingFilms />
                 <LatestFilms/>
                 <FeaturedFilmmaker />
-
-                {/* News & Events */}
-                <section className={styles.section}>
-                    <h2>📰 News & Events</h2>
-                    <p>🏆 Indie Film Festival 2025 is coming soon!</p>
-                    {/* <Link to="/live" className={styles.btn}>Learn More</Link> */}
-                </section>
+                <News />
+                
             </div>
 
         </div>

@@ -1,21 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import ReactPlayer from 'react-player'
 import styles from './trailer.module.css'
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Trailer() {
-
-    const location = useLocation();
-    // const { movie } = location.state || {};
 
     const [movies, setMovies] = useState([]);
     const navigate = useNavigate();
 
     const openMovie = (id) => {
-        const movie = movies.filter(movie => movie.id === id);
-        console.log(movie);
-        navigate("/movie", { state: { movie } });
+        navigate(`/movie/${id}`);
     };
+
 
     useEffect(() => {
         const fetchTrailers = async () => {
@@ -25,7 +20,6 @@ function Trailer() {
                 });
 
                 const data = await response.json();
-                console.log(data.data);
                 setMovies(data.data);
 
             } catch (error) {
@@ -38,7 +32,6 @@ function Trailer() {
     return (
         <div>
             <h1>Trailer</h1>
-            <hr />
             <ul className={styles.trailerContainer}>
                 {movies.length > 0 ? (
                     movies.map((video, index) => (

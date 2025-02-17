@@ -1,6 +1,8 @@
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './film_crew.module.css';
 
-function FilmCrew({crew}) {
+function FilmCrew({crew}) {    
 
     const directorList = crew.filter(member => member.role === "director") || [];
     const producerList = crew.filter(member => member.role === "producer");
@@ -18,19 +20,27 @@ function FilmCrew({crew}) {
     const composerList = crew.filter(member => member.role === "composer");
     const otherList = crew.filter(member => member.role === "other");
 
-    console.log(directorList);
+    const navigate = useNavigate();
+
+    const openUser = (list, userId) => {
+        const userInfo = list.filter(user => user.id === userId);
+        console.log(userInfo);
+        if (userInfo[0].account_id) {
+            navigate("/user", { state: { userInfo } });
+        }
+    };
 
     return (
         <div className={styles.container}>
             <h2>Cast & Crew</h2>
             {directorList.length > 0 && (
-            <div>
+            <div className={styles.roleContainer}>
                 <h3>Director</h3>
                 <ul>
                 {directorList.map((member, index) => (
-                    <li key={member.id} className={styles.member} >
-                        {member.crew_username ? (
-                            <img />
+                    <li key={member.id} className={styles.member} onClick={() => openUser(directorList, member.id)}>
+                        {member.profile_image_url ? (
+                            <img src={`http://localhost:3001${member.profile_image_url}`} alt={member.first_name} />
                         ):
                             <img src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={member.first_name}/>
                         }
@@ -42,11 +52,16 @@ function FilmCrew({crew}) {
             )}
 
             {producerList.length > 0 && (
-            <div>
+            <div className={styles.roleContainer}>
                 <h3>Producer</h3>
                 <ul>
                 {producerList.map((member, index) => (
-                    <li key={member.id} >
+                    <li key={member.id} className={styles.member} onClick={() => openUser(producerList, member.id)}>
+                        {member.profile_image_url ? (
+                            <img src={`http://localhost:3001${member.profile_image_url}`} alt={member.first_name} />
+                        ):
+                            <img src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={member.first_name}/>
+                        }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
                 ))}
@@ -55,11 +70,16 @@ function FilmCrew({crew}) {
             )}
 
             {screenwriterList.length > 0 && (
-            <div>
+            <div className={styles.roleContainer}>
                 <h3>Screenwriter</h3>
                 <ul>
                 {screenwriterList.map((member, index) => (
-                    <li key={member.id} >
+                    <li key={member.id} className={styles.member} onClick={() => openUser(screenwriterList, member.id)}>
+                        {member.profile_image_url ? (
+                            <img src={`http://localhost:3001${member.profile_image_url}`} alt={member.first_name} />
+                        ):
+                            <img src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={member.first_name}/>
+                        }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
                 ))}
@@ -68,11 +88,16 @@ function FilmCrew({crew}) {
             )}
 
             {actorList.length > 0 && (
-            <div>
+            <div className={styles.roleContainer}>
                 <h3>Actor</h3>
                 <ul>
                 {actorList.map((member, index) => (
-                    <li key={member.id} >
+                    <li key={member.id} className={styles.member} onClick={() => openUser(actorList, member.id)}>
+                        {member.profile_image_url ? (
+                            <img src={`http://localhost:3001${member.profile_image_url}`} alt={member.first_name} />
+                        ):
+                            <img src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={member.first_name}/>
+                        }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
                 ))}
@@ -81,11 +106,16 @@ function FilmCrew({crew}) {
             )}
 
             {cinematographerList.length > 0 && (
-            <div>
+            <div className={styles.roleContainer}>
                 <h3>Cinematographer</h3>
                 <ul>
                 {cinematographerList.map((member, index) => (
-                    <li key={member.id} >
+                    <li key={member.id} className={styles.member} onClick={() => openUser(cinematographerList, member.id)}>
+                        {member.profile_image_url ? (
+                            <img src={`http://localhost:3001${member.profile_image_url}`} alt={member.first_name} />
+                        ):
+                            <img src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={member.first_name}/>
+                        }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
                 ))}
@@ -94,11 +124,16 @@ function FilmCrew({crew}) {
             )}
 
             {editorList.length > 0 && (
-            <div>
+            <div className={styles.roleContainer}>
                 <h3>Editor</h3>
                 <ul>
                 {editorList.map((member, index) => (
-                    <li key={member.id} >
+                    <li key={member.id} className={styles.member} onClick={() => openUser(editorList, member.id)}>
+                        {member.profile_image_url ? (
+                            <img src={`http://localhost:3001${member.profile_image_url}`} alt={member.first_name} />
+                        ):
+                            <img src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={member.first_name}/>
+                        }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
                 ))}
@@ -107,11 +142,16 @@ function FilmCrew({crew}) {
             )}
 
             {cameraList.length > 0 && (
-            <div>
+            <div className={styles.roleContainer}>
                 <h3>Camera Operator</h3>
                 <ul>
                 {cameraList.map((member, index) => (
-                    <li key={member.id} >
+                    <li key={member.id} className={styles.member} onClick={() => openUser(cameraList, member.id)}>
+                        {member.profile_image_url ? (
+                            <img src={`http://localhost:3001${member.profile_image_url}`} alt={member.first_name} />
+                        ):
+                            <img src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={member.first_name}/>
+                        }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
                 ))}
@@ -120,11 +160,16 @@ function FilmCrew({crew}) {
             )}
 
             {gafferList.length > 0 && (
-            <div>
+            <div className={styles.roleContainer}>
                 <h3>Gaffer</h3>
                 <ul>
                 {gafferList.map((member, index) => (
-                    <li key={member.id} >
+                    <li key={member.id} className={styles.member} onClick={() => openUser(gafferList, member.id)}>
+                        {member.profile_image_url ? (
+                            <img src={`http://localhost:3001${member.profile_image_url}`} alt={member.first_name} />
+                        ):
+                            <img src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={member.first_name}/>
+                        }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
                 ))}
@@ -133,11 +178,16 @@ function FilmCrew({crew}) {
             )}
 
             {soundList.length > 0 && (
-            <div>
+            <div className={styles.roleContainer}>
                 <h3>Sound Designer</h3>
                 <ul>
                 {soundList.map((member, index) => (
-                    <li key={member.id} >
+                    <li key={member.id} className={styles.member} onClick={() => openUser(soundList, member.id)}>
+                        {member.profile_image_url ? (
+                            <img src={`http://localhost:3001${member.profile_image_url}`} alt={member.first_name} />
+                        ):
+                            <img src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={member.first_name}/>
+                        }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
                 ))}
@@ -146,11 +196,16 @@ function FilmCrew({crew}) {
             )}
 
             {makeupList.length > 0 && (
-            <div>
+            <div className={styles.roleContainer}>
                 <h3>Makeup Artist</h3>
                 <ul>
                 {makeupList.map((member, index) => (
-                    <li key={member.id} >
+                    <li key={member.id} className={styles.member} onClick={() => openUser(makeupList, member.id)}>
+                        {member.profile_image_url ? (
+                            <img src={`http://localhost:3001${member.profile_image_url}`} alt={member.first_name} />
+                        ):
+                            <img src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={member.first_name}/>
+                        }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
                 ))}
@@ -159,11 +214,16 @@ function FilmCrew({crew}) {
             )}
 
             {costumeList.length > 0 && (
-            <div>
+            <div className={styles.roleContainer}>
                 <h3>Costume Designer</h3>
                 <ul>
                 {costumeList.map((member, index) => (
-                    <li key={member.id} >
+                    <li key={member.id} className={styles.member} onClick={() => openUser(costumeList, member.id)}>
+                        {member.profile_image_url ? (
+                            <img src={`http://localhost:3001${member.profile_image_url}`} alt={member.first_name} />
+                        ):
+                            <img src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={member.first_name}/>
+                        }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
                 ))}
@@ -172,11 +232,16 @@ function FilmCrew({crew}) {
             )}
 
             {vfxList.length > 0 && (
-            <div>
+            <div className={styles.roleContainer}>
                 <h3>VFX Artist</h3>
                 <ul>
                 {vfxList.map((member, index) => (
-                    <li key={member.id} >
+                    <li key={member.id} className={styles.member} onClick={() => openUser(vfxList, member.id)}>
+                        {member.profile_image_url ? (
+                            <img src={`http://localhost:3001${member.profile_image_url}`} alt={member.first_name} />
+                        ):
+                            <img src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={member.first_name}/>
+                        }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
                 ))}
@@ -185,11 +250,16 @@ function FilmCrew({crew}) {
             )}
 
             {stuntList.length > 0 && (
-            <div>
+            <div className={styles.roleContainer}>
                 <h3>Stunt Coordinator</h3>
                 <ul>
                 {stuntList.map((member, index) => (
-                    <li key={member.id} >
+                    <li key={member.id} className={styles.member} onClick={() => openUser(stuntList, member.id)}>
+                        {member.profile_image_url ? (
+                            <img src={`http://localhost:3001${member.profile_image_url}`} alt={member.first_name} />
+                        ):
+                            <img src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={member.first_name}/>
+                        }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
                 ))}
@@ -198,11 +268,16 @@ function FilmCrew({crew}) {
             )}
 
             {composerList.length > 0 && (
-            <div>
+            <div className={styles.roleContainer}>
                 <h3>Composer</h3>
                 <ul>
                 {composerList.map((member, index) => (
-                    <li key={member.id} >
+                    <li key={member.id} className={styles.member} onClick={() => openUser(composerList, member.id)}>
+                        {member.profile_image_url ? (
+                            <img src={`http://localhost:3001${member.profile_image_url}`} alt={member.first_name} />
+                        ):
+                            <img src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={member.first_name}/>
+                        }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
                 ))}
@@ -211,11 +286,16 @@ function FilmCrew({crew}) {
             )}
 
             {otherList.length > 0 && (
-            <div>
+            <div className={styles.roleContainer}>
                 <h3>Other</h3>
                 <ul>
                 {otherList.map((member, index) => (
-                    <li key={member.id} >
+                    <li key={member.id} className={styles.member} onClick={() => openUser(otherList, member.id)}>
+                        {member.profile_image_url ? (
+                            <img src={`http://localhost:3001${member.profile_image_url}`} alt={member.first_name} />
+                        ):
+                            <img src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={member.first_name}/>
+                        }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
                 ))}

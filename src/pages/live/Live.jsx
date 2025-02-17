@@ -14,7 +14,7 @@ function Live() {
             <h1>{publishedMovie[0].title}</h1>
             <hr />
             <div className={styles.video}>
-                <ReactPlayer width='1280px' height='720px' url={`http://localhost:3001${publishedMovie[0].movie_path}`} controls/>
+                <ReactPlayer width='1280px' height='720px' url={`http://localhost:3001${publishedMovie[0].movie_path}`} controls light/>
                 {/* <iframe
                     width="1120"
                     height="630"

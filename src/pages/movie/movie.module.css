@@ -1,20 +1,13 @@
-.container {
-    /* width: 640px; */
-}
-
-.containerUp {
+.section {
     display: flex;
-    gap: 20px;
+    gap: 50px;
+    background-color: #ffffff;
+    padding: 30px 50px 30px 50px;
+    border-radius: 20px;
     margin-bottom: 30px;
+
 }
 
 .filmInfo {
-    width: 500px;
+    width: 50%;
 }
-
-.video {
-    border: 10px solid rgb(175, 165, 165);
-    border-radius: 20px;
-    padding: 3px;
-}
-

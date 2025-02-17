@@ -78,7 +78,11 @@ const Checkbox = ({user, movie}) => {
       :
       <DislikeIcon />
       }
+      {likes ? 
+      <p className={styles.likeWord} >Like</p>
+      :
       <p>Like</p>
+      }
     </div>
   );
 }

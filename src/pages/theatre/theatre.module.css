@@ -1,7 +1,21 @@
-.whatsOnContainer {
-    list-style: none;
-    padding: 0px;
+.whatson {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
+
+.section {
+    background-color: #ffffff;
+    padding: 30px 50px 30px 50px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.scheduleContainer{
+    list-style: none;
+}
+
+
 
 .movie {
     /* width: 320px; */
@@ -9,39 +23,53 @@
     gap: 50px;
 }
 
+.movieInfo {
+    width: 50%;
+}
+
+.movie h2 {
+    font-size: 3rem;
+}
+
 .movie p {
     margin: 0px;
 }
 
 .movie img { 
-    width: 480px;
-    height: 270px;
+    width: 640px;
+    height: 360px;
     /* width: 400px;
     height: 225px; */
     object-fit: contain;
-    border: 10px solid rgb(160, 157, 157);
+    /* border: 1px solid grey; */
     border-radius: 10px;
+    background-color: black;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
-.scheduleContainer {
+
+.scheduleContainer ul{
     list-style: none;
     padding: 0px;
 }
 
 .toLiveButton {
-    width: 130px;
-    height: 40px;
-    border-radius: 10px;
-    font-size: 1.0rem;
+    width: 200px;
+    height: 60px;
+    border-radius: 20px;
+    font-size: 1.5rem;
     border: none;
     margin-top: 30px;
     font-weight: bold;
-    padding: 0px 10px 0px 10px;
+    padding: 0px 20px 0px 20px;
+    background-color: #EAD8B1;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    color: #001F3F;
 }
 
-.liveNowContainer {
-    margin-top: 30px;
-}
 
 .liveNowContainer h2 {
     margin: 0px;

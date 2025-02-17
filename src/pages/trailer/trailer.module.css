@@ -16,6 +16,9 @@
     flex-direction: column;
     gap: 20px;
     width: 320px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
     /* border: 1px solid #dfd8d8; */
 }
 
@@ -33,6 +36,6 @@
     width: 320px;
     height: 180px;
     object-fit: contain;
-    border: 1px solid #dfd8d8;
-    border-radius: 20px;
+    /* border: 1px solid grey; */
+    border-radius: 10px;
 }

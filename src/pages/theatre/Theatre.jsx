@@ -12,11 +12,8 @@ function Theatre() {
     const [weekDates, setWeekDates] = useState([]);
 
     const openMovie = (id) => {
-        const movie = movies.filter(movie => movie.id === id);
-        console.log(movie);
-        navigate("/movie", { state: { movie } });
+        navigate(`/movie/${id}`);
     };
-
     const goToLive = () => {
         navigate("/live", { state: { publishedMovie } });
     };
@@ -55,19 +52,18 @@ function Theatre() {
     }, []);
 
     return (
-        <div>
+        <div className={styles.whatson}>
             <h1>What's on</h1>
-            <hr />
-            <div className={styles.liveNowContainer} >
+            <div className={`${styles.liveNowContainer} ${styles.section}`} >
                 {publishedMovie.length > 0 ? (
-                <div onClick={() => openMovie(publishedMovie[0].id)} className={styles.movie}>
-                    <img src={`http://localhost:3001${publishedMovie[0].thumbnail_path}`} alt={publishedMovie[0].title} />
-                    <div>
+                <div className={styles.movie}>
+                    <div className={styles.movieInfo}>
                         <h2>{publishedMovie[0].title}</h2>
                         <p>{publishedMovie[0].description}</p>
                         <FilmCrew movie={publishedMovie[0]} />
 
                     </div>
+                    <img onClick={() => openMovie(publishedMovie[0].id)} src={`http://localhost:3001${publishedMovie[0].thumbnail_path}`} alt={publishedMovie[0].title} />
                 </div>
                 ) : (
                     <p>Loading movie...</p>
@@ -75,20 +71,20 @@ function Theatre() {
                 <button className={styles.toLiveButton} onClick={() => goToLive()} >Watch Now</button>
             </div>
 
-            <hr />
-
-            <h2>Schedule</h2>
-            <ul className={styles.scheduleContainer}>
-                {weekDates.length > 0 ? (
-                    weekDates.map((date, index) => (
-                        <li key={index} className={styles.day}>
-                            <h3>{date}</h3>
-                        </li>
-                    ))
-                ) : (
-                    <p>Loading schedule...</p>
-                )}
-            </ul>
+            <div className={`${styles.scheduleContainer} ${styles.section}`}>
+                <h2>Schedule</h2>
+                <ul>
+                    {weekDates.length > 0 ? (
+                        weekDates.map((date, index) => (
+                            <li key={index} className={styles.day}>
+                                <h3>{date}</h3>
+                            </li>
+                        ))
+                    ) : (
+                        <p>Loading schedule...</p>
+                    )}
+                </ul>
+            </div>
         </div>
     )
 }
