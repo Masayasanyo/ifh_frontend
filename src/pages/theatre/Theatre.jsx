@@ -52,38 +52,40 @@ function Theatre() {
     }, []);
 
     return (
-        <div className={styles.whatson}>
+        <div className={styles.container}>
             <h1>What's on</h1>
-            <div className={`${styles.liveNowContainer} ${styles.section}`} >
-                {publishedMovie.length > 0 ? (
-                <div className={styles.movie}>
-                    <div className={styles.movieInfo}>
-                        <h2>{publishedMovie[0].title}</h2>
-                        <p>{publishedMovie[0].description}</p>
-                        <FilmCrew movie={publishedMovie[0]} />
+            <div className={styles.whatson}>
+                <div className={`${styles.liveNowContainer} ${styles.section}`} >
+                    {publishedMovie.length > 0 ? (
+                    <div className={styles.movie}>
+                        <img onClick={() => openMovie(publishedMovie[0].id)} src={`http://localhost:3001${publishedMovie[0].thumbnail_path}`} alt={publishedMovie[0].title} />
+                        <div className={styles.movieInfo}>
+                            <h2>{publishedMovie[0].title}</h2>
+                            <p>{publishedMovie[0].description}</p>
+                            <FilmCrew movie={publishedMovie[0]} />
 
+                        </div>
                     </div>
-                    <img onClick={() => openMovie(publishedMovie[0].id)} src={`http://localhost:3001${publishedMovie[0].thumbnail_path}`} alt={publishedMovie[0].title} />
-                </div>
-                ) : (
-                    <p>Loading movie...</p>
-                )}
-                <button className={styles.toLiveButton} onClick={() => goToLive()} >Watch Now</button>
-            </div>
-
-            <div className={`${styles.scheduleContainer} ${styles.section}`}>
-                <h2>Schedule</h2>
-                <ul>
-                    {weekDates.length > 0 ? (
-                        weekDates.map((date, index) => (
-                            <li key={index} className={styles.day}>
-                                <h3>{date}</h3>
-                            </li>
-                        ))
                     ) : (
-                        <p>Loading schedule...</p>
+                        <p>Loading movie...</p>
                     )}
-                </ul>
+                    <button className={styles.toLiveButton} onClick={() => goToLive()} >Watch Now</button>
+                </div>
+
+                <div className={`${styles.scheduleContainer} ${styles.section}`}>
+                    <h2>Schedule</h2>
+                    <ul>
+                        {weekDates.length > 0 ? (
+                            weekDates.map((date, index) => (
+                                <li key={index} className={styles.day}>
+                                    <h3>{date}</h3>
+                                </li>
+                            ))
+                        ) : (
+                            <p>Loading schedule...</p>
+                        )}
+                    </ul>
+                </div>
             </div>
         </div>
     )

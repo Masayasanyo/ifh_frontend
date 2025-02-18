@@ -1,11 +1,37 @@
-.shop {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+@media (max-width: 599px) {
+
+    .shop h1 {
+        text-align: center;
+    }
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .section {
+        background-color: #ffffff;
+        border-radius: 20px;
+        padding: 20px;
+    }
 }
 
-.section {
-    background-color: #ffffff;
-    border-radius: 20px;
-    padding: 20px;
+
+@media (min-width: 600px) and (max-width: 1199px) {
+}
+
+@media (min-width: 1200px) {
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .section {
+        background-color: #ffffff;
+        border-radius: 20px;
+        padding: 20px;
+    }
 }

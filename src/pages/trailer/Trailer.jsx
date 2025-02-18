@@ -30,7 +30,7 @@ function Trailer() {
     }, []);
 
     return (
-        <div>
+        <div className={styles.container}>
             <h1>Trailer</h1>
             <ul className={styles.trailerContainer}>
                 {movies.length > 0 ? (

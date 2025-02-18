@@ -13,10 +13,7 @@ function User() {
     const navigate = useNavigate();
 
     const openMovie = (id) => {
-        console.log(workList);
-        const movie = workList.filter(movie => movie.film_id === id);
-        console.log(movie);
-        navigate("/movie", { state: { movie } });
+        navigate(`/movie/${id}`);
     };
     
     useEffect(() => {
@@ -52,7 +49,6 @@ function User() {
                     <p>{}</p>
                 </div>
             </div>
-            <hr />
             <div>
                 {workList.length > 0 && (
                     <ul className={styles.movieContainer}>

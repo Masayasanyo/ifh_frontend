@@ -1,45 +1,111 @@
-.member img {
-    width: 100px;
-    height: 100px;
-    border: 2px solid white;
-    border-radius: 50%;
-    background-color: aliceblue;
-    object-fit: cover;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+@media (max-width: 599px) {
+
+    .member img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: aliceblue;
+        object-fit: cover;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .container li {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+        flex-direction: column;
+        padding: 10px;
+        width: 160px;
+        text-align: center;
+    }
+    
+    .container ul {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+        padding: 0px;
+        /* background-color: black; */
+    }
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        background-color: #ffffff;
+        padding: 30px 50px 30px 50px;
+        border-radius: 20px;
+        margin-bottom: 30px;
+        gap: 20px;
+        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
+    }
+    
+    .roleContainer {
+        border: 5px solid #001F3F;
+        border-radius: 20px;
+        padding: 10px;
+    }
+    
+    .roleContainer h3 {
+        text-align: center;
+    }
 }
 
-.container li {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-    flex-direction: column;
-    justify-content: center;
-    padding: 10px;
-    width: 160px;
-    text-align: center;
+
+@media (min-width: 600px) and (max-width: 1199px) {
 }
 
-.container ul {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-    padding: 0px;
-}
+@media (min-width: 1200px) {
 
-.container {
-    display: flex;
-    flex-direction: column;
-    background-color: #ffffff;
-    padding: 30px 50px 30px 50px;
-    border-radius: 20px;
-    margin-bottom: 30px;
-    gap: 20px;
-}
-
-.roleContainer {
-    border: 5px solid #001F3F;
-    border-radius: 20px;
-    padding: 20px;
+    .member img {
+        width: 100px;
+        height: 100px;
+        border: 2px solid white;
+        border-radius: 50%;
+        background-color: aliceblue;
+        object-fit: cover;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .container li {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px;
+        width: 160px;
+        text-align: center;
+    }
+    
+    .container ul {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+        padding: 0px;
+    }
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        background-color: #ffffff;
+        padding: 30px 50px 30px 50px;
+        border-radius: 20px;
+        margin-bottom: 30px;
+        gap: 20px;
+        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
+    }
+    
+    .roleContainer {
+        border: 5px solid #001F3F;
+        border-radius: 20px;
+        padding: 20px;
+    }
+    
+    .roleContainer h3 {
+        text-align: center;
+        font-family: 2rem;
+    }
 }

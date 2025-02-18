@@ -118,7 +118,7 @@ function Account() {
                 </form>
 
                 <div>
-                    <button className={styles.logoutButton} onClick={logout} >Log out</button>
+                    <button id={styles.logoutButton} onClick={logout} >Log out</button>
                 </div>
 
             </div>

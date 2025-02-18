@@ -1,58 +1,210 @@
-.uploadForm {
-    display: flex;
-    gap: 50px;
+@media (max-width: 599px) {
+
+    .uploadForm {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .container h1 {
+        text-align: center;
+    }
+    
+    .uploadForm label {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background-color: #ffffff;
+    
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
+    }
+    
+    .input {
+        width: 400px;
+        height: 20px;
+        border-radius: 5px;
+    }
+    
+    .uploadFormLeft input::file-selector-button {
+        font-weight: bold;
+        color: white;
+        background: #001F3F;
+        font-size: 14px;
+        border: 0;
+        border-radius: 20px;
+        padding: 8px 16px;
+        text-align: center;
+    }
+    
+    .input {
+        width: 400px;
+        padding: 3px 7px;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+    }
+    
+    .input:focus {
+        outline: 0;
+        border: 2px solid #001F3F;
+    }
+    
+    .uploadForm textarea {
+        width: 400px;
+        height: 80px;
+        padding: 3px 7px;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+        resize:none;
+    }
+    
+    .uploadForm textarea:focus {
+        outline: 0;
+        border: 2px solid #001F3F;
+    }
+    
+    .container form > button {
+        border-radius: 40px;
+        font-size: 1.2rem;
+        border: none;
+        margin-top: 30px;
+        font-weight: bold;
+        padding: 8px 16px;
+        background-color: #EAD8B1;
+        color: #001F3F;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    
+    .uploadFormLeft {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .uploadFormLeft select {
+        font-family: "Poppins", serif;
+        color: #001F3F;
+    }
+    
+    .container hr {
+        margin-top: 10px;
+        margin-bottom: 50px;
+    }
+    
+    .uploadForm select {
+        width: 200px;
+        border-radius: 5px;
+        height: 30px;
+        padding-left: 5px;
+        background-color: white;
+    }
+    
 }
 
-.uploadForm label {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    background-color: #ffffff;
 
-    padding: 20px;
-    border-radius: 10px;
+@media (min-width: 600px) and (max-width: 1199px) {
 }
 
-.input {
-    width: 400px;
-    height: 20px;
-    border-radius: 5px;
-}
+@media (min-width: 1200px) {
 
-.uploadForm textarea {
-    width: 400px;
-    height: 80px;
-    border-radius: 5px;
-}
-
-.container form > button {
-    width: 150px;
-    height: 60px;
-    border-radius: 20px;
-    font-size: 1.5rem;
-    border: none;
-    margin-top: 30px;
-    font-weight: bold;
-    padding: 0px 20px 0px 20px;
-    background-color: #EAD8B1;
-    color: #001F3F;
-}
-
-.uploadFormLeft {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.container hr {
-    margin-top: 10px;
-    margin-bottom: 50px;
-}
-
-.uploadForm select {
-    width: 200px;
-    border-radius: 5px;
-    height: 30px;
-    padding-left: 5px;
-    background-color: white;
+    .uploadForm {
+        display: flex;
+        gap: 50px;
+    }
+    
+    .uploadForm label {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background-color: #ffffff;
+    
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
+    }
+    
+    .input {
+        width: 400px;
+        height: 20px;
+        border-radius: 5px;
+    }
+    
+    .uploadFormLeft input::file-selector-button {
+        font-weight: bold;
+        color: white;
+        background: #001F3F;
+        font-size: 14px;
+        border: 0;
+        border-radius: 20px;
+        padding: 8px 16px;
+        text-align: center;
+    }
+    
+    .input {
+        width: 400px;
+        padding: 3px 7px;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+    }
+    
+    .input:focus {
+        outline: 0;
+        border: 2px solid #001F3F;
+    }
+    
+    .uploadForm textarea {
+        width: 400px;
+        height: 80px;
+        padding: 3px 7px;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+        resize:none;
+    }
+    
+    .uploadForm textarea:focus {
+        outline: 0;
+        border: 2px solid #001F3F;
+    }
+    
+    .container form > button {
+        border-radius: 40px;
+        font-size: 1.2rem;
+        border: none;
+        margin-top: 30px;
+        font-weight: bold;
+        padding: 8px 16px;
+        background-color: #EAD8B1;
+        color: #001F3F;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    
+    .uploadFormLeft {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .uploadFormLeft select {
+        font-family: "Poppins", serif;
+        color: #001F3F;
+    }
+    
+    .container hr {
+        margin-top: 10px;
+        margin-bottom: 50px;
+    }
+    
+    .uploadForm select {
+        width: 200px;
+        border-radius: 5px;
+        height: 30px;
+        padding-left: 5px;
+        background-color: white;
+    }
+    
 }

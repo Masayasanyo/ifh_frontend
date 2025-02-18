@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import styles from './filmcrew.module.css';
 
 function FilmCrew({movie}) {
 
@@ -30,9 +31,9 @@ function FilmCrew({movie}) {
     const actorList = crew.filter(member => member.role === "actor");
     
     return (
-        <div>
+        <div className={styles.container}>
             {/* <h2>Cast & Crew</h2> */}
-            <div>
+            <div className={styles.section}>
                 <h3>Director</h3>
                 <ul>
                 {directorList.map((member, index) => (
@@ -43,7 +44,7 @@ function FilmCrew({movie}) {
                 </ul>
             </div>
 
-            <div>
+            <div className={styles.section}>
                 <h3>Screenwriter</h3>
                 <ul>
                 {screenwriterList.map((member, index) => (
@@ -54,7 +55,7 @@ function FilmCrew({movie}) {
                 </ul>
             </div>
 
-            <div>
+            <div className={styles.section}>
                 <h3>Actor</h3>
                 <ul>
                 {actorList.map((member, index) => (

@@ -5,12 +5,16 @@ function Shop() {
         <div className={styles.shop}>
             <h1>Shop</h1>
 
-            <div className={styles.section}>
-                <h2>Tickets</h2>
-            </div>
+            <div className={styles.container}>
 
-            <div className={styles.section}>
-                <h2>Food & Drinks</h2>
+                <div className={styles.section}>
+                    <h2>Tickets</h2>
+                </div>
+
+                <div className={styles.section}>
+                    <h2>Food & Drinks</h2>
+                </div>
+
             </div>
             
         </div>

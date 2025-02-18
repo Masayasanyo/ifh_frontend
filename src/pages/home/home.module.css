@@ -1,12 +1,56 @@
-.btn {
-    color: blue;
-    text-decoration: none;
-    margin-right: 50px;
+@media (max-width: 599px) {
+    .btn {
+        color: blue;
+        text-decoration: none;
+        margin-right: 50px;
+        text-align: center;
+    }
+    
+    .home {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: center;
+    }
 }
 
-.home {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
+
+@media (min-width: 600px) and (max-width: 1199px) {
+   
 }
 
+@media (min-width: 1200px) {
+    .btn {
+        color: blue;
+        text-decoration: none;
+        margin-right: 50px;
+    }
+    
+    .home {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+}
+
+
+@media (max-width: 599px) {
+}
+
+
+@media (min-width: 600px) and (max-width: 1199px) {
+}
+
+@media (min-width: 1200px) {
+}

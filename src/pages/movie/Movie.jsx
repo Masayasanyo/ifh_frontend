@@ -76,14 +76,12 @@ function Movie() {
     return (
         <div className={styles.container}>
             <div className={styles.section}>
+                <video controls controlslist="nodownload noremoteplayback noplaybackrate foobar" playsinline poster={`http://localhost:3001${movieData[0].thumbnail_path}`} src={`http://localhost:3001${movieData[0].trailer_path}`} />
                 <div className={styles.filmInfo}>
                     <h1>{movieData[0].title}</h1>
                     <h2>({year}) {movieData[0].genre}</h2>
                     <p>{movieData[0].description}</p>
                     <Checkbox user={user} movie={movieData[0]} />
-                </div>
-                <div className={styles.video}>                
-                <ReactPlayer url={`http://localhost:3001${movieData[0].trailer_path}`} controls/>
                 </div>
             </div>
             

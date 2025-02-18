@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.container li {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.section {
+    border: 5px solid #001F3F;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.section h3 {
+    text-align: center;
+
+}
