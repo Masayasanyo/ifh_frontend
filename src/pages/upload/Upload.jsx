@@ -12,32 +12,49 @@ function Upload() {
 
     const [videoForm, setVideoForm] = useState({
         trailer: null, 
-        movie: null, 
+        film: null, 
+        thumbnail: null, 
+    });
+
+    const [fileUrl, setFileUrl] = useState({
+        trailer: null, 
+        film: null, 
         thumbnail: null, 
     });
 
     const handleFileChange = (event) => {
         const { name } = event.target;
+
+        if (!event.target.files[0]) {
+            return;
+        }
+
+        const url = URL.createObjectURL(event.target.files[0]);
+
         setVideoForm({
             ...videoForm, 
             [name]: event.target.files[0], 
+        })
+
+        setFileUrl({
+            ...fileUrl, 
+            [name]: url, 
         })
     };
 
     const [formData, setFormData] = useState({
         userId: user.id, 
         trailerFilePath: '', 
-        movieFilePath: '', 
+        filmFilePath: '', 
         thumbnailFilePath: '', 
         title: "", 
         description: "", 
-        genre: "",
+        genre: "action",
         crew: [],
     });
 
     const handleChange = (event) => {
         const { name, value } = event.target;
-        console.log(value);
         setFormData({
             ...formData,
             [name]: value, 
@@ -49,7 +66,7 @@ function Upload() {
         fileFormData.append(endpoint, file);
 
         try {
-            const response = await fetch(`http://localhost:3001/upload/${endpoint}`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/upload/${endpoint}`, {
                 method: "POST",
                 body: fileFormData,
             });
@@ -63,28 +80,23 @@ function Upload() {
     const handleUpload = async (event) => {
         event.preventDefault();
 
-        if (!videoForm.movie ||!videoForm.trailer || !videoForm.thumbnail || !formData.title || !formData.description || !formData.genre || !formData.crew) {
-            console.log(formData.genre);
+        if (!videoForm.film ||!videoForm.trailer || !videoForm.thumbnail || !formData.title || !formData.description || !formData.genre || !formData.crew) {
             alert("Please fill in the blanks.");
             return;
         }
 
-        // console.log("movie:", videoForm.movie);
-        // console.log("trailer:", videoForm.trailer);
-        // console.log("thumbnail:", videoForm.thumbnail);
-
-        const movieData = await uploadFile(videoForm.movie, "movie");
+        const filmData = await uploadFile(videoForm.film, "film");
         const trailerData = await uploadFile(videoForm.trailer, "trailer");
         const thumbnailData = await uploadFile(videoForm.thumbnail, "thumbnail");
 
-        if (!movieData?.filePath || !trailerData?.filePath || !thumbnailData?.filePath) {
+        if (!filmData?.filePath || !trailerData?.filePath || !thumbnailData?.filePath) {
             alert("File upload failed. Please try again.");
             return;
         }
 
         const uploadData = {
             userId: formData.userId,
-            movieFilePath: movieData.filePath,
+            filmFilePath: filmData.filePath,
             trailerFilePath: trailerData.filePath,
             thumbnailFilePath: thumbnailData.filePath,
             title: formData.title,
@@ -94,7 +106,7 @@ function Upload() {
         };
 
         try {
-            const response = await fetch("http://localhost:3001/upload", {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/upload`, {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
@@ -104,7 +116,6 @@ function Upload() {
             if (response.ok) {
                 const data = await response.json();
                 navigate('/');
-                console.log(data);
             } else {
                 alert('Failed');
             }
@@ -122,17 +133,20 @@ function Upload() {
                     <div className={styles.uploadFormLeft} >
                         <label>
                             Film 
-                            <input type="file" name="movie" onChange={handleFileChange} />
+                            <input type="file" name="film" onChange={handleFileChange} />
+                            <video src={fileUrl.film} alt='Film Preview' />
                         </label>
 
                         <label>
                             Trailer
                             <input type="file" name="trailer" onChange={handleFileChange} />
+                            <video src={fileUrl.trailer} alt='Trailer Preview' />
                         </label>
 
                         <label>
                             Thumbnail
                             <input type="file" name="thumbnail" onChange={handleFileChange} />
+                            <img src={fileUrl.thumbnail} alt='' />
                         </label>
 
                         <label>

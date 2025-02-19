@@ -6,6 +6,13 @@
     margin-top: 20px;
 }
 
+.container ul {
+    display: flex;
+    
+    gap: 20px;
+   
+}
+
 .container li {
     list-style: none;
     display: flex;

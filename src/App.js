@@ -11,7 +11,7 @@ import Login from './pages/login/Login';
 import SignUp from './pages/sign_up/SignUp';
 import Trailer from './pages/trailer/Trailer';
 import Account from './pages/account/Account';
-import Movie from './pages/movie/Movie';
+import Film from './pages/film/Film';
 import Shop from './pages/shop/Shop';
 import Live from './pages/live/Live';
 import User from './pages/user/User';
@@ -27,11 +27,11 @@ function App() {
               <Route path='/' element={<PrivateRoute><Home /></PrivateRoute>} />
               <Route path='/upload' element={<PrivateRoute><Upload /></PrivateRoute>} />
               <Route path='/trailer' element={<PrivateRoute><Trailer /></PrivateRoute>} />
-              <Route path='/movie/:filmId' element={<PrivateRoute><Movie /></PrivateRoute>} />
+              <Route path='/film/:filmId' element={<PrivateRoute><Film /></PrivateRoute>} />
               <Route path='/theatre' element={<PrivateRoute><Theatre /></PrivateRoute>} />
-              <Route path='/live' element={<PrivateRoute><Live /></PrivateRoute>} />
+              <Route path='/live/:filmId' element={<PrivateRoute><Live /></PrivateRoute>} />
               <Route path='/shop' element={<PrivateRoute><Shop /></PrivateRoute>} />
-              <Route path='/user' element={<PrivateRoute><User /></PrivateRoute>} />
+              <Route path='/user/:userId' element={<PrivateRoute><User /></PrivateRoute>} />
               <Route path='/account' element={<PrivateRoute><Account /></PrivateRoute>} />
               <Route path='/login' element={<Login />} />
               <Route path='/sign_up' element={<SignUp />} />

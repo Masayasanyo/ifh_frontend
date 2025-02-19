@@ -8,11 +8,13 @@ function Account() {
 
     const [formData, setFormData] = useState({
         username: user.username, 
-        firstName: user.firstName, 
-        familyName: user.familyName, 
+        firstName: user.first_name, 
+        familyName: user.family_name, 
         email: user.email, 
         password: "",
     });
+
+    console.log(user);
 
     const handleChange = (event) => {
         const { name, value } = event.target;

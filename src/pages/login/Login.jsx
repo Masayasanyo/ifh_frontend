@@ -26,7 +26,7 @@ function Login() {
         event.preventDefault();
         if (formData.email !== '' && formData.password !== '') {
             try {
-                const response = await fetch(`${process.env.REACT_APP_API_URL}/login`, {
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/accounts/login`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -56,30 +56,32 @@ function Login() {
     }
 
     return (
-        <div className={styles.loginContainer}>
+        <div>
             <h1>Log in</h1>
-            <form className={styles.inputForm} onSubmit={handleSubmit}>
-                <div className={styles.inputContainer}>
-                    <p>Email</p>
-                    <input 
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}>
-                    </input>
-                </div>
-                <div className={styles.inputContainer}>
-                    <p>Password</p>
-                    <input
-                        type="password"
-                        name="password"
-                        value={formData.password}
-                        onChange={handleChange}>
-                    </input>
-                </div>
-                <button type='submit'>Continue</button>
-            </form>
-            <p>Don't have an account? <span onClick={toSignUp} className={styles.toSignUp}>Sign Up</span></p>
+            <div className={styles.container}>
+                <form className={styles.form} onSubmit={handleSubmit}>
+                    <div className={styles.inputContainer}>
+                        <p>Email</p>
+                        <input 
+                            type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}>
+                        </input>
+                    </div>
+                    <div className={styles.inputContainer}>
+                        <p>Password</p>
+                        <input
+                            type="password"
+                            name="password"
+                            value={formData.password}
+                            onChange={handleChange}>
+                        </input>
+                    </div>
+                    <button type='submit'>Continue</button>
+                </form>
+                <p>Don't have an account? <span onClick={toSignUp} id={styles.toSignUp}>Sign Up</span></p>
+            </div>
         </div>
     )
 }

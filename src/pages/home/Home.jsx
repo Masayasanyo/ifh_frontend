@@ -13,8 +13,9 @@ function Home() {
     return (
         <div>
             <h1>Show Your Film to the World</h1>
-            {/* Hero Section */}
+            
             <div className={styles.home}>
+
                 <section className={styles.hero}>
                     <p>Join Indie Film Hub and connect with your audience</p>
                     <div className={styles.buttons}>

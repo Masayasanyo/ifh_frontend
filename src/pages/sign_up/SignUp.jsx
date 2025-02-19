@@ -41,7 +41,7 @@ function SignUp() {
         fileFormData.append(endpoint, file);
 
         try {
-            const response = await fetch(`http://localhost:3001/upload/${endpoint}`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/upload/${endpoint}`, {
                 method: "POST",
                 body: fileFormData,
             });
@@ -69,7 +69,7 @@ function SignUp() {
             }
 
             try {
-                const response = await fetch(`${process.env.REACT_APP_API_URL}/signup`, {
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/accounts/signup`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -99,75 +99,78 @@ function SignUp() {
     }
 
     return (
-        <div className={styles.signUpContainer} >
+        <div>
             <h1>Sign Up</h1>
-            <form className={styles.inputForm} onSubmit={handleSubmit} >
 
-                <label className={styles.inputContainer}>
-                    Username
-                    <input 
-                        type="text"
-                        name="username"
-                        value={formData.username}
-                        onChange={handleChange}
-                    >
-                    </input>
-                </label>
+            <div className={styles.container}>
+                <form className={styles.form} onSubmit={handleSubmit} >
 
-                <label className={styles.inputContainer}>
-                    Profile picture 
-                    <input type="file" name="picture" onChange={handleFileChange} />
-                    <img src={imageUrl} alt='Preview' />
-                </label>
+                    <label className={styles.inputContainer}>
+                        Username
+                        <input 
+                            type="text"
+                            name="username"
+                            value={formData.username}
+                            onChange={handleChange}
+                        >
+                        </input>
+                    </label>
 
-                <label className={styles.inputContainer}>
-                    First Name
-                    <input 
-                        type="text"
-                        name="firstName"
-                        value={formData.firstName}
-                        onChange={handleChange}
-                    >
-                    </input>
-                </label>
+                    <label className={styles.imageInput}>
+                        Profile picture 
+                        <input type="file" name="picture" onChange={handleFileChange} />
+                        <img src={imageUrl} alt='Preview' />
+                    </label>
 
-                <label className={styles.inputContainer}>
-                    Family Name
-                    <input 
-                        type="text"
-                        name="familyName"
-                        value={formData.familyName}
-                        onChange={handleChange}
-                    >
-                    </input>
-                </label>
+                    <label className={styles.inputContainer}>
+                        First Name
+                        <input 
+                            type="text"
+                            name="firstName"
+                            value={formData.firstName}
+                            onChange={handleChange}
+                        >
+                        </input>
+                    </label>
 
-                <label className={styles.inputContainer}>
-                    Email
-                    <input 
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                    >
-                    </input>
-                </label>
+                    <label className={styles.inputContainer}>
+                        Family Name
+                        <input 
+                            type="text"
+                            name="familyName"
+                            value={formData.familyName}
+                            onChange={handleChange}
+                        >
+                        </input>
+                    </label>
 
-                <label className={styles.inputContainer}>
-                    Password
-                    <input 
-                        type="password"
-                        name="password"
-                        value={formData.password}
-                        onChange={handleChange}
-                    >
-                    </input>
-                </label>
+                    <label className={styles.inputContainer}>
+                        Email
+                        <input 
+                            type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                        >
+                        </input>
+                    </label>
 
-                <button type='submit'>Continue</button>
+                    <label className={styles.inputContainer}>
+                        Password
+                        <input 
+                            type="password"
+                            name="password"
+                            value={formData.password}
+                            onChange={handleChange}
+                        >
+                        </input>
+                    </label>
 
-            </form>
-            <p>If you already have an account? <span onClick={toLogin} className={styles.toLogin}>Log in</span></p>
+                    <button type='submit'>Continue</button>
+
+                </form>
+                <p>If you already have an account? <span onClick={toLogin} id={styles.toLogin}>Log in</span></p>
+            </div>
         </div>
     )   
 }

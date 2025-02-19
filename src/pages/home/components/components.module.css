@@ -123,6 +123,7 @@
     
     .filmmakerContainer {
         display: flex;
+        flex-wrap: wrap;
         list-style: none;
         padding: 0px;
     }
@@ -137,6 +138,8 @@
         width: 160px;
         text-align: center;
         border-radius: 20px;
+
+        justify-content: flex-start;
     }
     
     .filmmaker:hover {

@@ -1,48 +1,157 @@
-.toLogin {
-    color: rgb(41, 110, 219);
+@media (max-width: 599px) {
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 90%;
+        background-color: #ffffff;
+        padding: 20px 30px 20px 30px;
+        border-radius: 20px;
+        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .inputContainer {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .form button {
+        border-radius: 40px;
+        font-size: 1.2rem;
+        border: none;
+        margin-top: 30px;
+        font-weight: bold;
+        padding: 8px 16px;
+        background-color: #EAD8B1;
+        color: #001F3F;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .form input::file-selector-button {
+        font-weight: bold;
+        color: white;
+        background: #001F3F;
+        font-size: 14px;
+        border: 0;
+        border-radius: 20px;
+        padding: 8px 16px;
+        text-align: center;
+    }
+
+    .inputContainer input {
+        height: 30px;
+        padding: 3px 7px;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+    }
+
+    .imageInput {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .imageInput img {
+        width: 150px;
+        height: 150px;
+        border: 2px solid black;
+        border-radius: 50%;
+        object-fit: cover;
+        text-align: center;
+    }
+
+    #toLogin {
+        color: rgb(41, 110, 219);
+    }
+
+
 }
 
-.inputForm {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    border: 1px solid #dfd8d8;
-    padding: 20px;
-    border-radius: 10px;
-}
+@media (min-width: 1200px) {
 
-.inputContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    width: 300px;
-}
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 25%;
+        background-color: #ffffff;
+        padding: 20px 30px 20px 30px;
+        border-radius: 20px;
+        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
+    }
 
-.inputForm button {
-    width: 100px;
-    height: 40px;
-    border-radius: 10px;
-    font-size: 1rem;
-    border: none;
-    margin-top: 30px;
-    font-weight: bold;
-}
+    .form {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
 
-.signUpContainer {
-    width: 500px;
-}
+    .inputContainer {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
 
-.inputContainer input {
-    height: 30px;
-    border-radius: 10px;
-    padding-left: 15px;
-}
+    .form button {
+        border-radius: 40px;
+        font-size: 1.2rem;
+        border: none;
+        margin-top: 30px;
+        font-weight: bold;
+        padding: 8px 16px;
+        background-color: #EAD8B1;
+        color: #001F3F;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
 
-.inputContainer img {
-    width: 200px;
-    height: 200px;
-    border: 2px solid white;
-    border-radius: 50%;
-    object-fit: cover;
-    text-align: center;
+    .form input::file-selector-button {
+        font-weight: bold;
+        color: white;
+        background: #001F3F;
+        font-size: 14px;
+        border: 0;
+        border-radius: 20px;
+        padding: 8px 16px;
+        text-align: center;
+    }
+
+    .inputContainer input {
+        height: 30px;
+        padding: 3px 7px;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+    }
+
+    .imageInput {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .imageInput img {
+        width: 150px;
+        height: 150px;
+        border: 2px solid black;
+        border-radius: 50%;
+        object-fit: cover;
+        text-align: center;
+    }
+
+    #toLogin {
+        color: rgb(41, 110, 219);
+    }
 }

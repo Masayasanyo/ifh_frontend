@@ -1,33 +1,48 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import styles from "./live.module.css";
 
 function Live() {
 
-    const location = useLocation();
-    const { publishedMovie } = location.state || {};
-    console.log(`http://localhost:3001${publishedMovie[0].movie_path}`);
+    const { filmId } = useParams(); 
+
+    const [filmData, setFilmData] = useState([]);
+
+    useEffect(() => {
+        const getFilm = async () => {
+            try {
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/films/data`, {
+                    method: "POST", 
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }, 
+                    body: JSON.stringify({filmId: filmId}), 
+                });
+
+                const data = await response.json();
+                setFilmData(data.data);
+            } catch (error) {
+                console.error("Filed to fetch films: ", error);
+            }
+        };
+
+        if (filmId) {
+            getFilm();
+        }
+    }, [filmId]);
+
+    if (filmData.length < 1) {
+        return <div>Loading...</div>;
+    }
     
     return (
         <div>
-            <h1>{publishedMovie[0].title}</h1>
+            <h1>{filmData[0].title}</h1>
             <hr />
             <div className={styles.video}>
-                <ReactPlayer width='1280px' height='720px' url={`http://localhost:3001${publishedMovie[0].movie_path}`} controls light/>
-                {/* <iframe
-                    width="1120"
-                    height="630"
-                    src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1&mute=1?showinfo=0"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-                    allowfullscreen>
-                </iframe> */}
+                <ReactPlayer width='1280px' height='720px' url={`${process.env.REACT_APP_STORAGE_URL}${filmData[0].film_file_path}`} controls light/>
             </div>
-            {/* <div className={styles.movieInformation}>
-                <h2>{publishedMovie[0].title}</h2>
-                <h3>{publishedMovie[0].description}</h3>
-            </div> */}
         </div>
     )
 }

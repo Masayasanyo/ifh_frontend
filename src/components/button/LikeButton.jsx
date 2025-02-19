@@ -3,40 +3,40 @@ import styles from './like_button.module.css';
 import LikeIcon from '../icons/LikeIcon';
 import DislikeIcon from '../icons/DislikeIcon';
 
-const Checkbox = ({user, movie}) => {
+const Checkbox = ({user, film}) => {
 
   const [likes, setLikes] = useState(false);
 
   useEffect(() => {
       const getInitialLike = async () => {
           try {
-              const response = await fetch("http://localhost:3001/films/like/initial", {
+              const response = await fetch(`${process.env.REACT_APP_API_URL}/likes`, {
                   method: "POST", 
                   headers: {
                       'Content-Type': 'application/json',
                   }, 
-                  body: JSON.stringify({userId: user.id, filmId: movie.id}), 
+                  body: JSON.stringify({userId: user.id, filmId: film.id}), 
               });
 
               const data = await response.json();
               setLikes(data.isLiked)
           } catch (error) {
-              console.error("Filed to fetch movies: ", error);
+              console.error("Filed to fetch films: ", error);
           }
       };
       getInitialLike();
-  }, [user, movie]);
+  }, [user, film]);
 
   const handleLike = async (event) => {
       event.preventDefault();
       if (likes) {
         try {
-          const response = await fetch(`${process.env.REACT_APP_API_URL}/films/dislike`, {
+          const response = await fetch(`${process.env.REACT_APP_API_URL}/likes/dislike`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             }, 
-            body: JSON.stringify({userId: user.id, filmId: movie.id}), 
+            body: JSON.stringify({userId: user.id, filmId: film.id}), 
           });
           if (response.ok) {
             const data = await response.json();
@@ -51,12 +51,12 @@ const Checkbox = ({user, movie}) => {
       }
       else {
         try {
-          const response = await fetch(`${process.env.REACT_APP_API_URL}/films/like`, {
+          const response = await fetch(`${process.env.REACT_APP_API_URL}/likes/like`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             }, 
-            body: JSON.stringify({userId: user.id, filmId: movie.id}), 
+            body: JSON.stringify({userId: user.id, filmId: film.id}), 
           });
           if (response.ok) {
             const data = await response.json();

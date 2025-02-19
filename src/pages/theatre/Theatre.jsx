@@ -7,15 +7,15 @@ function Theatre() {
 
     const navigate = useNavigate();
 
-    const [movies, setMovies] = useState([]);
-    const [publishedMovie, setPublishedMovie] = useState([]);
+    // const [films, setFilms] = useState([]);
+    const [publishedFilm, setPublishedFilm] = useState([]);
     const [weekDates, setWeekDates] = useState([]);
 
-    const openMovie = (id) => {
-        navigate(`/movie/${id}`);
+    const openFilm = (id) => {
+        navigate(`/film/${id}`);
     };
-    const goToLive = () => {
-        navigate("/live", { state: { publishedMovie } });
+    const goToLive = (id) => {
+        navigate(`/live/${id}`);
     };
 
     const getWeekDates = () => {
@@ -34,21 +34,20 @@ function Theatre() {
 
     useEffect(() => {
         getWeekDates();
-        const fetchMovies = async () => {
+        const fetchFilms = async () => {
             try {
-                const response = await fetch("http://localhost:3001/films", {
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/films`, {
                     method: "GET",
                 });
 
                 const data = await response.json();
-                console.log(data.data);
-                setMovies(data.data);
-                setPublishedMovie(data.data.filter(movie => movie.is_published === true));
+                // setFilms(data.data);
+                setPublishedFilm(data.data.filter(film => film.is_published === true));
             } catch (error) {
-                console.error("Filed to fetch movies: ", error);
+                console.error("Filed to fetch films: ", error);
             }
         };
-        fetchMovies();
+        fetchFilms();
     }, []);
 
     return (
@@ -56,20 +55,20 @@ function Theatre() {
             <h1>What's on</h1>
             <div className={styles.whatson}>
                 <div className={`${styles.liveNowContainer} ${styles.section}`} >
-                    {publishedMovie.length > 0 ? (
+                    {publishedFilm.length > 0 ? (
                     <div className={styles.movie}>
-                        <img onClick={() => openMovie(publishedMovie[0].id)} src={`http://localhost:3001${publishedMovie[0].thumbnail_path}`} alt={publishedMovie[0].title} />
+                        <img onClick={() => openFilm(publishedFilm[0].id)} src={`${process.env.REACT_APP_STORAGE_URL}${publishedFilm[0].thumbnail_file_path}`} alt={publishedFilm[0].title} />
                         <div className={styles.movieInfo}>
-                            <h2>{publishedMovie[0].title}</h2>
-                            <p>{publishedMovie[0].description}</p>
-                            <FilmCrew movie={publishedMovie[0]} />
+                            <h2>{publishedFilm[0].title}</h2>
+                            <p>{publishedFilm[0].description}</p>
+                            <FilmCrew film={publishedFilm[0]} />
 
                         </div>
                     </div>
                     ) : (
                         <p>Loading movie...</p>
                     )}
-                    <button className={styles.toLiveButton} onClick={() => goToLive()} >Watch Now</button>
+                    <button className={styles.toLiveButton} onClick={() => goToLive(publishedFilm[0].id)} >Watch Now</button>
                 </div>
 
                 <div className={`${styles.scheduleContainer} ${styles.section}`}>

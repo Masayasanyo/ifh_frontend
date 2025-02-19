@@ -1,43 +1,103 @@
-.toSignUp {
-    color: rgb(41, 110, 219);
+@media (max-width: 599px) {
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 90%;
+        background-color: #ffffff;
+        padding: 20px 30px 20px 30px;
+        border-radius: 20px;
+        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .inputContainer {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .form button {
+        border-radius: 40px;
+        font-size: 1.2rem;
+        border: none;
+        margin-top: 30px;
+        font-weight: bold;
+        padding: 8px 16px;
+        background-color: #EAD8B1;
+        color: #001F3F;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .form input {
+        height: 30px;
+        padding: 3px 7px;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+    }
+
+    #toSignUp {
+        color: rgb(41, 110, 219);
+    }
+
+
 }
 
+@media (min-width: 1200px) {
 
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 25%;
+        background-color: #ffffff;
+        padding: 20px 30px 20px 30px;
+        border-radius: 20px;
+        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
+    }
 
+    .form {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
 
+    .inputContainer {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
 
-.inputForm {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    border: 1px solid #dfd8d8;
-    padding: 20px;
-    border-radius: 10px;
-}
+    .form button {
+        border-radius: 40px;
+        font-size: 1.2rem;
+        border: none;
+        margin-top: 30px;
+        font-weight: bold;
+        padding: 8px 16px;
+        background-color: #EAD8B1;
+        color: #001F3F;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
 
-.inputContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    width: 300px;
-}
+    .form input {
+        height: 30px;
+        padding: 3px 7px;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+    }
 
-.inputForm button {
-    width: 100px;
-    height: 40px;
-    border-radius: 10px;
-    font-size: 1rem;
-    border: none;
-    margin-top: 30px;
-    font-weight: bold;
-}
-
-.loginContainer {
-    width: 500px;
-}
-
-.inputContainer input {
-    height: 30px;
-    border-radius: 10px;
-    padding-left: 15px;
+    #toSignUp {
+        color: rgb(41, 110, 219);
+    }
 }

@@ -22,12 +22,8 @@ function FilmCrew({crew}) {
 
     const navigate = useNavigate();
 
-    const openUser = (list, userId) => {
-        const userInfo = list.filter(user => user.id === userId);
-        console.log(userInfo);
-        if (userInfo[0].account_id) {
-            navigate("/user", { state: { userInfo } });
-        }
+    const openUser = (id) => {
+        navigate(`/user/${id}`);
     };
 
     return (
@@ -38,11 +34,11 @@ function FilmCrew({crew}) {
                 <h3>Director</h3>
                 <ul>
                 {directorList.map((member, index) => (
-                    <li key={member.id} className={styles.member} onClick={() => openUser(directorList, member.id)}>
+                    <li key={index} className={styles.member} onClick={() => openUser(member.account_id)}>
                         {member.profile_image_url ? (
-                            <img src={`http://localhost:3001${member.profile_image_url}`} alt={member.first_name} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
                         ):
-                            <img src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={member.first_name}/>
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
                         }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
@@ -56,11 +52,11 @@ function FilmCrew({crew}) {
                 <h3>Producer</h3>
                 <ul>
                 {producerList.map((member, index) => (
-                    <li key={member.id} className={styles.member} onClick={() => openUser(producerList, member.id)}>
+                    <li key={index} className={styles.member} onClick={() => openUser(member.account_id)}>
                         {member.profile_image_url ? (
-                            <img src={`http://localhost:3001${member.profile_image_url}`} alt={member.first_name} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
                         ):
-                            <img src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={member.first_name}/>
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
                         }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
@@ -74,11 +70,11 @@ function FilmCrew({crew}) {
                 <h3>Screenwriter</h3>
                 <ul>
                 {screenwriterList.map((member, index) => (
-                    <li key={member.id} className={styles.member} onClick={() => openUser(screenwriterList, member.id)}>
+                    <li key={index} className={styles.member} onClick={() => openUser(member.account_id)}>
                         {member.profile_image_url ? (
-                            <img src={`http://localhost:3001${member.profile_image_url}`} alt={member.first_name} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
                         ):
-                            <img src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={member.first_name}/>
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
                         }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
@@ -92,11 +88,11 @@ function FilmCrew({crew}) {
                 <h3>Actor</h3>
                 <ul>
                 {actorList.map((member, index) => (
-                    <li key={member.id} className={styles.member} onClick={() => openUser(actorList, member.id)}>
+                    <li key={index} className={styles.member} onClick={() => openUser(member.account_id)}>
                         {member.profile_image_url ? (
-                            <img src={`http://localhost:3001${member.profile_image_url}`} alt={member.first_name} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
                         ):
-                            <img src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={member.first_name}/>
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
                         }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
@@ -110,11 +106,11 @@ function FilmCrew({crew}) {
                 <h3>Cinematographer</h3>
                 <ul>
                 {cinematographerList.map((member, index) => (
-                    <li key={member.id} className={styles.member} onClick={() => openUser(cinematographerList, member.id)}>
+                    <li key={index} className={styles.member} onClick={() => openUser(member.account_id)}>
                         {member.profile_image_url ? (
-                            <img src={`http://localhost:3001${member.profile_image_url}`} alt={member.first_name} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
                         ):
-                            <img src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={member.first_name}/>
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
                         }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
@@ -128,11 +124,11 @@ function FilmCrew({crew}) {
                 <h3>Editor</h3>
                 <ul>
                 {editorList.map((member, index) => (
-                    <li key={member.id} className={styles.member} onClick={() => openUser(editorList, member.id)}>
+                    <li key={index} className={styles.member} onClick={() => openUser(member.account_id)}>
                         {member.profile_image_url ? (
-                            <img src={`http://localhost:3001${member.profile_image_url}`} alt={member.first_name} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
                         ):
-                            <img src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={member.first_name}/>
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
                         }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
@@ -146,11 +142,11 @@ function FilmCrew({crew}) {
                 <h3>Camera Operator</h3>
                 <ul>
                 {cameraList.map((member, index) => (
-                    <li key={member.id} className={styles.member} onClick={() => openUser(cameraList, member.id)}>
+                    <li key={index} className={styles.member} onClick={() => openUser(member.account_id)}>
                         {member.profile_image_url ? (
-                            <img src={`http://localhost:3001${member.profile_image_url}`} alt={member.first_name} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
                         ):
-                            <img src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={member.first_name}/>
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
                         }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
@@ -164,11 +160,11 @@ function FilmCrew({crew}) {
                 <h3>Gaffer</h3>
                 <ul>
                 {gafferList.map((member, index) => (
-                    <li key={member.id} className={styles.member} onClick={() => openUser(gafferList, member.id)}>
+                    <li key={index} className={styles.member} onClick={() => openUser(member.account_id)}>
                         {member.profile_image_url ? (
-                            <img src={`http://localhost:3001${member.profile_image_url}`} alt={member.first_name} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
                         ):
-                            <img src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={member.first_name}/>
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
                         }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
@@ -182,11 +178,11 @@ function FilmCrew({crew}) {
                 <h3>Sound Designer</h3>
                 <ul>
                 {soundList.map((member, index) => (
-                    <li key={member.id} className={styles.member} onClick={() => openUser(soundList, member.id)}>
+                    <li key={index} className={styles.member} onClick={() => openUser(member.account_id)}>
                         {member.profile_image_url ? (
-                            <img src={`http://localhost:3001${member.profile_image_url}`} alt={member.first_name} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
                         ):
-                            <img src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={member.first_name}/>
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
                         }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
@@ -200,11 +196,11 @@ function FilmCrew({crew}) {
                 <h3>Makeup Artist</h3>
                 <ul>
                 {makeupList.map((member, index) => (
-                    <li key={member.id} className={styles.member} onClick={() => openUser(makeupList, member.id)}>
+                    <li key={index} className={styles.member} onClick={() => openUser(member.account_id)}>
                         {member.profile_image_url ? (
-                            <img src={`http://localhost:3001${member.profile_image_url}`} alt={member.first_name} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
                         ):
-                            <img src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={member.first_name}/>
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
                         }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
@@ -218,11 +214,11 @@ function FilmCrew({crew}) {
                 <h3>Costume Designer</h3>
                 <ul>
                 {costumeList.map((member, index) => (
-                    <li key={member.id} className={styles.member} onClick={() => openUser(costumeList, member.id)}>
+                    <li key={index} className={styles.member} onClick={() => openUser(member.account_id)}>
                         {member.profile_image_url ? (
-                            <img src={`http://localhost:3001${member.profile_image_url}`} alt={member.first_name} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
                         ):
-                            <img src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={member.first_name}/>
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
                         }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
@@ -236,11 +232,11 @@ function FilmCrew({crew}) {
                 <h3>VFX Artist</h3>
                 <ul>
                 {vfxList.map((member, index) => (
-                    <li key={member.id} className={styles.member} onClick={() => openUser(vfxList, member.id)}>
+                    <li key={index} className={styles.member} onClick={() => openUser(member.account_id)}>
                         {member.profile_image_url ? (
-                            <img src={`http://localhost:3001${member.profile_image_url}`} alt={member.first_name} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
                         ):
-                            <img src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={member.first_name}/>
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
                         }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
@@ -254,11 +250,11 @@ function FilmCrew({crew}) {
                 <h3>Stunt Coordinator</h3>
                 <ul>
                 {stuntList.map((member, index) => (
-                    <li key={member.id} className={styles.member} onClick={() => openUser(stuntList, member.id)}>
+                    <li key={index} className={styles.member} onClick={() => openUser(member.account_id)}>
                         {member.profile_image_url ? (
-                            <img src={`http://localhost:3001${member.profile_image_url}`} alt={member.first_name} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
                         ):
-                            <img src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={member.first_name}/>
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
                         }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
@@ -272,11 +268,11 @@ function FilmCrew({crew}) {
                 <h3>Composer</h3>
                 <ul>
                 {composerList.map((member, index) => (
-                    <li key={member.id} className={styles.member} onClick={() => openUser(composerList, member.id)}>
+                    <li key={index} className={styles.member} onClick={() => openUser(member.account_id)}>
                         {member.profile_image_url ? (
-                            <img src={`http://localhost:3001${member.profile_image_url}`} alt={member.first_name} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
                         ):
-                            <img src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={member.first_name}/>
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
                         }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
@@ -290,11 +286,11 @@ function FilmCrew({crew}) {
                 <h3>Other</h3>
                 <ul>
                 {otherList.map((member, index) => (
-                    <li key={member.id} className={styles.member} onClick={() => openUser(otherList, member.id)}>
+                    <li key={index} className={styles.member} onClick={() => openUser(member.account_id)}>
                         {member.profile_image_url ? (
-                            <img src={`http://localhost:3001${member.profile_image_url}`} alt={member.first_name} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
                         ):
-                            <img src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={member.first_name}/>
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
                         }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>

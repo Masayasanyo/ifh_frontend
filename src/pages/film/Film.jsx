@@ -1,24 +1,23 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
-import ReactPlayer from 'react-player'
-import styles from './movie.module.css';
+import { useParams } from 'react-router-dom';
+import styles from './film.module.css';
 import FilmCrew from './film_crew/FilmCrew';
 import Checkbox from '../../components/button/LikeButton';
 import { AuthContext } from '../../context/AuthContext';
 
-function Movie() {
+function Film() {
     const { user } = useContext(AuthContext);
 
     const { filmId } = useParams(); 
 
-    const [movieData, setMovieData] = useState([]);
+    const [filmData, setFilmData] = useState([]);
     const [crew, setCrew] = useState([]);
     const [year, setYear] = useState(null);
 
 
     const getCrew = async (id) => {
         try {
-            const response = await fetch("http://localhost:3001/members", {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/users/crews`, {
                 method: "POST", 
                 headers: {
                     'Content-Type': 'application/json',
@@ -28,20 +27,15 @@ function Movie() {
 
             const data = await response.json();
             setCrew(data.data)
-            console.log(data.data);
         } catch (error) {
-            console.error("Filed to fetch movies: ", error);
+            console.error("Filed to fetch crews: ", error);
         }
     };
 
     useEffect(() => {
-        const getMovie = async () => {
-
-            console.log(filmId);
-
-
+        const getFilm = async () => {
             try {
-                const response = await fetch("http://localhost:3001/film/data", {
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/films/data`, {
                     method: "POST", 
                     headers: {
                         'Content-Type': 'application/json',
@@ -50,38 +44,32 @@ function Movie() {
                 });
 
                 const data = await response.json();
-                console.log(data.data);
                 setYear(data.data[0].created_at.split("-")[0]);
-                console.log(year);
-                setMovieData(data.data);
+                setFilmData(data.data);
                 getCrew(data.data[0].id);
             } catch (error) {
-                console.error("Filed to fetch movies: ", error);
+                console.error("Filed to fetch films: ", error);
             }
         };
 
-        // getMovie();
-
         if (filmId) {
-            getMovie();
+            getFilm();
         }
     }, [filmId]);
-    // }, []);
 
-    if (movieData.length < 1) {
-        console.log(movieData);
+    if (filmData.length < 1) {
         return <div>Loading...</div>;
     }
 
     return (
         <div className={styles.container}>
             <div className={styles.section}>
-                <video controls controlslist="nodownload noremoteplayback noplaybackrate foobar" playsinline poster={`http://localhost:3001${movieData[0].thumbnail_path}`} src={`http://localhost:3001${movieData[0].trailer_path}`} />
+                <video controls controlsList="nodownload noremoteplayback noplaybackrate foobar" playsInline poster={`${process.env.REACT_APP_STORAGE_URL}${filmData[0].thumbnail_file_path}`} src={`${process.env.REACT_APP_STORAGE_URL}${filmData[0].trailer_file_path}`} />
                 <div className={styles.filmInfo}>
-                    <h1>{movieData[0].title}</h1>
-                    <h2>({year}) {movieData[0].genre}</h2>
-                    <p>{movieData[0].description}</p>
-                    <Checkbox user={user} movie={movieData[0]} />
+                    <h1>{filmData[0].title}</h1>
+                    <h2>({year}) {filmData[0].genre}</h2>
+                    <p>{filmData[0].description}</p>
+                    <Checkbox user={user} film={filmData[0]} />
                 </div>
             </div>
             
@@ -90,4 +78,4 @@ function Movie() {
     )
 }
 
-export default Movie;
+export default Film;

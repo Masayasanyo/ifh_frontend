@@ -114,6 +114,16 @@
         display: flex;
         gap: 50px;
     }
+
+    .uploadForm video {
+        width: 320px;
+        height: 180px;
+    }
+
+    .uploadFormLeft img {
+        width: 320px;
+        height: 180px;
+    }
     
     .uploadForm label {
         display: flex;

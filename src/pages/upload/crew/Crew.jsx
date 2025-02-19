@@ -21,20 +21,17 @@ function Crew({ formData, setFormData }) {
         updatedList[index]["username"] = user.username;
         updatedList[index].suggestionList = [];
         setCrewList(updatedList);
-
-        console.log(updatedList);
     }
 
     const searchUser = async (username, index) => {
         const updatedList = [...crewList];
 
         if (username === "") {
-            
             updatedList[index].suggestionList = [];
         }
         else {
             try {
-                const response = await fetch("http://localhost:3001/accounts", {
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/accounts`, {
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json',
@@ -159,9 +156,9 @@ function Crew({ formData, setFormData }) {
                                 crew.suggestionList.map((user) => (
                                 <div key={user.id} onClick={(event) => handleUser(event, index, user)}>
                                     {user.profile_image_url ? (
-                                        <img className={styles.userImage} src={`http://localhost:3001${user.profile_image_url}`} alt={user.first_name} />
+                                        <img className={styles.userImage} src={`${process.env.REACT_APP_STORAGE_URL}${user.profile_image_url}`} alt={user.first_name} />
                                     ):(
-                                        <img className={styles.userImage} src={"http://localhost:3001/profile_image/anonymous_person.png"} alt={user.first_name} />
+                                        <img className={styles.userImage} src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={user.first_name} />
                                     )}
                                     <p>{user.username}</p>
                                 </div>
