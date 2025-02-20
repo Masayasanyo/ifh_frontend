@@ -20,8 +20,6 @@ function Trailer() {
 
                 const data = await response.json();
                 setFilms(data.data);
-                console.log(`${process.env.REACT_APP_STORAGE_URL}${data.data[4].thumbnail_file_path}`);
-
             } catch (error) {
                 console.error("Filed to fetch trailers: ", error);
             }

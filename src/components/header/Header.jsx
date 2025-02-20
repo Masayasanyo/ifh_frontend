@@ -8,6 +8,7 @@ import AccountIcon from '../icons/AccountIcon';
 import CinemaIcon from '../icons/CinemaIcon';
 import Play from '../icons/PlayIcon';
 import ShopIcon from '../icons/ShopIcon';
+import WatchlistIcon from '../icons/WatchlistIcon';
 
 function Header() {
 
@@ -39,6 +40,10 @@ function Header() {
                     <Link to='/shop' className={`${styles.link} ${location.pathname === '/shop' ? styles.active : ''}`}>
                         <ShopIcon />
                         <h2>Shop</h2>
+                    </Link>
+                    <Link to='/watchlist' className={`${styles.link} ${location.pathname === '/watchlist' ? styles.active : ''}`}>
+                        <WatchlistIcon />
+                        <h2>Watchlist</h2>
                     </Link>
                     <Link to='/account' className={`${styles.link} ${location.pathname === '/account' ? styles.active : ''}`}>
                         <AccountIcon />

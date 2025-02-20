@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './crew.module.css';
+import Cancel from '../../../components/icons/Cancel';
 
 function Crew({ formData, setFormData }) {
 
@@ -188,7 +189,8 @@ function Crew({ formData, setFormData }) {
                             onChange={(e) => crewChange(index, e.target)}
                         />
                     </div>
-                    <button onClick={(event) => addCancelCrew(event, index)} >×</button>
+                    
+                    <button onClick={(event) => addCancelCrew(event, index)} ><Cancel /></button>
                 </div>
                 ))}
             </div>

@@ -42,7 +42,7 @@ function FilmCrew({film}) {
                 </ul>
             </div>
 
-            <div className={styles.section}>
+            {/* <div className={styles.section}>
                 <h3>Screenwriter</h3>
                 <ul>
                 {screenwriterList.map((member, index) => (
@@ -51,7 +51,7 @@ function FilmCrew({film}) {
                     </li>
                 ))}
                 </ul>
-            </div>
+            </div> */}
 
             <div className={styles.section}>
                 <h3>Actor</h3>

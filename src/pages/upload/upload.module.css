@@ -116,13 +116,15 @@
     }
 
     .uploadForm video {
-        width: 320px;
-        height: 180px;
+        margin-top: 20px;
+        width: 160px;
+        height: 90px;
     }
 
-    .uploadFormLeft img {
-        width: 320px;
-        height: 180px;
+    .formOne img {
+        margin-top: 20px;
+        width: 180px;
+        height: 90px;
     }
     
     .uploadForm label {
@@ -142,7 +144,7 @@
         border-radius: 5px;
     }
     
-    .uploadFormLeft input::file-selector-button {
+    .formOne input::file-selector-button {
         font-weight: bold;
         color: white;
         background: #001F3F;
@@ -154,7 +156,7 @@
     }
     
     .input {
-        width: 400px;
+        width: 300px;
         padding: 3px 7px;
         border-radius: 5px;
         border: 2px solid #ccc;
@@ -166,8 +168,8 @@
     }
     
     .uploadForm textarea {
-        width: 400px;
-        height: 80px;
+        width: 300px;
+        height: 100px;
         padding: 3px 7px;
         border-radius: 5px;
         border: 2px solid #ccc;
@@ -188,18 +190,24 @@
         padding: 8px 16px;
         background-color: #EAD8B1;
         color: #001F3F;
-        margin-left: auto;
         margin-right: auto;
         display: block;
+        margin-bottom: 20px;
     }
     
-    .uploadFormLeft {
+    .formOne {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .formTwo {
         display: flex;
         flex-direction: column;
         gap: 30px;
     }
     
-    .uploadFormLeft select {
+    .formTwo select {
         font-family: "Poppins", serif;
         color: #001F3F;
     }

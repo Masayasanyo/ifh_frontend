@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import styles from './like_button.module.css';
-import LikeIcon from '../icons/LikeIcon';
-import DislikeIcon from '../icons/DislikeIcon';
+import React, { useState, useEffect, useContext } from 'react';
+import { AuthContext } from '../../../context/AuthContext';import styles from './like_button.module.css';
+import LikeIcon from '../../icons/LikeIcon';
+import DislikeIcon from '../../icons/DislikeIcon';
 
-const Checkbox = ({user, film}) => {
+const Checkbox = ({film}) => {
+
+  const { user } = useContext(AuthContext);
 
   const [likes, setLikes] = useState(false);
 

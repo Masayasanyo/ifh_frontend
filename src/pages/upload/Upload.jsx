@@ -80,6 +80,14 @@ function Upload() {
     const handleUpload = async (event) => {
         event.preventDefault();
 
+        const vid = document.getElementById("film");
+        const filmDuration = vid.duration;
+
+        if (!filmDuration) {
+            alert("Please wait a moment");
+            return;
+        }
+
         if (!videoForm.film ||!videoForm.trailer || !videoForm.thumbnail || !formData.title || !formData.description || !formData.genre || !formData.crew) {
             alert("Please fill in the blanks.");
             return;
@@ -103,6 +111,7 @@ function Upload() {
             description: formData.description,
             genre: formData.genre,
             crew: formData.crew,
+            duration: filmDuration, 
         };
 
         try {
@@ -129,12 +138,16 @@ function Upload() {
         <div className={styles.container} >
             <h1>Upload your film</h1>
             <form onSubmit={handleUpload} >
+
+                <button type='submit'>Submit</button>
+
+
                 <div className={styles.uploadForm}>
-                    <div className={styles.uploadFormLeft} >
+                    <div className={styles.formOne} >
                         <label>
                             Film 
                             <input type="file" name="film" onChange={handleFileChange} />
-                            <video src={fileUrl.film} alt='Film Preview' />
+                            <video id='film' src={fileUrl.film} alt='Film Preview' />
                         </label>
 
                         <label>
@@ -148,7 +161,9 @@ function Upload() {
                             <input type="file" name="thumbnail" onChange={handleFileChange} />
                             <img src={fileUrl.thumbnail} alt='' />
                         </label>
+                    </div>
 
+                    <div className={styles.formTwo}>
                         <label>
                             Title
                             <input className={styles.input} type="text" name="title" value={formData.title} onChange={handleChange} />
@@ -182,7 +197,6 @@ function Upload() {
                     </div>
                     <Crew formData={formData} setFormData={setFormData}/>
                 </div>
-                <button type='submit'>Submit</button>
             </form>
         </div>
     )

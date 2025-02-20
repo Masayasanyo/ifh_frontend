@@ -15,6 +15,7 @@ import Film from './pages/film/Film';
 import Shop from './pages/shop/Shop';
 import Live from './pages/live/Live';
 import User from './pages/user/User';
+import WatchList from './pages/watch_list/WatchList';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
               <Route path='/live/:filmId' element={<PrivateRoute><Live /></PrivateRoute>} />
               <Route path='/shop' element={<PrivateRoute><Shop /></PrivateRoute>} />
               <Route path='/user/:userId' element={<PrivateRoute><User /></PrivateRoute>} />
+              <Route path='/watchlist' element={<PrivateRoute><WatchList /></PrivateRoute>} />
               <Route path='/account' element={<PrivateRoute><Account /></PrivateRoute>} />
               <Route path='/login' element={<Login />} />
               <Route path='/sign_up' element={<SignUp />} />

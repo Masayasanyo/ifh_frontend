@@ -133,6 +133,7 @@
     }
     
     .crewInputContainer {
+        width: 250px;
         display: flex;
         gap: 10px;
         padding: 20px;
@@ -141,7 +142,7 @@
     }
     
     .crewInputContainer input {
-        width: 220px;
+        width: 200px;
         height: 25px;
         padding: 3px 7px;
         border-radius: 5px;
@@ -154,7 +155,7 @@
     }
     
     .crewInputContainer textarea {
-        width: 220px;
+        width: 200px;
         height: 40px;
         border-radius: 5px;
         padding-left: 10px;
@@ -164,21 +165,18 @@
     }
     
     .crewInputContainer button {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        margin-left: auto;
-        color: grey;
-        font-size: 1.3rem;
+        background-color: #ffffff;     
         border: none;
         margin-top: auto;
         margin-bottom: auto;
+        padding: 0px;
     }
     
     .crewInput {
         display: flex;
         flex-direction: column;
         gap: 10px;
+        width: 300px;
     }
     
     .crewInput select {

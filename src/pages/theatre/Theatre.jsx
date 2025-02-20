@@ -10,12 +10,35 @@ function Theatre() {
     // const [films, setFilms] = useState([]);
     const [publishedFilm, setPublishedFilm] = useState([]);
     const [weekDates, setWeekDates] = useState([]);
+    const [duration, setDuration] = useState('');
 
     const openFilm = (id) => {
         navigate(`/film/${id}`);
     };
     const goToLive = (id) => {
         navigate(`/live/${id}`);
+    };
+
+    const adjustDuration = async (time) => {
+        let second = Math.ceil(time);
+        let minute = 0;
+        let hour = 0;
+
+        minute = Math.floor(second / 60);
+        second = second % 60;
+
+        hour = Math.floor(minute / 60);
+        minute = minute % 60;
+
+        let secondStr = '';
+        let minuteStr = '';
+        let hourStr = '';
+
+        secondStr = `${second} sec`;
+        minuteStr = `${minute} min`;
+        hourStr = `${hour} hr`;
+
+        setDuration(`${hourStr} ${minuteStr} ${secondStr}`)       
     };
 
     const getWeekDates = () => {
@@ -41,8 +64,8 @@ function Theatre() {
                 });
 
                 const data = await response.json();
-                // setFilms(data.data);
                 setPublishedFilm(data.data.filter(film => film.is_published === true));
+                adjustDuration(data.data[0].duration);
             } catch (error) {
                 console.error("Filed to fetch films: ", error);
             }
@@ -60,9 +83,9 @@ function Theatre() {
                         <img onClick={() => openFilm(publishedFilm[0].id)} src={`${process.env.REACT_APP_STORAGE_URL}${publishedFilm[0].thumbnail_file_path}`} alt={publishedFilm[0].title} />
                         <div className={styles.movieInfo}>
                             <h2>{publishedFilm[0].title}</h2>
+                            <h3>{publishedFilm[0].genre}, {duration}</h3>
                             <p>{publishedFilm[0].description}</p>
                             <FilmCrew film={publishedFilm[0]} />
-
                         </div>
                     </div>
                     ) : (
