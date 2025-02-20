@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import ReactPlayer from 'react-player';
 import styles from "./live.module.css";
 
 function Live() {
@@ -34,14 +33,13 @@ function Live() {
 
     if (filmData.length < 1) {
         return <div>Loading...</div>;
-    }
+    }  
     
     return (
         <div>
             <h1>{filmData[0].title}</h1>
-            <hr />
             <div className={styles.video}>
-                <ReactPlayer width='1280px' height='720px' url={`${process.env.REACT_APP_STORAGE_URL}${filmData[0].film_file_path}`} controls light/>
+                <video onContextMenu={(e) => e.preventDefault()} controls controlsList="nodownload noremoteplayback noplaybackrate foobar" playsInline poster={`${process.env.REACT_APP_STORAGE_URL}${filmData[0].thumbnail_file_path}`} src={`${process.env.REACT_APP_STORAGE_URL}${filmData[0].film_file_path}`} />
             </div>
         </div>
     )

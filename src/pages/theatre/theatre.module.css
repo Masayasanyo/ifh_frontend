@@ -138,20 +138,29 @@
     }
     
     .toLiveButton {
-        width: 200px;
-        height: 60px;
-        border-radius: 20px;
-        font-size: 1.5rem;
+        border-radius: 40px;
+        font-size: 1.2rem;
         border: none;
-        margin-top: 30px;
+        margin: 30px auto 20px auto;
         font-weight: bold;
-        padding: 0px 20px 0px 20px;
+        padding: 15px 20px;
         background-color: #EAD8B1;
-        margin-left: auto;
-        margin-right: auto;
-        display: block;
         color: #001F3F;
+        display: block;
+        box-shadow: 0 5px #999;
     }
+
+    .toLiveButton:hover {
+        background-color: #afa184
+    }
+
+
+    .toLiveButton:active {
+        background-color: #afa184;
+        box-shadow: 0 3px #666;
+        transform: translateY(4px);
+    }
+
     
     
     .liveNowContainer h2 {

@@ -81,7 +81,7 @@ function Upload() {
         event.preventDefault();
 
         const vid = document.getElementById("film");
-        const filmDuration = vid.duration;
+        const filmDuration = Math.ceil(vid.duration);
 
         if (!filmDuration) {
             alert("Please wait a moment");

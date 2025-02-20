@@ -19,8 +19,8 @@ function Home() {
                 <section className={styles.hero}>
                     <p>Join Indie Film Hub and connect with your audience</p>
                     <div className={styles.buttons}>
-                    <Link to="/theatre" className={styles.btn}>Watch Movies</Link>
-                    <Link to="/upload" className={styles.btn}>Upload Your Film</Link>
+                        <Link to="/theatre" className={styles.btn}>What's on</Link>
+                        <Link to="/upload" className={styles.btn}>Upload Your Film</Link>
                     </div>
                 </section>
 

@@ -31,17 +31,42 @@
 }
 
 @media (min-width: 1200px) {
+
+    .buttons {
+        display: flex;
+        gap: 30px;
+    }
+
     .btn {
-        color: blue;
         text-decoration: none;
-        margin-right: 50px;
+        border-radius: 40px;
+        font-size: 1.2rem;
+        border: none;
+        margin: 10px 0px 0px 0px;
+        font-weight: bold;
+        padding: 10px 20px;
+        background-color: #EAD8B1;
+        color: #001F3F;
+        display: block;
+        box-shadow: 0 5px #999;
+    }
+
+    .btn:hover {
+        background-color: #afa184
+    }
+
+
+    .btn:active {
+        background-color: #afa184;
+        box-shadow: 0 3px #666;
+        transform: translateY(4px);
     }
     
     .home {
         display: flex;
         flex-direction: column;
         gap: 50px;
-        width: 90%;
+        /* width: 90%; */
     }
 }
 

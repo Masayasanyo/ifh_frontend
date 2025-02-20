@@ -89,7 +89,7 @@ function Film() {
     return (
         <div className={styles.container}>
             <div className={styles.section}>
-                <video controls controlsList="nodownload noremoteplayback noplaybackrate foobar" playsInline poster={`${process.env.REACT_APP_STORAGE_URL}${filmData[0].thumbnail_file_path}`} src={`${process.env.REACT_APP_STORAGE_URL}${filmData[0].trailer_file_path}`} />
+                <video onContextMenu={(e) => e.preventDefault()} controls controlsList="nodownload noremoteplayback noplaybackrate foobar" playsInline poster={`${process.env.REACT_APP_STORAGE_URL}${filmData[0].thumbnail_file_path}`} src={`${process.env.REACT_APP_STORAGE_URL}${filmData[0].trailer_file_path}`} />
                 <div className={styles.filmInfo}>
                     <h1>{filmData[0].title}</h1>
                     <h2>{year}, {filmData[0].genre}, {duration}</h2>

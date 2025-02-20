@@ -133,12 +133,15 @@
     }
     
     .crewInputContainer {
-        width: 250px;
+        width: 220px;
         display: flex;
+        flex-direction: column;
         gap: 10px;
         padding: 20px;
         border-radius: 10px;
-        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
+        box-shadow:
+            4px 4px 4px 2px rgb(0 0 0 / 20%), 
+            -2px -2px 4px 1px rgb(0 0 0 / 10%); 
     }
     
     .crewInputContainer input {
@@ -165,12 +168,26 @@
     }
     
     .crewInputContainer button {
-        background-color: #ffffff;     
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        font-size: 1rem;
         border: none;
-        margin-top: auto;
-        margin-bottom: auto;
-        padding: 0px;
+        box-shadow: 0 3px #999;
+        background-color: #EAD8B1;
+        margin: 0px 0px 10px auto
     }
+
+    .crewInputContainer button:hover {
+        background-color: #afa184
+    }
+
+    .crewInputContainer button:active {
+        background-color: #afa184;
+        box-shadow: 0 1px #666;
+        transform: translateY(4px);
+    }
+
     
     .crewInput {
         display: flex;
@@ -199,15 +216,22 @@
     .new {
         width: 30px;
         height: 30px;
-        /* border-radius: 50%; */
         border-radius: 10px;
-        color: grey;
         font-size: 1.3rem;
         border: none;
-        /* margin-top: auto;
-        margin-bottom: auto; */
+        box-shadow: 0 3px #999;
+        background-color: #EAD8B1;
     }
-    
+
+    .new:hover {
+        background-color: #afa184
+    }
+
+    .new:active {
+        background-color: #afa184;
+        box-shadow: 0 1px #666;
+        transform: translateY(4px);
+    }
     
     .suggestionContainer {
         display: flex;

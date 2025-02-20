@@ -50,6 +50,18 @@
 
 @media (min-width: 1200px) {
 
+    .header {
+        display: flex;
+        gap: 20px;
+    }
+
+    .searchGenre {
+        font-family: "Poppins", serif;
+        color: #001F3F;
+        border-radius: 10px;
+        padding: 0px 20px;
+    }
+
     .trailerContainer {
         display: flex;
         flex-wrap: wrap;
