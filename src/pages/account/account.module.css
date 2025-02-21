@@ -1,59 +1,4 @@
 @media (max-width: 599px) {
-
-    .container {
-        width: 100%;
-    }
-    .container h1 {
-        text-align: center;
-    }
-    
-    .inputForm {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-    }
-    
-    .inputForm label {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        background-color: #ffffff;
-        border-radius: 20px;
-        padding: 20px;
-    }
-    
-    
-    .inputContainer {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    .inputForm button {
-        border-radius: 40px;
-        font-size: 1.2rem;
-        border: none;
-        font-weight: bold;
-        padding: 8px 16px;
-        background-color: #EAD8B1;
-        color: #001F3F;
-        margin-left: auto;
-        margin-right: auto;
-        display: block;
-    }
-    
-    #logoutButton {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        color: red;
-    }
-    
-    .accountInput {
-        height: 30px;
-        border-radius: 10px;
-        padding-left: 15px;
-    }
 }
 
 
@@ -62,48 +7,93 @@
 
 @media (min-width: 1200px) {
 
-    .container {
-        width: 500px;
-    }
-    
-    .inputForm {
+    .section {
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 20px;
     }
-    
-    .inputForm label {
+
+    .form {
         display: flex;
         flex-direction: column;
-        gap: 10px;
-        background-color: #ffffff;
-        border-radius: 20px;
-        padding: 20px;
+        gap: 20px;
+        width: 25%;
     }
-    
-    
-    .inputContainer {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        width: 300px;
-    }
-    
-    .inputForm button {
+
+    .form img {
         width: 150px;
-        height: 30px;
-        border-radius: 10px;
-        font-size: 0.7rem;
-        border: none;
+        height: 150px;
+        border: 2px solid black;
+        border-radius: 50%;
+        object-fit: cover;
+        text-align: center;
+    }
+
+    .form input::file-selector-button {
+        font-weight: bold;
+        color: white;
+        background: #001F3F;
+        font-size: 14px;
+        border: 0;
+        border-radius: 20px;
+        padding: 8px 16px;
+        text-align: center;
     }
     
-    .logoutButton {
-        color: red;
+    .form label {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background-color: #ffffff;
+    
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
     }
     
     .accountInput {
-        height: 30px;
-        border-radius: 10px;
-        padding-left: 15px;
+        width: 90%;
+        height: 20px;
+        padding: 3px 7px;
+        border-radius: 5px;
+        border: 2px solid #ccc;
     }
+    
+    .form input:focus {
+        outline: 0;
+        border: 2px solid #001F3F;
+    }
+
+    .btns {
+        display: flex;
+        gap: 50px;
+    }
+    
+    .container button {
+        border-radius: 40px;
+        font-size: 1.2rem;
+        border: none;
+        font-weight: bold;
+        padding: 8px 16px;
+        background-color: #EAD8B1;
+        color: #001F3F;
+        display: block;
+        box-shadow: 0 5px #999;
+    }
+
+    .container button:hover {
+        background-color: #afa184
+    }
+
+
+    .container button:active {
+        background-color: #afa184;
+        box-shadow: 0 3px #666;
+        transform: translateY(4px);
+    }
+
+    #logoutButton {
+        color: red;
+    }
+    
 }

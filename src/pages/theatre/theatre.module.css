@@ -125,8 +125,8 @@
         height: 225px; */
         object-fit: contain;
         /* border: 1px solid grey; */
-        border-radius: 10px;
-        background-color: black;
+        border-radius: 0px;
+        /* background-color: black; */
         margin-top: auto;
         margin-bottom: auto;
     }

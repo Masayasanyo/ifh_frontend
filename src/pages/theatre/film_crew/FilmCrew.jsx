@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './filmcrew.module.css';
 
+
 function FilmCrew({film}) {
 
     const [crew, setCrew] = useState([]);
@@ -13,7 +14,7 @@ function FilmCrew({film}) {
                     headers: {
                         'Content-Type': 'application/json',
                     }, 
-                    body: JSON.stringify({filmId: film.id}), 
+                    body: JSON.stringify({filmId: film.film_id}), 
                 });
 
                 const data = await response.json();
