@@ -1,0 +1,81 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(55, 55, 55, 0.6);
+    backdrop-filter: blur(6px); 
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 99;
+}
+
+.container {
+    position: fixed;
+    left: 35%;
+    top: 20%;
+    background-color: #ffffffff;
+    width: 500px;
+    height: 450px;
+    border-radius: 20px;
+    padding: 20px 40px 50px 40px;
+    color: #001F3F;
+    z-index: 100;
+    border: 10px solid #001F3F;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+#myticket {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+#myticket p {
+    font-size: 2.5rem;
+    margin: 0px;
+}
+
+#ticket {
+    width: 60px;
+    height: 60px;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn {
+    width: 150px;
+    border-radius: 40px;
+    font-size: 1.2rem;
+    border: none;
+    font-weight: bold;
+    padding: 10px 16px;
+    background-color: #EAD8B1;
+    color: #001F3F;
+    display: block;
+    box-shadow: 0 5px #999;
+}
+
+.btn:hover {
+    background-color: #afa184
+}
+
+
+.btn:active {
+    background-color: #afa184;
+    box-shadow: 0 3px #666;
+    transform: translateY(4px);
+}

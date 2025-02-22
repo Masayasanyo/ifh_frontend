@@ -3,18 +3,26 @@ import styles from './theatre.module.css'
 import { useNavigate } from 'react-router-dom';
 import FilmCrew from './film_crew/FilmCrew';
 import Schedule from './schedule/schedule/Schedule';
+import Popup from './popup/Popup';
 
 function Theatre() {
 
     const navigate = useNavigate();
 
     const [publishedFilm, setPublishedFilm] = useState([]);
+    const [isPopup, setIsPopup] = useState(false);
 
+    const [filmId, setFilmId] = useState(null);
+    const [filmTitle, setFilmTitle] = useState("");
+ 
     const openFilm = (id) => {
         navigate(`/film/${id}`);
     };
-    const goToLive = (id) => {
-        navigate(`/live/${id}`);
+    const goToLive = (id, title) => {
+        // navigate(`/live/${id}`);
+        setFilmId(id);
+        setFilmTitle(title);
+        setIsPopup(true);
     };
 
     useEffect(() => {
@@ -38,6 +46,11 @@ function Theatre() {
     return (
         <div className={styles.container}>
             <h1>What's on</h1>
+
+            {isPopup && (
+                <Popup setIsPopup={setIsPopup} filmId={filmId} filmTitle={filmTitle} />
+            )}
+
             <div className={styles.whatson}>
 
                 <div className={`${styles.liveNowContainer} ${styles.section}`} >
@@ -54,7 +67,7 @@ function Theatre() {
                     ) : (
                         <p>Loading movie...</p>
                     )}
-                    <button className={styles.toLiveButton} onClick={() => goToLive(publishedFilm[0].film_id)} >Watch Now</button>
+                    <button className={styles.toLiveButton} onClick={() => goToLive(publishedFilm[0].film_id, publishedFilm[0].title)} >Watch Now</button>
                 </div>
 
                 <div className={`${styles.liveNowContainer} ${styles.section}`} >
@@ -71,7 +84,7 @@ function Theatre() {
                     ) : (
                         <p>Loading movie...</p>
                     )}
-                    <button className={styles.toLiveButton} onClick={() => goToLive(publishedFilm[1].film_id)} >Watch Now</button>
+                    <button className={styles.toLiveButton} onClick={() => goToLive(publishedFilm[1].film_id, publishedFilm[1].title)} >Watch Now</button>
                 </div>
 
                 <Schedule publishedFilm={publishedFilm} />

@@ -35,10 +35,6 @@
         padding: 10px 50px 30px 50px;
     }
 
-    .section h2 {
-        /* margin: auto 0px auto 0px; */
-    }
-
     .items {
         display: flex;
         gap: 20px;
@@ -55,14 +51,32 @@
         
     }
 
-    .item:hover {
-        transition: 0.6s ease;
-        transform: scale(1.05);
-
-    }
-
     .item img {
         width: 100px;
         height: 100px;
+    }
+
+    .btn {
+        width: 80px;
+        border-radius: 40px;
+        font-size: 1.0rem;
+        border: none;
+        font-weight: bold;
+        padding: 8px 16px;
+        background-color: #EAD8B1;
+        color: #001F3F;
+        display: block;
+        box-shadow: 0 5px #999;
+    }
+    
+    .btn:hover {
+        background-color: #afa184
+    }
+    
+    
+    .btn:active {
+        background-color: #afa184;
+        box-shadow: 0 3px #666;
+        transform: translateY(4px);
     }
 }

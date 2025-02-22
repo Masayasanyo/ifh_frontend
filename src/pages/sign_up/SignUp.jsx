@@ -119,7 +119,7 @@ function SignUp() {
                     <label className={styles.imageInput}>
                         Profile picture 
                         <input type="file" name="picture" onChange={handleFileChange} />
-                        <img src={imageUrl} alt='Preview' />
+                        <img src={imageUrl} alt='' />
                     </label>
 
                     <label className={styles.inputContainer}>

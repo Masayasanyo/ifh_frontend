@@ -17,9 +17,11 @@ function Header() {
     return (
         <div>
             <header className={styles.header}>
-                <div className={styles.logo}>
+            
+                <Link to='/' className={styles.logo} >
                     <img src={logo} alt='logo' />
-                </div>
+                </Link>
+                
                 <div className={styles.section}>
                     <Link to='/' className={`${styles.link} ${location.pathname === '/' ? styles.active : ''}`}>
                         <HomeIcon />
