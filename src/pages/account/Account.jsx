@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
 import styles from './account.module.css';
+import Sidebar from './sidebar/Sidebar';
 
 function Account() {
 
@@ -108,87 +109,93 @@ function Account() {
 
     return (
         <div className={styles.container} >
-            <h1>Account</h1>
 
-            <form onSubmit={handleSubmit} className={styles.section}>
+            <Sidebar />
 
-                <div className={styles.btns}>
-                    <button type='submit' id={styles.submit}>Submit</button>
-                    <button id={styles.logoutButton} onClick={logout} >Log out</button>
-                </div>
+            <div className={styles.account} >
+                <h1>Account</h1>
 
-                <div className={styles.form}>
+                <form onSubmit={handleSubmit} className={styles.section}>
 
-                    <label className={styles.imageInput}>
-                        Profile picture 
-                        <input type="file" name="picture" onChange={handleFileChange} />
-                        <img src={`${process.env.REACT_APP_STORAGE_URL}${imageUrl}`} alt='' />
-                    </label>
+                    <div className={styles.btns}>
+                        <button type='submit' id={styles.submit}>Submit</button>
+                        <button id={styles.logoutButton} onClick={logout} >Log out</button>
+                    </div>
 
-                    <label>
-                    Username
-                        <input
-                            className={styles.accountInput}
-                            type="text"
-                            name="username"
-                            value={formData.username}
-                            onChange={handleChange}>
-                        </input>
-                    </label>
+                    <div className={styles.form}>
 
-                    <label>
-                    First Name
-                        <input
-                            className={styles.accountInput}
-                            type="text"
-                            name="firstName"
-                            value={formData.firstName}
-                            onChange={handleChange}>
-                        </input>
-                    </label>
+                        <label className={styles.imageInput}>
+                            Profile picture 
+                            <input type="file" name="picture" onChange={handleFileChange} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${imageUrl}`} alt='' />
+                        </label>
 
-                    <label>
-                    Family Name
-                        <input
-                            className={styles.accountInput}
-                            type="text"
-                            name="familyName"
-                            value={formData.familyName}
-                            onChange={handleChange}>
-                        </input>
-                    </label>
+                        <label>
+                        Username
+                            <input
+                                className={styles.accountInput}
+                                type="text"
+                                name="username"
+                                value={formData.username}
+                                onChange={handleChange}>
+                            </input>
+                        </label>
 
-                    <label>
-                        Email
-                        <input 
-                            className={styles.accountInput}
-                            type="text"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}>
-                        </input>
-                    </label>
+                        <label>
+                        First Name
+                            <input
+                                className={styles.accountInput}
+                                type="text"
+                                name="firstName"
+                                value={formData.firstName}
+                                onChange={handleChange}>
+                            </input>
+                        </label>
 
-                    <label>
-                        Password
-                        <input 
-                            className={styles.accountInput}
-                            type="password"
-                            name="password" 
-                            placeholder='New password'
-                            onChange={handleChange}>
-                        </input>
-                        <input 
-                            className={styles.accountInput}
-                            type="password"
-                            name="passwordConfirmed" 
-                            placeholder='Confirm password'
-                            onChange={handleChange}>
-                        </input>
-                    </label>
-                </div>
+                        <label>
+                        Family Name
+                            <input
+                                className={styles.accountInput}
+                                type="text"
+                                name="familyName"
+                                value={formData.familyName}
+                                onChange={handleChange}>
+                            </input>
+                        </label>
 
-            </form>
+                        <label>
+                            Email
+                            <input 
+                                className={styles.accountInput}
+                                type="text"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}>
+                            </input>
+                        </label>
+
+                        <label>
+                            Password
+                            <input 
+                                className={styles.accountInput}
+                                type="password"
+                                name="password" 
+                                placeholder='New password'
+                                onChange={handleChange}>
+                            </input>
+                            <input 
+                                className={styles.accountInput}
+                                type="password"
+                                name="passwordConfirmed" 
+                                placeholder='Confirm password'
+                                onChange={handleChange}>
+                            </input>
+                        </label>
+                    </div>
+
+                </form>
+
+            </div>
 
         </div>
     )

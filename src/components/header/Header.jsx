@@ -1,5 +1,6 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useEffect, useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import styles from './header.module.css';
 import logo from '../../assets/logo.png';
 import HomeIcon from '../icons/HomeIcon';
@@ -12,7 +13,16 @@ import WatchlistIcon from '../icons/WatchlistIcon';
 
 function Header() {
 
+    const { user, login, logout } = useContext(AuthContext);
+
     let location = useLocation()
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!user) {
+            navigate('/login');
+        }
+    }, [user]);
 
     return (
         <div>
@@ -47,9 +57,23 @@ function Header() {
                         <WatchlistIcon />
                         <h2>Watchlist</h2>
                     </Link>
-                    <Link to='/account' className={`${styles.link} ${location.pathname === '/account' ? styles.active : ''}`}>
-                        <AccountIcon />
-                        <h2>Account</h2>
+
+                    <Link id={styles.user} to='/account'>
+                        {user ? (
+                            <div   className={`${styles.user} ${styles.link} ${location.pathname === '/account' ? styles.active : ''}`}>
+                                {user.profile_image_url ? (
+                                <img id={styles.profileImage} src={`${process.env.REACT_APP_STORAGE_URL}${user.profile_image_url}`} alt={user.first_name} />
+                                ):(
+                                <img id={styles.profileImage} src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={user.first_name} />
+                                )}
+                                <h2 id={styles.username}>{user.username}</h2>
+                            </div>
+                        ):(
+                            <div  className={`${styles.user} ${styles.link} ${location.pathname === '/account' ? styles.active : ''}`}>
+                                <AccountIcon />
+                                <h2>Login</h2>
+                            </div>
+                        )}                        
                     </Link>
                 </div>
             </header>

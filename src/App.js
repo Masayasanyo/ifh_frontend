@@ -4,6 +4,7 @@ import AuthProvider from './context/AuthContext';
 import PrivateRoute from './context/PrivateRoute';
 import styles from './styles/styles.module.css'
 import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
 import Home from './pages/home/Home';
 import Upload from './pages/upload/Upload';
 import Theatre from './pages/theatre/Theatre';
@@ -16,6 +17,8 @@ import Shop from './pages/shop/Shop';
 import Live from './pages/live/Live';
 import User from './pages/user/User';
 import WatchList from './pages/watch_list/WatchList';
+import History from './pages/account/history/History';
+import Ticket from './pages/account/ticket/Ticket';
 
 function App() {
   return (
@@ -35,9 +38,12 @@ function App() {
               <Route path='/user/:userId' element={<PrivateRoute><User /></PrivateRoute>} />
               <Route path='/watchlist' element={<PrivateRoute><WatchList /></PrivateRoute>} />
               <Route path='/account' element={<PrivateRoute><Account /></PrivateRoute>} />
+              <Route path='/account/history' element={<PrivateRoute><History /></PrivateRoute>} />
+              <Route path='/account/ticket' element={<PrivateRoute><Ticket /></PrivateRoute>} />
               <Route path='/login' element={<Login />} />
               <Route path='/sign_up' element={<SignUp />} />
             </Routes>
+            <Footer />
           </div>
         </div>
       </Router>

@@ -75,33 +75,21 @@
 @media (min-width: 1200px) {
 
     .userInfo {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-columns: 400px 1fr;
-        background-color: #ffffff;
-    
         display: flex;
         gap: 50px;
-        background-color: #ffffff;
-        padding: 30px 50px 30px 50px;
+        padding: 30px 50px;
         border-radius: 20px;
-        margin-bottom: 30px;
-    
+        background-color: #ffffff;
     }
     
     .userInfo img {
-        width: 250px;
-        height: 250px;
-        /* border: 2px solid grey; */
+        width: 200px;
+        height: 200px;
         border-radius: 50%;
         background-color: aliceblue;
         object-fit: cover;
         text-align: center;
-        margin-right: auto;
     }
-    
-    
-    
     
     .movieContainer {
         display: flex;
@@ -139,7 +127,6 @@
         width: 320px;
         height: 180px;
         object-fit: contain;
-        /* border: 5px solid #001F3F; */
         border-radius: 20px;
     }
     

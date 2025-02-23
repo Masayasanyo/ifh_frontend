@@ -1,0 +1,75 @@
+@media (max-width: 599px) {
+}
+
+
+@media (min-width: 600px) and (max-width: 1199px) {
+}
+
+@media (min-width: 1200px) {
+
+    .container {
+        display: flex;
+        gap: 100px;
+    }
+
+    .ticket {
+        width: 20%;
+    }
+
+    .section {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        background-color: #ffffff;
+        padding: 40px 30px 40px 30px;
+        border-radius: 20px;
+    }
+
+    .myticket {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px; 
+    }
+    
+    .myticket p {
+        font-size: 2.9rem;
+        margin: 0px;
+    }
+    
+    #ticketImage {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .btns {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    .btn {
+        width: 150px;
+        border-radius: 40px;
+        font-size: 1.2rem;
+        border: none;
+        font-weight: bold;
+        padding: 10px 16px;
+        background-color: #EAD8B1;
+        color: #001F3F;
+        display: block;
+        box-shadow: 0 5px #999;
+        margin: 0px auto;
+    }
+    
+    .btn:hover {
+        background-color: #afa184
+    }
+    
+    
+    .btn:active {
+        background-color: #afa184;
+        box-shadow: 0 3px #666;
+        transform: translateY(4px);
+    }
+    
+}

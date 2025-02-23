@@ -37,6 +37,22 @@ function Popup({ setIsPopup, filmId, filmTitle }) {
         }
 
         setIsPopup(false);
+
+        try {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/history/watched`, {
+                method: "POST", 
+                headers: {
+                    'Content-Type': 'application/json',
+                }, 
+                body: JSON.stringify({userId: user.id, filmId: filmId}), 
+            });
+
+            const data = await response.json();
+
+        } catch (error) {
+            console.error("Filed to update your viewing history: ", error);
+        }
+
         navigate(`/live/${filmId}`);
     } 
 

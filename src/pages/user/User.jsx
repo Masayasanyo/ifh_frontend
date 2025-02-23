@@ -71,7 +71,7 @@ function User() {
                 )}
                 <div>
                     <h1>{userData[0].first_name} {userData[0].family_name}</h1>
-                    <p>{}</p>
+                    <p>{userData[0].bio}</p>
                 </div>
             </div>
             <div>
