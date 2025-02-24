@@ -2,8 +2,11 @@ import React, { useState, useEffect, useContext } from 'react';
 import { AuthContext } from '../../../context/AuthContext';import styles from './like_button.module.css';
 import LikeIcon from '../../icons/LikeIcon';
 import DislikeIcon from '../../icons/DislikeIcon';
+import { useTranslation } from 'react-i18next';
 
 const Checkbox = ({film}) => {
+
+  const { t } = useTranslation();
 
   const { user } = useContext(AuthContext);
 
@@ -81,9 +84,9 @@ const Checkbox = ({film}) => {
       <DislikeIcon />
       }
       {likes ? 
-      <p className={styles.likeWord} >Like</p>
+      <p className={styles.likeWord} >{t("like")}</p>
       :
-      <p>Like</p>
+      <p>{t("like")}</p>
       }
     </div>
   );

@@ -1,26 +1,67 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './crew.module.css';
 
-function Crew({ formData, setFormData }) {
+function Crew({ filmId, formData, setFormData }) {
 
     const [crewList, setCrewList] = useState([{
-        accountId: null,
+        account_id: null,
         username: "",
-        firstName: "",
-        familyName: "",
+        first_name: "",
+        family_name: "",
         role: "director",
         comment: "",
         suggestionList: []
     }]);
 
+    useEffect(() => {
+
+        const getCrew = async (id, data) => {
+            try {
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/users/crews`, {
+                    method: "POST", 
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }, 
+                    body: JSON.stringify({filmId: filmId}), 
+                });
+    
+                const crewData = await response.json();
+
+                for (var i = 0; i < crewData.data.length; i++) {
+                    crewData.data[i].suggestionList = [];
+                }
+
+                setCrewList(crewData.data);
+
+                setFormData({
+                    ...formData,
+                    crew: crewData.data, 
+                });
+
+            } catch (error) {
+                console.error("Filed to fetch crews: ", error);
+            }
+        };
+
+        if (filmId) {
+            getCrew();
+        }
+    }, [filmId]);
+    
     const handleUser = (event, index, user) => {
         event.preventDefault();
 
         const updatedList = [...crewList];
-        updatedList[index]["accountId"] = user.id;
-        updatedList[index]["username"] = user.username;
+        updatedList[index].account_id = user.id;
+        updatedList[index].username = user.username;
         updatedList[index].suggestionList = [];
+
         setCrewList(updatedList);
+
+        setFormData({
+            ...formData,
+            crew: updatedList, 
+        });
     }
 
     const searchUser = async (username, index) => {
@@ -40,9 +81,11 @@ function Crew({ formData, setFormData }) {
                 });
                 if (response.ok) {
                     const data = await response.json();
+
                     updatedList[index].suggestionList = data.data;
 
-                    console.log(updatedList);
+                    setCrewList(updatedList);
+                    
                 } else {
                     updatedList[index].suggestionList = [];
                 }
@@ -65,16 +108,18 @@ function Crew({ formData, setFormData }) {
         if (target.name === "username") {
             searchUser(target.value, index);
             updatedList[index]["username"] = target.value;
+
+            console.log(updatedList);
             setCrewList(updatedList);
         }
 
         if (target.name === "firstName") {
-            updatedList[index]["firstName"] = target.value;
+            updatedList[index]["first_name"] = target.value;
             setCrewList(updatedList);
         }
 
         if (target.name === "familyName") {
-            updatedList[index]["familyName"] = target.value;
+            updatedList[index]["family_name"] = target.value;
             setCrewList(updatedList);
         }
 
@@ -82,6 +127,8 @@ function Crew({ formData, setFormData }) {
             updatedList[index]["comment"] = target.value;
             setCrewList(updatedList);            
         }
+
+        setCrewList(updatedList);
 
         setFormData({
             ...formData,
@@ -92,10 +139,10 @@ function Crew({ formData, setFormData }) {
     const addCrew  = (event) => {
         event.preventDefault();
         setCrewList([...crewList, {
-            accountId: null,
+            account_id: null,
             username: "",
-            firstName: "",
-            familyName: "",
+            first_name: "",
+            family_name: "",
             role: "director",
             comment: "",
             suggestionList: []
@@ -116,6 +163,10 @@ function Crew({ formData, setFormData }) {
         });
     }
 
+    if (crewList.length < 1) {
+        return <div>Loading...</div>;
+    }
+
     return (
         <div className={styles.crewContainer}>
             <div className={styles.crewHeader}>
@@ -128,7 +179,7 @@ function Crew({ formData, setFormData }) {
                     <button onClick={(event) => addCancelCrew(event, index)} >×</button>
                     <div className={styles.crewInput}>
 
-                        <select name="role" onChange={(e) => crewChange(index, e.target)}>
+                        <select value={crew.role} name="role" onChange={(e) => crewChange(index, e.target)}>
                             <option value="director">Director</option>
                             <option value="producer">Producer</option>
                             <option value="screenwriter">Screenwriter</option>
@@ -172,7 +223,7 @@ function Crew({ formData, setFormData }) {
                             placeholder="First Name"
                             type="text"
                             name="firstName"
-                            value={crew.firstName}
+                            value={crew.first_name}
                             onChange={(e) => crewChange(index, e.target)}
                         />
 
@@ -180,14 +231,15 @@ function Crew({ formData, setFormData }) {
                             placeholder="Family Name"
                             type="text"
                             name="familyName"
-                            value={crew.familyName}
+                            value={crew.family_name}
                             onChange={(e) => crewChange(index, e.target)}
                         />
                         
                         <textarea 
                             placeholder="Comment"
                             type="text"
-                            name="comment"
+                            name="comment" 
+                            value={crew.comment}
                             onChange={(e) => crewChange(index, e.target)}
                         />
                     </div>

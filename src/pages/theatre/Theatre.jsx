@@ -56,7 +56,10 @@ function Theatre() {
                 <div className={`${styles.liveNowContainer} ${styles.section}`} >
                     {publishedFilm.length > 0 ? (
                     <div className={styles.movie}>
-                        <img onClick={() => openFilm(publishedFilm[0].film_id)} src={`${process.env.REACT_APP_STORAGE_URL}${publishedFilm[0].thumbnail_file_path}`} alt={publishedFilm[0].title} />
+                        <div>
+                            <img onClick={() => openFilm(publishedFilm[0].film_id)} src={`${process.env.REACT_APP_STORAGE_URL}${publishedFilm[0].thumbnail_file_path}`} alt={publishedFilm[0].title} />
+                            <button className={styles.toLiveButton} onClick={() => goToLive(publishedFilm[0].film_id, publishedFilm[0].title)} >Watch Now</button>
+                        </div>
                         <div className={styles.movieInfo}>
                             <h2>{publishedFilm[0].title}</h2>
                             <h3>{publishedFilm[0].genre}, {publishedFilm[0].duration}min</h3>
@@ -67,13 +70,15 @@ function Theatre() {
                     ) : (
                         <p>Loading movie...</p>
                     )}
-                    <button className={styles.toLiveButton} onClick={() => goToLive(publishedFilm[0].film_id, publishedFilm[0].title)} >Watch Now</button>
                 </div>
 
                 <div className={`${styles.liveNowContainer} ${styles.section}`} >
                     {publishedFilm.length > 0 ? (
                     <div className={styles.movie}>
-                        <img onClick={() => openFilm(publishedFilm[1].film_id)} src={`${process.env.REACT_APP_STORAGE_URL}${publishedFilm[1].thumbnail_file_path}`} alt={publishedFilm[1].title} />
+                        <div>
+                            <img onClick={() => openFilm(publishedFilm[1].film_id)} src={`${process.env.REACT_APP_STORAGE_URL}${publishedFilm[1].thumbnail_file_path}`} alt={publishedFilm[1].title} />
+                            <button className={styles.toLiveButton} onClick={() => goToLive(publishedFilm[1].film_id, publishedFilm[1].title)} >Watch Now</button>
+                        </div>
                         <div className={styles.movieInfo}>
                             <h2>{publishedFilm[1].title}</h2>
                             <h3>{publishedFilm[1].genre}, {publishedFilm[1].duration}min</h3>
@@ -84,7 +89,6 @@ function Theatre() {
                     ) : (
                         <p>Loading movie...</p>
                     )}
-                    <button className={styles.toLiveButton} onClick={() => goToLive(publishedFilm[1].film_id, publishedFilm[1].title)} >Watch Now</button>
                 </div>
 
                 <Schedule publishedFilm={publishedFilm} />

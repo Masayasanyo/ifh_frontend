@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import styles from './film.module.css';
 import FilmCrew from './film_crew/FilmCrew';
 import Checkbox from '../../components/button/like/LikeButton';
@@ -9,11 +9,17 @@ import { AuthContext } from '../../context/AuthContext';
 function Film() {
     const { user } = useContext(AuthContext);
 
+    const navigate = useNavigate();
+
     const { filmId } = useParams(); 
 
     const [filmData, setFilmData] = useState([]);
     const [crew, setCrew] = useState([]);
     const [year, setYear] = useState(null);
+
+    const edit = (id) => {
+        navigate(`/edit/${id}`);
+    };
 
     const getCrew = async (id) => {
         try {
@@ -44,6 +50,7 @@ function Film() {
                 });
 
                 const data = await response.json();
+                console.log(data.data);
                 setYear(data.data[0].created_at.split("-")[0]);
                 setFilmData(data.data);
                 getCrew(data.data[0].id);
@@ -63,6 +70,14 @@ function Film() {
 
     return (
         <div className={styles.container}>
+
+            {user.id === filmData[0].user_id && (
+                <div>
+                    <button id={styles.edit} onClick={() => edit(filmId)} >Edit</button>
+                </div>
+            )}
+
+
             <div className={styles.section}>
                 <video onContextMenu={(e) => e.preventDefault()} controls controlsList="nodownload noremoteplayback noplaybackrate foobar" playsInline poster={`${process.env.REACT_APP_STORAGE_URL}${filmData[0].thumbnail_file_path}`} src={`${process.env.REACT_APP_STORAGE_URL}${filmData[0].trailer_file_path}`} />
                 <div className={styles.filmInfo}>

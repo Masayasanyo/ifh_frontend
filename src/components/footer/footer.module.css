@@ -6,3 +6,33 @@
 #copyright {
     text-align: center;
 }
+
+.btns {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    border-radius: 40px;
+    font-size: 1.2rem;
+    border: none;
+    /* margin: 30px auto 30px 0px; */
+    font-weight: bold;
+    padding: 8px 16px;
+    background-color: #EAD8B1;
+    color: #001F3F;
+    display: block;
+    box-shadow: 0 5px #999;
+}
+
+.btn:hover {
+    background-color: #afa184
+}
+
+
+.btn:active {
+    background-color: #afa184;
+    box-shadow: 0 3px #666;
+    transform: translateY(4px);
+}

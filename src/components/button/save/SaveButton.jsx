@@ -3,8 +3,11 @@ import { AuthContext } from '../../../context/AuthContext';
 import styles from './save_button.module.css';
 import SaveIcon from '../../icons/SaveIcon';
 import UnsaveIcon from '../../icons/UnsaveIcon';
+import { useTranslation } from 'react-i18next';
 
 const SaveButton = ({film}) => {
+
+    const { t } = useTranslation();
 
     const { user } = useContext(AuthContext);
 
@@ -84,9 +87,9 @@ const SaveButton = ({film}) => {
         <SaveIcon />
         }
         {save ? 
-        <p className={styles.saveWord} >Save</p>
+        <p className={styles.saveWord} >{t("save")}</p>
         :
-        <p>Save</p>
+        <p>{t("save")}</p>
         }
         </div>
     );

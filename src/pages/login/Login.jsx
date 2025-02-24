@@ -36,7 +36,7 @@ function Login() {
                 if (response.ok) {
                     const data = await response.json();
                     console.log('Login Successful:', data);
-                    login(data.user);
+                    login(data.data);
                     navigate('/');
                 } else {
                     alert('Failed');

@@ -3,8 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
 import styles from './account.module.css';
 import Sidebar from './sidebar/Sidebar';
+import { useTranslation } from 'react-i18next';
 
 function Account() {
+
+    const { t } = useTranslation();
 
     const { user, login, logout } = useContext(AuthContext);
 
@@ -18,6 +21,7 @@ function Account() {
         username: user.username, 
         firstName: user.first_name, 
         familyName: user.family_name, 
+        bio: user.bio, 
         email: user.email, 
         password: "",
         passwordConfirmed: "", 
@@ -76,6 +80,7 @@ function Account() {
             username: formData.username, 
             firstName: formData.firstName, 
             familyName: formData.familyName, 
+            bio: formData.bio, 
             email: formData.email, 
             password: formData.password,
             imagePath: imageUrl,
@@ -96,6 +101,8 @@ function Account() {
             });
             if (response.ok) {
                 const data = await response.json();
+
+                console.log(data.data);
                 login(data.data);
                 navigate('/account');
             } else {
@@ -113,25 +120,25 @@ function Account() {
             <Sidebar />
 
             <div className={styles.account} >
-                <h1>Account</h1>
+                <h1>{t("Account")}</h1>
 
                 <form onSubmit={handleSubmit} className={styles.section}>
 
                     <div className={styles.btns}>
-                        <button type='submit' id={styles.submit}>Submit</button>
-                        <button id={styles.logoutButton} onClick={logout} >Log out</button>
+                        <button type='submit' id={styles.submit}>{t("Submit")}</button>
+                        <button id={styles.logoutButton} onClick={logout} >{t("Log out")}</button>
                     </div>
 
                     <div className={styles.form}>
 
                         <label className={styles.imageInput}>
-                            Profile picture 
+                        {t("Profile picture ")}
                             <input type="file" name="picture" onChange={handleFileChange} />
                             <img src={`${process.env.REACT_APP_STORAGE_URL}${imageUrl}`} alt='' />
                         </label>
 
                         <label>
-                        Username
+                        {t("Username")}
                             <input
                                 className={styles.accountInput}
                                 type="text"
@@ -142,7 +149,19 @@ function Account() {
                         </label>
 
                         <label>
-                        First Name
+                        {t("Bio")}
+                            <textarea
+                                id={styles.bio}
+                                className={styles.accountInput}
+                                type="text"
+                                name="bio"
+                                value={formData.bio}
+                                onChange={handleChange}>
+                            </textarea>
+                        </label>
+
+                        <label>
+                        {t("First Name")}
                             <input
                                 className={styles.accountInput}
                                 type="text"
@@ -153,7 +172,7 @@ function Account() {
                         </label>
 
                         <label>
-                        Family Name
+                        {t("Family Name")}
                             <input
                                 className={styles.accountInput}
                                 type="text"
@@ -164,7 +183,7 @@ function Account() {
                         </label>
 
                         <label>
-                            Email
+                        {t("Email")}
                             <input 
                                 className={styles.accountInput}
                                 type="text"
@@ -175,7 +194,7 @@ function Account() {
                         </label>
 
                         <label>
-                            Password
+                        {t("Password")}
                             <input 
                                 className={styles.accountInput}
                                 type="password"

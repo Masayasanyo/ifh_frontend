@@ -37,9 +37,11 @@ function Live() {
     
     return (
         <div>
+            <div className={styles.overlay}></div>
+            
             <h1>{filmData[0].title}</h1>
             <div className={styles.video}>
-                <video onContextMenu={(e) => e.preventDefault()} controls controlsList="nodownload noremoteplayback noplaybackrate foobar" playsInline poster={`${process.env.REACT_APP_STORAGE_URL}${filmData[0].thumbnail_file_path}`} src={`${process.env.REACT_APP_STORAGE_URL}${filmData[0].film_file_path}`} />
+                <video onContextMenu={(e) => e.preventDefault()} autoplay="autoplay" controls controlsList="nodownload noremoteplayback noplaybackrate foobar" playsInline poster={`${process.env.REACT_APP_STORAGE_URL}${filmData[0].thumbnail_file_path}`} src={`${process.env.REACT_APP_STORAGE_URL}${filmData[0].film_file_path}`} />
             </div>
         </div>
     )

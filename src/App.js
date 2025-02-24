@@ -19,8 +19,21 @@ import User from './pages/user/User';
 import WatchList from './pages/watch_list/WatchList';
 import History from './pages/account/history/History';
 import Ticket from './pages/account/ticket/Ticket';
+import Work from './pages/account/work/Work';
+import EditFilm from './pages/edit_film/EditFilm';
+import { useTranslation } from 'react-i18next';
+import './i18n';
+
 
 function App() {
+
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
+
   return (
     <AuthProvider>
       <Router>
@@ -32,6 +45,7 @@ function App() {
               <Route path='/upload' element={<PrivateRoute><Upload /></PrivateRoute>} />
               <Route path='/trailer' element={<PrivateRoute><Trailer /></PrivateRoute>} />
               <Route path='/film/:filmId' element={<PrivateRoute><Film /></PrivateRoute>} />
+              <Route path='/edit/:filmId' element={<PrivateRoute><EditFilm /></PrivateRoute>} />
               <Route path='/theatre' element={<PrivateRoute><Theatre /></PrivateRoute>} />
               <Route path='/live/:filmId' element={<PrivateRoute><Live /></PrivateRoute>} />
               <Route path='/shop' element={<PrivateRoute><Shop /></PrivateRoute>} />
@@ -40,10 +54,11 @@ function App() {
               <Route path='/account' element={<PrivateRoute><Account /></PrivateRoute>} />
               <Route path='/account/history' element={<PrivateRoute><History /></PrivateRoute>} />
               <Route path='/account/ticket' element={<PrivateRoute><Ticket /></PrivateRoute>} />
+              <Route path='/account/work' element={<PrivateRoute><Work /></PrivateRoute>} />
               <Route path='/login' element={<Login />} />
               <Route path='/sign_up' element={<SignUp />} />
             </Routes>
-            <Footer />
+            <Footer changeLanguage={changeLanguage} />
           </div>
         </div>
       </Router>

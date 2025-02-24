@@ -121,12 +121,7 @@
     .movie img { 
         width: 640px;
         height: 360px;
-        /* width: 400px;
-        height: 225px; */
         object-fit: contain;
-        /* border: 1px solid grey; */
-        border-radius: 0px;
-        /* background-color: black; */
         margin-top: auto;
         margin-bottom: auto;
     }

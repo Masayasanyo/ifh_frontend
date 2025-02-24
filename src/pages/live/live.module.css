@@ -1,8 +1,24 @@
 .movieInformation {
     margin-top: 50px;
     width: 640px;
+
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    z-index: 99;
 }
 
 .video video {
-    width: 1280px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100vw;
+    z-index: 100;
 }

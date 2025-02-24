@@ -65,13 +65,14 @@
     .header {
         display: flex;
         flex-direction: column;
-        width: 210px;
-        height: 90%;
+        width: 220px;
         position: fixed;
+        top: 30px;
+        left: 30px;
+        bottom: 30px;
         color: #ffffff; 
         background-color: #001F3F;
         border-radius: 20px;
-        margin: 30px;
         padding: 20px;
     }
     
@@ -125,7 +126,10 @@
     #profileImage {
         background-color: #ffffff;
         width: 30px;
+        height: 30px;
         border-radius: 50%;
+        object-fit: cover;
+        text-align: center;
     }
    
 }

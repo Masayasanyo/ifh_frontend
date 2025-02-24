@@ -10,8 +10,12 @@ import CinemaIcon from '../icons/CinemaIcon';
 import Play from '../icons/PlayIcon';
 import ShopIcon from '../icons/ShopIcon';
 import WatchlistIcon from '../icons/WatchlistIcon';
+import { useTranslation } from 'react-i18next';
+
 
 function Header() {
+
+    const { t } = useTranslation();
 
     const { user, login, logout } = useContext(AuthContext);
 
@@ -35,27 +39,27 @@ function Header() {
                 <div className={styles.section}>
                     <Link to='/' className={`${styles.link} ${location.pathname === '/' ? styles.active : ''}`}>
                         <HomeIcon />
-                        <h2>Home</h2>
+                        <h2>{t("home")}</h2>
                     </Link>
                     <Link to='/upload' className={`${styles.link} ${location.pathname === '/upload' ? styles.active : ''}`}>
                         <UploadIcon />
-                        <h2>Upload</h2>
+                        <h2>{t("upload")}</h2>
                     </Link>
                     <Link to='/trailer' className={`${styles.link} ${location.pathname === '/trailer' ? styles.active : ''}`}>
                         <Play />
-                        <h2>Trailer</h2>
+                        <h2>{t("trailer")}</h2>
                     </Link>
                     <Link to='/theatre' className={`${styles.link} ${location.pathname === '/theatre' ? styles.active : ''}`}>
                         <CinemaIcon />
-                        <h2>Theatre</h2>
+                        <h2>{t("theatre")}</h2>
                     </Link>
                     <Link to='/shop' className={`${styles.link} ${location.pathname === '/shop' ? styles.active : ''}`}>
                         <ShopIcon />
-                        <h2>Shop</h2>
+                        <h2>{t("shop")}</h2>
                     </Link>
                     <Link to='/watchlist' className={`${styles.link} ${location.pathname === '/watchlist' ? styles.active : ''}`}>
                         <WatchlistIcon />
-                        <h2>Watchlist</h2>
+                        <h2>{t("watchlist")}</h2>
                     </Link>
 
                     <Link id={styles.user} to='/account'>
@@ -71,7 +75,7 @@ function Header() {
                         ):(
                             <div  className={`${styles.user} ${styles.link} ${location.pathname === '/account' ? styles.active : ''}`}>
                                 <AccountIcon />
-                                <h2>Login</h2>
+                                <h2>{t("login")}</h2>
                             </div>
                         )}                        
                     </Link>

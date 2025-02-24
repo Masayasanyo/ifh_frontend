@@ -4,8 +4,11 @@ import { AuthContext } from '../../../context/AuthContext';
 import Sidebar from '../sidebar/Sidebar';
 import styles from './ticket.module.css';
 import ticket from '../../../assets/ticket.png';
+import { useTranslation } from 'react-i18next';
 
 function Ticket() {
+
+    const { t } = useTranslation();
 
     const { user } = useContext(AuthContext);
 
@@ -45,15 +48,14 @@ function Ticket() {
         <div className={styles.container}>
             <Sidebar />
             <div className={styles.ticket}>
-                <h1>Ticket</h1>
+                <h1>{t("Ticket")}</h1>
                 <div className={styles.section}>
-                    {/* <h2>Your tickets</h2> */}
                     <div className={styles.myticket}>
                         <img id={styles.ticketImage} src={ticket} alt="ticket"/>
                         <p>×</p>
                         <p>{ticketsAmount}</p>
                     </div>
-                    <button className={styles.btn} onClick={goToShop} >Get a ticket</button>
+                    <button className={styles.btn} onClick={goToShop} >{t("Get a ticket")}</button>
                 </div>
             </div>
         </div>

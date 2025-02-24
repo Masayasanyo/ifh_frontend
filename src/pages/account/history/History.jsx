@@ -3,8 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthContext';
 import Sidebar from '../sidebar/Sidebar';
 import styles from './history.module.css';
+import { useTranslation } from 'react-i18next';
 
 function History() {
+
+    const { t } = useTranslation();
 
     const { user } = useContext(AuthContext);
 
@@ -42,7 +45,7 @@ function History() {
         <div className={styles.container}>
             <Sidebar />
             <div className={styles.history}>
-                <h1>Viewing history</h1>
+                <h1>{t("Viewing history")}</h1>
                 <div>
                     <ul className={styles.filmList}>
                         {historyList.length > 0 ? (
@@ -53,7 +56,7 @@ function History() {
                                 </li>
                             ))
                         ) : (
-                            <p>Your viewing history is empty</p>
+                            <p>{t("Your viewing history is empty")}</p>
                         )}
                     </ul>
                 </div>
