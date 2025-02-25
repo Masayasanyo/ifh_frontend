@@ -20,7 +20,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "vite preview"
+    "start": "serve -s dist -l 10000"
   }, 
   "eslintConfig": {
     "extends": [
