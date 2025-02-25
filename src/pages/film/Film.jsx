@@ -71,22 +71,23 @@ function Film() {
     return (
         <div className={styles.container}>
 
-            {user.id === filmData[0].user_id && (
-                <div>
-                    <button id={styles.edit} onClick={() => edit(filmId)} >Edit</button>
-                </div>
-            )}
-
 
             <div className={styles.section}>
-                <video onContextMenu={(e) => e.preventDefault()} controls controlsList="nodownload noremoteplayback noplaybackrate foobar" playsInline poster={`${process.env.REACT_APP_STORAGE_URL}${filmData[0].thumbnail_file_path}`} src={`${process.env.REACT_APP_STORAGE_URL}${filmData[0].trailer_file_path}`} />
-                <div className={styles.filmInfo}>
-                    <h1>{filmData[0].title}</h1>
-                    <h2>{year}, {filmData[0].genre}, {filmData[0].duration}min</h2>
-                    <p>{filmData[0].description}</p>
-                    <div className={styles.iconContainer}>
-                        <SaveButton film={filmData[0]} />
-                        <Checkbox user={user} film={filmData[0]} />
+
+                {user.id === filmData[0].user_id && (
+                    <button id={styles.edit} onClick={() => edit(filmId)} >Edit</button>
+                )}
+
+                <div className={styles.filmContainer}>
+                    <video onContextMenu={(e) => e.preventDefault()} controls controlsList="nodownload noremoteplayback noplaybackrate foobar" playsInline poster={`${process.env.REACT_APP_STORAGE_URL}${filmData[0].thumbnail_file_path}`} src={`${process.env.REACT_APP_STORAGE_URL}${filmData[0].trailer_file_path}`} />
+                    <div className={styles.filmInfo}>
+                        <h1>{filmData[0].title}</h1>
+                        <h2>{year}, {filmData[0].genre}, {filmData[0].duration}min</h2>
+                        <p>{filmData[0].description}</p>
+                        <div className={styles.iconContainer}>
+                            <SaveButton film={filmData[0]} />
+                            <Checkbox user={user} film={filmData[0]} />
+                        </div>
                     </div>
                 </div>
             </div>

@@ -2,14 +2,12 @@
     .header {
         display: flex;
         flex-direction: column;
-        width: 90%;
         height: 100px;
         position: static;
+        margin: 20px;
         color: #ffffff; 
         background-color: #001F3F;
         border-radius: 20px;
-        margin: 30px auto 30px auto;
-        gap: 0px;
         padding: 10px;
     }
     
@@ -20,7 +18,7 @@
     }
     
     .logo img {
-        width: 100px;
+        width: 80px;
     }
     
     .section {
@@ -42,21 +40,101 @@
         height: 100%;
         transition: 0.4s ease;
         padding: 10px;
-        padding-left: 10px;
-        line-height: 70px;
         box-sizing: border-box;
         align-items: center;
         justify-content: center;
-        border-radius: 20px;
+        border-radius: 50%;
     }
             
     .active {
         background-color: grey;
-        border-radius: 20px;
+        border-radius: 50%;
+    }
+
+    #user {
+        display: flex;
+        align-items: center;
+        text-decoration:none;
+    }
+
+    #profileImage {
+        background-color: #ffffff;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        object-fit: cover;
+        text-align: center;
     }
 }
 
 @media (min-width: 600px) and (max-width: 1199px) {
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        height: 100px;
+        position: static;
+        margin: 20px;
+        color: #ffffff; 
+        background-color: #001F3F;
+        border-radius: 20px;
+        padding: 10px;
+    }
+    
+    .logo {
+        padding: 10px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .logo img {
+        width: 80px;
+    }
+    
+    .section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    
+    .section h2 {
+        display: none;
+    }
+    
+    .link {
+        text-decoration:none;
+        color: #ffffff; 
+        display: flex;   
+        gap: 0px;
+        width: 50px;
+        height: 100%;
+        transition: 0.4s ease;
+        padding: 10px;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+            
+    .active {
+        background-color: grey;
+        border-radius: 50%;
+    }
+
+    #user {
+        display: flex;
+        align-items: center;
+        text-decoration:none;
+    }
+
+    #profileImage {
+        background-color: #ffffff;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        object-fit: cover;
+        text-align: center;
+    }
    
 }
 

@@ -1,117 +1,250 @@
 @media (max-width: 599px) {
 
-    .uploadForm {
-        display: flex;
-        flex-direction: column;
-        gap: 50px;
-    }
-
-    .container h1 {
+    .upload h1 {
         text-align: center;
     }
-    
-    .uploadForm label {
+
+    .form {
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        gap: 20px;
+    }
+
+    .section {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
         background-color: #ffffff;
-    
         padding: 20px;
         border-radius: 10px;
         box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
     }
-    
-    .input {
-        width: 400px;
-        height: 20px;
-        border-radius: 5px;
+
+    .section > div {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
-    
-    .uploadFormLeft input::file-selector-button {
+
+    .section label {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow:
+            4px 4px 4px 2px rgb(0 0 0 / 20%), 
+            -2px -2px 4px 1px rgb(0 0 0 / 10%); 
+    }
+
+    .section video {
+        width: 160px;
+        height: 90px;
+    }
+
+    .section img {
+        width: 160px;
+        height: 90px;
+    }
+
+    .section input::file-selector-button {
         font-weight: bold;
         color: white;
         background: #001F3F;
-        font-size: 14px;
+        font-size: 12px;
         border: 0;
         border-radius: 20px;
         padding: 8px 16px;
         text-align: center;
     }
-    
-    .input {
-        width: 400px;
+
+    #title {
         padding: 3px 7px;
         border-radius: 5px;
         border: 2px solid #ccc;
     }
     
-    .input:focus {
+    #title:focus {
         outline: 0;
         border: 2px solid #001F3F;
     }
-    
-    .uploadForm textarea {
-        width: 400px;
-        height: 80px;
+
+    #description {
+        height: 100px;
         padding: 3px 7px;
         border-radius: 5px;
         border: 2px solid #ccc;
         resize:none;
     }
     
-    .uploadForm textarea:focus {
+    #description:focus {
         outline: 0;
         border: 2px solid #001F3F;
     }
     
-    .container form > button {
+    #role {
+        font-family: "Poppins", serif;
+        color: #001F3F;
+        font-size: 18px;
+        width: 200px;
+        border-radius: 5px;
+        height: 50px;
+        padding: 10px;
+        background-color: white;
+    }
+
+    #submit {
         border-radius: 40px;
         font-size: 1.2rem;
         border: none;
-        margin-top: 30px;
+        margin: 30px auto;
         font-weight: bold;
         padding: 8px 16px;
         background-color: #EAD8B1;
         color: #001F3F;
-        margin-left: auto;
-        margin-right: auto;
         display: block;
+        box-shadow: 0 5px #999;
     }
-    
-    .uploadFormLeft {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
+
+    #submit:hover {
+        background-color: #afa184
     }
-    
-    .uploadFormLeft select {
-        font-family: "Poppins", serif;
-        color: #001F3F;
-    }
-    
-    .container hr {
-        margin-top: 10px;
-        margin-bottom: 50px;
-    }
-    
-    .uploadForm select {
-        width: 200px;
-        border-radius: 5px;
-        height: 30px;
-        padding-left: 5px;
-        background-color: white;
+
+
+    #submit:active {
+        background-color: #afa184;
+        box-shadow: 0 3px #666;
+        transform: translateY(4px);
     }
     
 }
 
 
 @media (min-width: 600px) and (max-width: 1199px) {
+
+    .upload h1 {
+        text-align: center;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .section {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
+    }
+
+    .section > div {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .section label {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow:
+            4px 4px 4px 2px rgb(0 0 0 / 20%), 
+            -2px -2px 4px 1px rgb(0 0 0 / 10%); 
+    }
+
+    .section video {
+        width: 160px;
+        height: 90px;
+    }
+
+    .section img {
+        width: 160px;
+        height: 90px;
+    }
+
+    .section input::file-selector-button {
+        font-weight: bold;
+        color: white;
+        background: #001F3F;
+        font-size: 12px;
+        border: 0;
+        border-radius: 20px;
+        padding: 8px 16px;
+        text-align: center;
+    }
+
+    #title {
+        padding: 3px 7px;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+    }
+    
+    #title:focus {
+        outline: 0;
+        border: 2px solid #001F3F;
+    }
+
+    #description {
+        height: 100px;
+        padding: 3px 7px;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+        resize:none;
+    }
+    
+    #description:focus {
+        outline: 0;
+        border: 2px solid #001F3F;
+    }
+    
+    #role {
+        font-family: "Poppins", serif;
+        color: #001F3F;
+        font-size: 18px;
+        width: 200px;
+        border-radius: 5px;
+        height: 50px;
+        padding: 10px;
+        background-color: white;
+    }
+
+    #submit {
+        border-radius: 40px;
+        font-size: 1.2rem;
+        border: none;
+        margin: 30px auto;
+        font-weight: bold;
+        padding: 8px 16px;
+        background-color: #EAD8B1;
+        color: #001F3F;
+        display: block;
+        box-shadow: 0 5px #999;
+    }
+
+    #submit:hover {
+        background-color: #afa184
+    }
+
+
+    #submit:active {
+        background-color: #afa184;
+        box-shadow: 0 3px #666;
+        transform: translateY(4px);
+    }
 }
 
 @media (min-width: 1200px) {
 
     .form {
         display: flex;
+        flex-wrap: wrap;
         gap: 20px;
     }
 

@@ -101,7 +101,7 @@ function SignUp() {
     }
 
     return (
-        <div>
+        <div className={styles.signup}>
             <h1>Sign Up</h1>
 
             <div className={styles.container}>

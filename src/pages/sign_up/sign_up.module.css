@@ -1,10 +1,13 @@
 @media (max-width: 599px) {
 
+    .signup h1 {
+        text-align: center;
+    }
+
     .container {
         display: flex;
         flex-direction: column;
         gap: 20px;
-        width: 90%;
         background-color: #ffffff;
         padding: 20px 30px 20px 30px;
         border-radius: 20px;
@@ -41,7 +44,7 @@
         font-weight: bold;
         color: white;
         background: #001F3F;
-        font-size: 14px;
+        font-size: 12px;
         border: 0;
         border-radius: 20px;
         padding: 8px 16px;
@@ -74,8 +77,87 @@
     #toLogin {
         color: rgb(41, 110, 219);
     }
+}
 
+@media (min-width: 600px) and (max-width: 1199px) {
 
+    .signup h1 {
+        text-align: center;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background-color: #ffffff;
+        padding: 20px 30px 20px 30px;
+        border-radius: 20px;
+        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .inputContainer {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .form button {
+        border-radius: 40px;
+        font-size: 1.2rem;
+        border: none;
+        margin-top: 30px;
+        font-weight: bold;
+        padding: 8px 16px;
+        background-color: #EAD8B1;
+        color: #001F3F;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .form input::file-selector-button {
+        font-weight: bold;
+        color: white;
+        background: #001F3F;
+        font-size: 12px;
+        border: 0;
+        border-radius: 20px;
+        padding: 8px 16px;
+        text-align: center;
+    }
+
+    .inputContainer input {
+        height: 30px;
+        padding: 3px 7px;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+    }
+
+    .imageInput {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .imageInput img {
+        width: 150px;
+        height: 150px;
+        border: 2px solid black;
+        border-radius: 50%;
+        object-fit: cover;
+        text-align: center;
+    }
+
+    #toLogin {
+        color: rgb(41, 110, 219);
+    }
 }
 
 @media (min-width: 1200px) {

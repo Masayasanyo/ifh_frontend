@@ -18,17 +18,16 @@
     
     .crewInputContainer {
         display: flex;
-        width: 80%;
+        flex-direction: column;
         gap: 10px;
         padding: 20px;
         border-radius: 10px;
-        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
-        margin-left: auto;
-        margin-right: auto;
+        box-shadow:
+            4px 4px 4px 2px rgb(0 0 0 / 20%), 
+            -2px -2px 4px 1px rgb(0 0 0 / 10%); 
     }
     
     .crewInputContainer input {
-        width: 220px;
         height: 25px;
         padding: 3px 7px;
         border-radius: 5px;
@@ -41,7 +40,6 @@
     }
     
     .crewInputContainer textarea {
-        width: 220px;
         height: 40px;
         border-radius: 5px;
         padding-left: 10px;
@@ -54,13 +52,23 @@
         width: 30px;
         height: 30px;
         border-radius: 50%;
-        margin-left: auto;
-        color: grey;
-        font-size: 1.3rem;
+        font-size: 1rem;
         border: none;
-        margin-top: auto;
-        margin-bottom: auto;
+        box-shadow: 0 3px #999;
+        background-color: #EAD8B1;
+        margin: 0px 0px 10px auto
     }
+
+    .crewInputContainer button:hover {
+        background-color: #afa184
+    }
+
+    .crewInputContainer button:active {
+        background-color: #afa184;
+        box-shadow: 0 1px #666;
+        transform: translateY(4px);
+    }
+
     
     .crewInput {
         display: flex;
@@ -69,7 +77,6 @@
     }
     
     .crewInput select {
-        width: 220px;
         border-radius: 5px;
         height: 30px;
         padding-left: 5px;
@@ -81,7 +88,6 @@
     .crewMain {
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
         gap: 30px;
         margin-top: 30px;
     }
@@ -90,28 +96,178 @@
         width: 30px;
         height: 30px;
         border-radius: 10px;
-        color: grey;
         font-size: 1.3rem;
         border: none;
+        box-shadow: 0 3px #999;
+        background-color: #EAD8B1;
     }
-    
+
+    .new:hover {
+        background-color: #afa184
+    }
+
+    .new:active {
+        background-color: #afa184;
+        box-shadow: 0 1px #666;
+        transform: translateY(4px);
+    }
     
     .suggestionContainer {
         display: flex;
-        gap: 10px;
+        gap: 20px;
         flex-wrap: wrap;
     }
-    
-    .userImage {
-        width: 50px;
-        height: 50px;
+
+    .suggestionContainer img {
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
         object-fit: cover;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .suggestionContainer p {
+        font-size: 0.8rem;
+        text-align: center;
     }
 }
 
 
 @media (min-width: 600px) and (max-width: 1199px) {
+    .crewContainer {
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
+    }
+    
+    .crewContainer p {
+        margin: 0px;
+    }
+    
+    .crewHeader {
+        display: flex;
+        gap: 20px;
+    }
+    
+    .crewInputContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow:
+            4px 4px 4px 2px rgb(0 0 0 / 20%), 
+            -2px -2px 4px 1px rgb(0 0 0 / 10%); 
+    }
+    
+    .crewInputContainer input {
+        height: 25px;
+        padding: 3px 7px;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+    }
+    
+    .crewInputContainer input:focus {
+        outline: 0;
+        border: 2px solid #001F3F;
+    }
+    
+    .crewInputContainer textarea {
+        height: 40px;
+        border-radius: 5px;
+        padding-left: 10px;
+        padding-top: 10px;
+        border: 2px solid #ccc;
+        resize:none;
+    }
+    
+    .crewInputContainer button {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        font-size: 1rem;
+        border: none;
+        box-shadow: 0 3px #999;
+        background-color: #EAD8B1;
+        margin: 0px 0px 10px auto
+    }
+
+    .crewInputContainer button:hover {
+        background-color: #afa184
+    }
+
+    .crewInputContainer button:active {
+        background-color: #afa184;
+        box-shadow: 0 1px #666;
+        transform: translateY(4px);
+    }
+
+    
+    .crewInput {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .crewInput select {
+        border-radius: 5px;
+        height: 30px;
+        padding-left: 5px;
+        background-color: white;
+        font-family: "Poppins", serif;
+        color: #001F3F;
+    }
+    
+    .crewMain {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 30px;
+    }
+    
+    .new {
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+        font-size: 1.3rem;
+        border: none;
+        box-shadow: 0 3px #999;
+        background-color: #EAD8B1;
+    }
+
+    .new:hover {
+        background-color: #afa184
+    }
+
+    .new:active {
+        background-color: #afa184;
+        box-shadow: 0 1px #666;
+        transform: translateY(4px);
+    }
+    
+    .suggestionContainer {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .suggestionContainer img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .suggestionContainer p {
+        font-size: 0.8rem;
+        text-align: center;
+    }
 }
 
 @media (min-width: 1200px) {

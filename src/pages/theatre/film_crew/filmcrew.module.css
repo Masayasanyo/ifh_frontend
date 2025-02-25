@@ -1,32 +1,98 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    margin-top: 20px;
-}
+@media (max-width: 599px) {
 
-.container ul {
-    display: flex;
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        margin-top: 20px;
+    }
     
-    gap: 20px;
-   
+    .container ul {
+        display: flex;
+        gap: 20px;
+    }
+    
+    .container li {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .section {
+        border: 5px solid #001F3F;
+        border-radius: 20px;
+    }
+    
+    .section h3 {
+        text-align: center;
+    }
 }
 
-.container li {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+@media (min-width: 600px) and (max-width: 1199px) {
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        margin-top: 20px;
+    }
+    
+    .container ul {
+        display: flex;
+        gap: 20px;
+    }
+    
+    .container li {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .section {
+        border: 5px solid #001F3F;
+        border-radius: 20px;
+    }
+    
+    .section h3 {
+        text-align: center;
+    }
 }
 
-.section {
-    border: 5px solid #001F3F;
-    border-radius: 20px;
-    padding: 10px;
-}
+@media (min-width: 1200px) {
 
-.section h3 {
-    text-align: center;
-
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        margin-top: 20px;
+    }
+    
+    .container ul {
+        display: flex;
+        
+        gap: 20px;
+       
+    }
+    
+    .container li {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .section {
+        border: 5px solid #001F3F;
+        border-radius: 20px;
+        padding: 10px;
+    }
+    
+    .section h3 {
+        text-align: center;
+    }
 }

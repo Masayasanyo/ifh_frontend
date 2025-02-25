@@ -1,23 +1,34 @@
 @media (max-width: 599px) {
 
+    .container h1 {
+        text-align: center;
+    }
+
+    .header {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .searchGenre {
+        font-family: "Poppins", serif;
+        color: #001F3F;
+        border-radius: 10px;
+        padding: 0px 20px;
+    }
+
     .trailerContainer {
         display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
+        flex-direction: column;
         list-style: none;
         padding: 0px;
         gap: 20px;
-    }
-
-    .container h1 {
-        text-align: center;
     }
     
     .trailer {
         display: flex;
         flex-direction: column;
         gap: 20px;
-        width: 160px;
         background-color: #ffffff;
         border-radius: 20px;
         padding: 10px 15px;
@@ -26,7 +37,7 @@
     
     .trailer:hover {
         transition: 0.6s ease;
-        transform: scale(1.1);
+        transform: scale(1.05);
     }
     
     .trailer p {
@@ -36,8 +47,6 @@
     }
     
     .trailer img { 
-        width: 160px;
-        height: 90px;
         object-fit: contain;
         border-radius: 10px;
     }
@@ -46,6 +55,57 @@
 
 
 @media (min-width: 600px) and (max-width: 1199px) {
+
+    .container h1 {
+        text-align: center;
+    }
+
+    .header {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .searchGenre {
+        font-family: "Poppins", serif;
+        color: #001F3F;
+        border-radius: 10px;
+        padding: 0px 20px;
+    }
+
+    .trailerContainer {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 0px;
+        gap: 20px;
+    }
+    
+    .trailer {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background-color: #ffffff;
+        border-radius: 20px;
+        padding: 10px 15px;
+        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
+    }
+    
+    .trailer:hover {
+        transition: 0.6s ease;
+        transform: scale(1.05);
+    }
+    
+    .trailer p {
+        font-size: 1.0rem;
+        margin: 0px;
+        text-align: center;
+    }
+    
+    .trailer img { 
+        object-fit: contain;
+        border-radius: 10px;
+    }
 }
 
 @media (min-width: 1200px) {

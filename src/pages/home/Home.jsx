@@ -11,7 +11,7 @@ import News from './components/News';
 function Home() {   
 
     return (
-        <div>
+        <div className={styles.container}>
             <h1>Show Your Film to the World</h1>
             
             <div className={styles.home}>

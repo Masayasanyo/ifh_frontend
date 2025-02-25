@@ -80,7 +80,7 @@ function Trailer() {
 
     return (
         <div className={styles.container}>
-            <h1>Trailer</h1>
+            <h1>Trailers</h1>
             <div className={styles.header}>
                 <Input setFilms={setFilms} />
                 <select name="genre" onChange={handleChange} className={styles.searchGenre}>

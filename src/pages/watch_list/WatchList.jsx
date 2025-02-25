@@ -38,7 +38,7 @@ function WatchList() {
     }, [user]);
 
     return (
-        <div>
+        <div className={styles.container}>
             <h1>Watchlist</h1>
             <div>
                 <ul className={styles.filmList}>

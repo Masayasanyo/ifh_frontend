@@ -37,6 +37,25 @@ function EditFilm() {
         thumbnail: null, 
     });
 
+    const deleteFilm = async () => {
+        try {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/films/delete`, {
+                method: 'DELETE', 
+                headers: {
+                    'Content-Type': 'application/json', 
+                }, 
+                body: JSON.stringify({filmId: filmId}), 
+            });
+
+            const data = await response.json();
+
+            console.log(data.data);
+
+        } catch (error) {
+            console.error("Failed to delete the film");
+        }
+    };
+
 
     const handleFileChange = (event) => {
         const { name } = event.target;
@@ -154,6 +173,12 @@ function EditFilm() {
                 });
 
                 const data = await response.json();
+
+                console.log(data.data);
+
+                if (data.data[0].user_id !== user.id) {
+                    navigate(`/film/${data.data[0].id}`);
+                }
                 setFilmData(data.data);
                 setFormData({
                     ...formData,
@@ -170,7 +195,7 @@ function EditFilm() {
                     thumbnail: `${process.env.REACT_APP_STORAGE_URL}${data.data[0].thumbnail_file_path}`, 
                 })
             } catch (error) {
-                console.error("Filed to fetch films: ", error);
+                console.error("Failed to fetch films: ", error);
             }
         };
 
@@ -185,14 +210,14 @@ function EditFilm() {
 
 
     return (
-        <div className={styles.upload} >
+        <div className={styles.edit} >
             <h1>Edit</h1>
             <form onSubmit={handleUpload} >
 
                 
                 <div className={styles.btns}>
                     <button className={styles.btn} type='submit'>Submit</button>
-                    <button className={styles.btn} id={styles.delete} type="button" >Delete</button>
+                    <button onClick={deleteFilm} className={styles.btn} id={styles.delete} type="button" >Delete</button>
                 </div>
 
 

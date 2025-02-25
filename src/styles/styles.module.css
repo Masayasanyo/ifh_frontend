@@ -1,13 +1,22 @@
 @media (max-width: 599px) {
 
-    body {
-        margin: 0px;
+    html[lang="ja"] {
+        font-optical-sizing: auto;
+        font-family: "Sawarabi Mincho", serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+    
+    html[lang="en"] {
         font-optical-sizing: auto;
         font-family: "Poppins", serif;
         font-weight: 800;
         font-style: normal;
+    }
+
+    body {
+        margin: 0px;
         background-color: #6A9AB0;
-        height: 100%;
         box-sizing: border-box;
     }
     
@@ -16,16 +25,52 @@
         flex-direction: column;
         min-height: 100vh;
     }
-    
+
     .main {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        margin: 0px 20px;
         color: #001F3F;
-        width: 90%;
-        margin: 0px auto 30px auto;
     }
 }
 
 
 @media (min-width: 600px) and (max-width: 1199px) {
+
+    html[lang="ja"] {
+        font-optical-sizing: auto;
+        font-family: "Sawarabi Mincho", serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+    
+    html[lang="en"] {
+        font-optical-sizing: auto;
+        font-family: "Poppins", serif;
+        font-weight: 800;
+        font-style: normal;
+    }
+
+    body {
+        margin: 0px;
+        background-color: #6A9AB0;
+        box-sizing: border-box;
+    }
+    
+    .app {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        margin: 0px 20px;
+        color: #001F3F;
+    }
    
 }
 
@@ -48,7 +93,6 @@
     body {
         margin: 0px;
         background-color: #6A9AB0;
-        /* background-color: black; */
         box-sizing: border-box;
     }
     
@@ -68,7 +112,6 @@
         bottom: 30px;
         margin-bottom: 0px;
         color: #001F3F;
-        /* color: white; */
     }
    
 }
@@ -77,10 +120,8 @@
 @media (max-width: 599px) {
 }
 
-
 @media (min-width: 600px) and (max-width: 1199px) {
 }
 
 @media (min-width: 1200px) {
-   
 }

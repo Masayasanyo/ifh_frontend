@@ -1,22 +1,20 @@
 @media (max-width: 599px) {
 
+    .container h1 {
+        text-align: center;
+    }
+
     .whatson {
         display: flex;
         flex-direction: column;
         gap: 20px;
-        width: 100%;
-    }
-
-    .container h1 {
-        text-align: center;
     }
     
     .section {
         background-color: #ffffff;
-        padding: 20px 30px 20px 30px;
+        padding: 20px 30px;
         border-radius: 20px;
         box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
-       
     }
     
     .scheduleContainer{
@@ -24,13 +22,11 @@
     }
 
     .movie {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
+        text-align: center;
     }
-      
+    
     .movie h2 {
-        font-size: 2rem;
+        font-size: 3rem;
     }
     
     .movie p {
@@ -38,44 +34,98 @@
     }
     
     .movie img { 
-        width: 320px;
-        height: 180px;
+        width: 100%;
         object-fit: contain;
-        border-radius: 10px;
-        background-color: black;
-        margin: auto auto auto auto;
     }
-    
-    .scheduleContainer ul{
-        list-style: none;
-        padding: 0px;
-    }
-    
+        
     .toLiveButton {
-        width: 150px;
-        height: 50px;
-        border-radius: 20px;
+        border-radius: 40px;
         font-size: 1.2rem;
         border: none;
-        margin-top: 30px;
+        margin: 30px auto 20px auto;
         font-weight: bold;
-        padding: 0px 20px 0px 20px;
+        padding: 15px 20px;
         background-color: #EAD8B1;
-        margin-left: auto;
-        margin-right: auto;
-        display: block;
         color: #001F3F;
+        display: block;
+        box-shadow: 0 5px #999;
     }
-    
-    
-    .liveNowContainer h2 {
-        margin: 0px;
-        margin-bottom: 20px;
+
+    .toLiveButton:hover {
+        background-color: #afa184
     }
+
+    .toLiveButton:active {
+        background-color: #afa184;
+        box-shadow: 0 3px #666;
+        transform: translateY(4px);
+    }
+
 }
 
 
 @media (min-width: 600px) and (max-width: 1199px) {
+
+    .container h1 {
+        text-align: center;
+    }
+
+    .whatson {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .section {
+        background-color: #ffffff;
+        padding: 20px 30px;
+        border-radius: 20px;
+        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
+    }
+    
+    .scheduleContainer{
+        list-style: none;
+    }
+
+    .movie {
+        text-align: center;
+    }
+    
+    .movie h2 {
+        font-size: 3rem;
+    }
+    
+    .movie p {
+        margin: 0px;
+    }
+    
+    .movie img { 
+        width: 100%;
+        object-fit: contain;
+    }
+        
+    .toLiveButton {
+        border-radius: 40px;
+        font-size: 1.2rem;
+        border: none;
+        margin: 30px auto 20px auto;
+        font-weight: bold;
+        padding: 15px 20px;
+        background-color: #EAD8B1;
+        color: #001F3F;
+        display: block;
+        box-shadow: 0 5px #999;
+    }
+
+    .toLiveButton:hover {
+        background-color: #afa184
+    }
+
+    .toLiveButton:active {
+        background-color: #afa184;
+        box-shadow: 0 3px #666;
+        transform: translateY(4px);
+    }
 }
 
 @media (min-width: 1200px) {
@@ -88,7 +138,7 @@
     
     .section {
         background-color: #ffffff;
-        padding: 30px 50px 30px 50px;
+        padding: 20px 30px ;
         border-radius: 20px;
         margin-bottom: 30px;
         box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
@@ -101,8 +151,9 @@
     
     
     .movie {
-        /* width: 320px; */
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 50px;
     }
     
@@ -124,8 +175,8 @@
         object-fit: contain;
         margin-top: auto;
         margin-bottom: auto;
-    }
-    
+        margin: auto;
+    }    
     
     .scheduleContainer ul{
         list-style: none;

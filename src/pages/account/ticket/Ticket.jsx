@@ -48,7 +48,7 @@ function Ticket() {
         <div className={styles.container}>
             <Sidebar />
             <div className={styles.ticket}>
-                <h1>{t("Ticket")}</h1>
+                <h1>{t("Tickets")}</h1>
                 <div className={styles.section}>
                     <div className={styles.myticket}>
                         <img id={styles.ticketImage} src={ticket} alt="ticket"/>

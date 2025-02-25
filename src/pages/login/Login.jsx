@@ -56,7 +56,7 @@ function Login() {
     }
 
     return (
-        <div>
+        <div className={styles.login}>
             <h1>Log in</h1>
             <div className={styles.container}>
                 <form className={styles.form} onSubmit={handleSubmit}>
