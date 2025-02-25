@@ -13,7 +13,7 @@ const Input = ({ setFilms }) => {
 
     const fetchFilms = async () => {
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/films`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/films`, {
                 method: "GET",
             });
 
@@ -32,7 +32,7 @@ const Input = ({ setFilms }) => {
             }
             else {
                 try {
-                    const response = await fetch(`${process.env.REACT_APP_API_URL}/films/title`, {
+                    const response = await fetch(`${import.meta.env.VITE_API_URL}/films/title`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',

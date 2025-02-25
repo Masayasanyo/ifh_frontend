@@ -18,7 +18,7 @@ function User() {
 
     const getWork = async (id) => {
         try {
-            const response = await fetch(`${process.env.REACT_APP_STORAGE_URL}/films/works`, {
+            const response = await fetch(`${import.meta.env.VITE_STORAGE_URL}/films/works`, {
                 method: "POST", 
                 headers: {
                     'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ function User() {
     useEffect(() => {
         const getUser = async () => {
             try {
-                const response = await fetch(`${process.env.REACT_APP_API_URL}/accounts/data`, {
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/accounts/data`, {
                     method: "POST", 
                     headers: {
                         'Content-Type': 'application/json',
@@ -65,9 +65,9 @@ function User() {
         <div className={styles.container}>
             <div className={styles.userInfo}>
                 {userData[0].profile_image_url ? (
-                <img src={`${process.env.REACT_APP_STORAGE_URL}${userData[0].profile_image_url}`} alt={userData[0].first_name} />
+                <img src={`${import.meta.env.VITE_STORAGE_URL}${userData[0].profile_image_url}`} alt={userData[0].first_name} />
                 ):(
-                <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={userData[0].first_name} />
+                <img src={`${import.meta.env.VITE_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={userData[0].first_name} />
                 )}
                 <div>
                     <h1>{userData[0].first_name} {userData[0].family_name}</h1>
@@ -79,7 +79,7 @@ function User() {
                     <ul className={styles.movieContainer}>
                     {workList.map((work, index) => (
                         <li key={work.film_id} onClick={() => openFilm(work.film_id)} className={styles.movie}>
-                            <img src={`${process.env.REACT_APP_STORAGE_URL}${work.thumbnail_file_path}`} alt={work.title} />
+                            <img src={`${import.meta.env.VITE_STORAGE_URL}${work.thumbnail_file_path}`} alt={work.title} />
                             <p>{work.title}</p>
                         </li>
                     ))}

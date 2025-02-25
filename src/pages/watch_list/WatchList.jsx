@@ -18,7 +18,7 @@ function WatchList() {
     useEffect(() => {
         const getWatchlist = async () => {
             try {
-                const response = await fetch(`${process.env.REACT_APP_API_URL}/films/watchlist`, {
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/films/watchlist`, {
                     method: "POST", 
                     headers: {
                         'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ function WatchList() {
                     {watchlist.length > 0 ? (
                         watchlist.map((film, index) => (
                             <li key={film.id} onClick={() => openFilm(film.film_id)} className={styles.film}>
-                                <img src={`${process.env.REACT_APP_STORAGE_URL}${film.thumbnail_file_path}`} alt={film.title} />
+                                <img src={`${import.meta.env.VITE_STORAGE_URL}${film.thumbnail_file_path}`} alt={film.title} />
                                 <p>{film.title}</p>
                             </li>
                         ))

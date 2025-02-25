@@ -39,7 +39,7 @@ function EditFilm() {
 
     const deleteFilm = async () => {
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/films/delete`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/films/delete`, {
                 method: 'DELETE', 
                 headers: {
                     'Content-Type': 'application/json', 
@@ -90,7 +90,7 @@ function EditFilm() {
         fileFormData.append(endpoint, file);
 
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/upload/${endpoint}`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/upload/${endpoint}`, {
                 method: "POST",
                 body: fileFormData,
             });
@@ -143,7 +143,7 @@ function EditFilm() {
         } 
 
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/upload/update`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/upload/update`, {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
@@ -164,7 +164,7 @@ function EditFilm() {
     useEffect(() => {
         const getFilm = async () => {
             try {
-                const response = await fetch(`${process.env.REACT_APP_API_URL}/films/data`, {
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/films/data`, {
                     method: "POST", 
                     headers: {
                         'Content-Type': 'application/json',
@@ -190,9 +190,9 @@ function EditFilm() {
                     genre: data.data[0].genre,
                 });
                 setFileUrl({
-                    trailer: `${process.env.REACT_APP_STORAGE_URL}${data.data[0].trailer_file_path}`, 
-                    film: `${process.env.REACT_APP_STORAGE_URL}${data.data[0].film_file_path}`, 
-                    thumbnail: `${process.env.REACT_APP_STORAGE_URL}${data.data[0].thumbnail_file_path}`, 
+                    trailer: `${import.meta.env.VITE_STORAGE_URL}${data.data[0].trailer_file_path}`, 
+                    film: `${import.meta.env.VITE_STORAGE_URL}${data.data[0].film_file_path}`, 
+                    thumbnail: `${import.meta.env.VITE_STORAGE_URL}${data.data[0].thumbnail_file_path}`, 
                 })
             } catch (error) {
                 console.error("Failed to fetch films: ", error);

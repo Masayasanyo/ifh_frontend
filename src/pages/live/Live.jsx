@@ -11,7 +11,7 @@ function Live() {
     useEffect(() => {
         const getFilm = async () => {
             try {
-                const response = await fetch(`${process.env.REACT_APP_API_URL}/films/data`, {
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/films/data`, {
                     method: "POST", 
                     headers: {
                         'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ function Live() {
             
             <h1>{filmData[0].title}</h1>
             <div className={styles.video}>
-                <video onContextMenu={(e) => e.preventDefault()} autoplay="autoplay" controls controlsList="nodownload noremoteplayback noplaybackrate foobar" playsInline poster={`${process.env.REACT_APP_STORAGE_URL}${filmData[0].thumbnail_file_path}`} src={`${process.env.REACT_APP_STORAGE_URL}${filmData[0].film_file_path}`} />
+                <video onContextMenu={(e) => e.preventDefault()} autoplay="autoplay" controls controlsList="nodownload noremoteplayback noplaybackrate foobar" playsInline poster={`${import.meta.env.VITE_STORAGE_URL}${filmData[0].thumbnail_file_path}`} src={`${import.meta.env.VITE_STORAGE_URL}${filmData[0].film_file_path}`} />
             </div>
         </div>
     )

@@ -17,7 +17,7 @@ function Crew({ filmId, formData, setFormData }) {
 
         const getCrew = async (id, data) => {
             try {
-                const response = await fetch(`${process.env.REACT_APP_API_URL}/users/crews`, {
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/users/crews`, {
                     method: "POST", 
                     headers: {
                         'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ function Crew({ filmId, formData, setFormData }) {
         }
         else {
             try {
-                const response = await fetch(`${process.env.REACT_APP_API_URL}/accounts`, {
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/accounts`, {
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json',
@@ -210,9 +210,9 @@ function Crew({ filmId, formData, setFormData }) {
                                 crew.suggestionList.map((user) => (
                                 <div key={user.id} onClick={(event) => handleUser(event, index, user)}>
                                     {user.profile_image_url ? (
-                                        <img className={styles.userImage} src={`${process.env.REACT_APP_STORAGE_URL}${user.profile_image_url}`} alt={user.first_name} />
+                                        <img className={styles.userImage} src={`${import.meta.env.VITE_STORAGE_URL}${user.profile_image_url}`} alt={user.first_name} />
                                     ):(
-                                        <img className={styles.userImage} src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={user.first_name} />
+                                        <img className={styles.userImage} src={`${import.meta.env.VITE_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={user.first_name} />
                                     )}
                                     <p>{user.username}</p>
                                 </div>

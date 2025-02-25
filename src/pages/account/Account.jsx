@@ -51,7 +51,7 @@ function Account() {
         fileFormData.append(endpoint, file);
 
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/upload/${endpoint}`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/upload/${endpoint}`, {
                 method: "POST",
                 body: fileFormData,
             });
@@ -92,7 +92,7 @@ function Account() {
         }     
 
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/accounts/update`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/accounts/update`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -134,7 +134,7 @@ function Account() {
                         <label className={styles.imageInput}>
                         {t("Profile picture ")}
                             <input type="file" name="picture" onChange={handleFileChange} />
-                            <img src={`${process.env.REACT_APP_STORAGE_URL}${imageUrl}`} alt='' />
+                            <img src={`${import.meta.env.VITE_STORAGE_URL}${imageUrl}`} alt='' />
                         </label>
 
                         <label>

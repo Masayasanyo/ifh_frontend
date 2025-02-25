@@ -42,7 +42,7 @@ function SignUp() {
         fileFormData.append(endpoint, file);
 
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/upload/${endpoint}`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/upload/${endpoint}`, {
                 method: "POST",
                 body: fileFormData,
             });
@@ -71,7 +71,7 @@ function SignUp() {
             }
 
             try {
-                const response = await fetch(`${process.env.REACT_APP_API_URL}/accounts/signup`, {
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/accounts/signup`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

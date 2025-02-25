@@ -15,7 +15,7 @@ const Checkbox = ({film}) => {
   useEffect(() => {
       const getInitialLike = async () => {
           try {
-              const response = await fetch(`${process.env.REACT_APP_API_URL}/likes`, {
+              const response = await fetch(`${import.meta.env.VITE_API_URL}/likes`, {
                   method: "POST", 
                   headers: {
                       'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ const Checkbox = ({film}) => {
       event.preventDefault();
       if (likes) {
         try {
-          const response = await fetch(`${process.env.REACT_APP_API_URL}/likes/dislike`, {
+          const response = await fetch(`${import.meta.env.VITE_API_URL}/likes/dislike`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -56,7 +56,7 @@ const Checkbox = ({film}) => {
       }
       else {
         try {
-          const response = await fetch(`${process.env.REACT_APP_API_URL}/likes/like`, {
+          const response = await fetch(`${import.meta.env.VITE_API_URL}/likes/like`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -14,7 +14,7 @@ function FeaturedFilmmaker() {
     useEffect(() => {
         const fetchFilms = async () => {
             try {
-                const response = await fetch(`${process.env.REACT_APP_API_URL}/users/featured`, {
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/users/featured`, {
                     method: "GET",
                 });
     
@@ -36,9 +36,9 @@ function FeaturedFilmmaker() {
                     users.map((user, index) => (
                         <li key={user.id} className={styles.filmmaker} onClick={() => openUser(user.id)} >
                             {user.profile_image_url ? (
-                            <img src={`${process.env.REACT_APP_STORAGE_URL}${user.profile_image_url}`} alt={user.first_name} />
+                            <img src={`${import.meta.env.VITE_STORAGE_URL}${user.profile_image_url}`} alt={user.first_name} />
                             ):(
-                            <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={user.first_name} />
+                            <img src={`${import.meta.env.VITE_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={user.first_name} />
                             )}
                             <p>{user.first_name} {user.family_name}</p>
                         </li>

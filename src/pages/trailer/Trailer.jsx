@@ -29,7 +29,7 @@ function Trailer() {
 
     const fetchGenreFilms = async (genre) => {
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/films/genre`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/films/genre`, {
                 method: "POST", 
                 headers: {
                     'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ function Trailer() {
 
     const fetchFilms = async () => {
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/films`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/films`, {
                 method: "GET",
             });
 
@@ -64,7 +64,7 @@ function Trailer() {
 
         const fetchTrailers = async () => {
             try {
-                const response = await fetch(`${process.env.REACT_APP_API_URL}/films`, {
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/films`, {
                     method: "GET",
                 });
     
@@ -106,7 +106,7 @@ function Trailer() {
                 {films.length > 0 ? (
                     films.map((film, index) => (
                         <li key={film.id} onClick={() => openFilm(film.id)} className={styles.trailer}>
-                            <img src={`${process.env.REACT_APP_STORAGE_URL}${film.thumbnail_file_path}`} alt={film.title} />
+                            <img src={`${import.meta.env.VITE_STORAGE_URL}${film.thumbnail_file_path}`} alt={film.title} />
                             <p>{film.title}</p>
                         </li>
                     ))

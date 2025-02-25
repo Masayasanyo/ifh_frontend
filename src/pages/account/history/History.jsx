@@ -22,7 +22,7 @@ function History() {
     useEffect(() => {
         const getHistory = async () => {
             try {
-                const response = await fetch(`${process.env.REACT_APP_API_URL}/history`, {
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/history`, {
                     method: "POST", 
                     headers: {
                         'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ function History() {
                         {historyList.length > 0 ? (
                             historyList.map((film, index) => (
                                 <li key={film.id} onClick={() => openFilm(film.film_id)} className={styles.film}>
-                                    <img src={`${process.env.REACT_APP_STORAGE_URL}${film.thumbnail_file_path}`} alt={film.title} />
+                                    <img src={`${import.meta.env.VITE_STORAGE_URL}${film.thumbnail_file_path}`} alt={film.title} />
                                     <p>{film.title}</p>
                                 </li>
                             ))
