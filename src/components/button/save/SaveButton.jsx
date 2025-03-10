@@ -16,7 +16,7 @@ const SaveButton = ({film}) => {
     useEffect(() => {
         const getInitialSave = async () => {
             try {
-                const response = await fetch(`${import.meta.env.VITE_API_URL}/save`, {
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/save`, {
                     method: "POST", 
                     headers: {
                         'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ const SaveButton = ({film}) => {
         event.preventDefault();
         if (save) {
             try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/save/false`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/save/false`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ const SaveButton = ({film}) => {
         }
         else {
             try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/save/true`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/save/true`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import AuthProvider from './context/AuthContext';
 import PrivateRoute from './context/PrivateRoute';
+import AdminRoute from './context/AdminRoute';
 import styles from './styles/styles.module.css'
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
@@ -21,6 +22,7 @@ import History from './pages/account/history/History';
 import Ticket from './pages/account/ticket/Ticket';
 import Work from './pages/account/work/Work';
 import EditFilm from './pages/edit_film/EditFilm';
+import Admin from './pages/admin/Admin';
 import { useTranslation } from 'react-i18next';
 import './i18n';
 
@@ -55,6 +57,7 @@ function App() {
               <Route path='/account/history' element={<PrivateRoute><History /></PrivateRoute>} />
               <Route path='/account/ticket' element={<PrivateRoute><Ticket /></PrivateRoute>} />
               <Route path='/account/work' element={<PrivateRoute><Work /></PrivateRoute>} />
+              <Route path='/account/admin' element={<AdminRoute><Admin /></AdminRoute>} />
               <Route path='/login' element={<Login />} />
               <Route path='/sign_up' element={<SignUp />} />
             </Routes>

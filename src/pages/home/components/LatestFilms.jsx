@@ -14,11 +14,12 @@ function LatestFilms() {
     useEffect(() => {
         const fetchFilms = async () => {
             try {
-                const response = await fetch(`${import.meta.env.VITE_API_URL}/films/latest`, {
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/films/latest`, {
                     method: "GET",
                 });
     
                 const data = await response.json();
+                
                 setFilms(data.data);
     
             } catch (error) {
@@ -35,7 +36,7 @@ function LatestFilms() {
                 {films.length > 0 ? (
                     films.map((video, index) => (
                         <li key={video.id} onClick={() => openFilm(video.id)} className={styles.film}>
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}${video.thumbnail_file_path}`} alt={video.title} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${video.thumbnail_file_path}`} alt={video.title} />
                             <p>{video.title}</p>
                         </li>
                     ))

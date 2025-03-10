@@ -1,0 +1,123 @@
+@media (max-width: 599px) {
+
+}
+
+@media (min-width: 600px) and (max-width: 1199px) {
+
+}
+
+@media (min-width: 1200px) {
+
+    .overlay {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100vw;
+        height: 100vh;
+        background: rgba(55, 55, 55, 0.6);
+        backdrop-filter: blur(6px); 
+        -webkit-backdrop-filter: blur(10px);
+        z-index: 99;
+    }
+    
+    .rankingPage {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #ffffffff;
+        width: 50%;
+        max-height: 90vh;
+        overflow-y: auto;
+        border-radius: 20px;
+        padding: 20px 40px 50px 40px;
+        color: #001F3F;
+        z-index: 100;
+        border: 10px solid #001F3F;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .section {
+        background-color: #ffffff;
+        padding: 20px 30px;
+        border-radius: 20px;
+        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
+        margin-bottom: 100px;
+    }
+
+    .filmsList {
+        display: grid;
+        gap: 50px;
+        grid-template-columns: 1fr;
+        list-style: none;
+        padding: 0px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        border: 5px solid #001F3F;
+        border-radius: 20px;
+        padding: 30px 50px;
+    }
+
+    .film {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    #image {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: contain;
+        background-color: black;
+    }
+
+    #button {
+        border-radius: 20px;
+        font-size: 1.0rem;
+        border: none;
+        margin: 0px auto;
+        font-weight: bold;
+        padding: 10px 20px;
+        background-color: #EAD8B1;
+        color: #001F3F;
+        display: block;
+        box-shadow: 0 5px #999;
+    }
+
+    #button:hover {
+        background-color: #afa184
+    }
+
+    #button:active {
+        background-color: #afa184;
+        box-shadow: 0 3px #666;
+        transform: translateY(4px);
+    }
+
+    #cancel {
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        font-size: 2rem;
+        border: none;
+        box-shadow: 0 3px #999;
+        background-color: #EAD8B1;
+        margin: 0px 0px 0px auto;
+    }
+
+    #cancel:hover {
+        background-color: #afa184
+    }
+
+    #cancel:active {
+        background-color: #afa184;
+        box-shadow: 0 1px #666;
+        transform: translateY(4px);
+    }
+}

@@ -23,7 +23,7 @@ function Ticket() {
     useEffect(() => {
         const getTickets = async () => {
             try {
-                const response = await fetch(`${import.meta.env.VITE_API_URL}/tickets`, {
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/tickets`, {
                     method: "POST", 
                     headers: {
                         'Content-Type': 'application/json',
@@ -36,6 +36,7 @@ function Ticket() {
                 console.log(data.data);
 
                 setTicketsAmount(data.data[0].count);
+
             } catch (error) {
                 console.error("Filed to fetch tickets: ", error);
             }

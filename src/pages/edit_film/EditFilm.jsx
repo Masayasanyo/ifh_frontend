@@ -39,7 +39,7 @@ function EditFilm() {
 
     const deleteFilm = async () => {
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/films/delete`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/films/delete`, {
                 method: 'DELETE', 
                 headers: {
                     'Content-Type': 'application/json', 
@@ -90,7 +90,7 @@ function EditFilm() {
         fileFormData.append(endpoint, file);
 
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/upload/${endpoint}`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/upload/${endpoint}`, {
                 method: "POST",
                 body: fileFormData,
             });
@@ -143,7 +143,7 @@ function EditFilm() {
         } 
 
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/upload/update`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/upload/update`, {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
@@ -164,7 +164,7 @@ function EditFilm() {
     useEffect(() => {
         const getFilm = async () => {
             try {
-                const response = await fetch(`${import.meta.env.VITE_API_URL}/films/data`, {
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/films/data`, {
                     method: "POST", 
                     headers: {
                         'Content-Type': 'application/json',
@@ -190,9 +190,9 @@ function EditFilm() {
                     genre: data.data[0].genre,
                 });
                 setFileUrl({
-                    trailer: `${import.meta.env.VITE_STORAGE_URL}${data.data[0].trailer_file_path}`, 
-                    film: `${import.meta.env.VITE_STORAGE_URL}${data.data[0].film_file_path}`, 
-                    thumbnail: `${import.meta.env.VITE_STORAGE_URL}${data.data[0].thumbnail_file_path}`, 
+                    trailer: `${process.env.REACT_APP_STORAGE_URL}${data.data[0].trailer_file_path}`, 
+                    film: `${process.env.REACT_APP_STORAGE_URL}${data.data[0].film_file_path}`, 
+                    thumbnail: `${process.env.REACT_APP_STORAGE_URL}${data.data[0].thumbnail_file_path}`, 
                 })
             } catch (error) {
                 console.error("Failed to fetch films: ", error);
@@ -224,58 +224,54 @@ function EditFilm() {
                 <div className={styles.form}>
                     <div className={styles.section} >
 
-                        <div>
-                            <label>
-                                Film 
-                                <input type="file" name="film" onChange={handleFileChange} />
-                                <video id='film' src={fileUrl.film} alt='Film Preview' />
-                            </label>
+                        <label>
+                            Film 
+                            <input type="file" name="film" onChange={handleFileChange} />
+                            <video id='film' src={fileUrl.film} alt='Film Preview' />
+                        </label>
 
-                            <label>
-                                Trailer
-                                <input type="file" name="trailer" onChange={handleFileChange} />
-                                <video src={fileUrl.trailer} alt='Trailer Preview' />
-                            </label>
+                        <label>
+                            Trailer
+                            <input type="file" name="trailer" onChange={handleFileChange} />
+                            <video src={fileUrl.trailer} alt='Trailer Preview' />
+                        </label>
 
-                            <label>
-                                Thumbnail
-                                <input type="file" name="thumbnail" onChange={handleFileChange} />
-                                <img src={fileUrl.thumbnail} alt='' />
-                            </label>
-                        </div>
+                        <label>
+                            Thumbnail
+                            <input type="file" name="thumbnail" onChange={handleFileChange} />
+                            <img src={fileUrl.thumbnail} alt='' />
+                        </label>
+                    
+                        <label>
+                            Title
+                            <input id={styles.title} type="text" name="title" value={formData.title} onChange={handleChange} />
+                        </label>
 
-                        <div>
-                            <label>
-                                Title
-                                <input id={styles.title} type="text" name="title" value={formData.title} onChange={handleChange} />
-                            </label>
+                        <label>
+                            Description
+                            <textarea id={styles.description} type="text" name="description" value={formData.description} onChange={handleChange} />
+                        </label>
 
-                            <label>
-                                Description
-                                <textarea id={styles.description} type="text" name="description" value={formData.description} onChange={handleChange} />
-                            </label>
-
-                            <label>
-                                Genre
-                                <select value={formData.genre} id={styles.role} name="genre" onChange={handleChange}>
-                                    <option value="action">Action</option>
-                                    <option value="adventure">Adventure</option>
-                                    <option value="comedy">Comedy</option>
-                                    <option value="drama">Drama</option>
-                                    <option value="horror">Horror</option>
-                                    <option value="sci-fi">Sci-Fi</option>
-                                    <option value="fantasy">Fantasy</option>
-                                    <option value="romance">Romance</option>
-                                    <option value="thriller">Thriller</option>
-                                    <option value="mystery">Mystery</option>
-                                    <option value="crime">Crime</option>
-                                    <option value="war">War</option>
-                                    <option value="western">Western</option>
-                                    <option value="anime">Anime</option>
-                                    <option value="family">Family</option>
-                                </select>
-                            </label>
-                        </div>
+                        <label>
+                            Genre
+                            <select value={formData.genre} id={styles.role} name="genre" onChange={handleChange}>
+                                <option value="action">Action</option>
+                                <option value="adventure">Adventure</option>
+                                <option value="comedy">Comedy</option>
+                                <option value="drama">Drama</option>
+                                <option value="horror">Horror</option>
+                                <option value="sci-fi">Sci-Fi</option>
+                                <option value="fantasy">Fantasy</option>
+                                <option value="romance">Romance</option>
+                                <option value="thriller">Thriller</option>
+                                <option value="mystery">Mystery</option>
+                                <option value="crime">Crime</option>
+                                <option value="war">War</option>
+                                <option value="western">Western</option>
+                                <option value="anime">Anime</option>
+                                <option value="family">Family</option>
+                            </select>
+                        </label>
 
                     </div>
 

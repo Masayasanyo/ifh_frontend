@@ -23,7 +23,7 @@ function Film() {
 
     const getCrew = async (id) => {
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/users/crews`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/users/crews`, {
                 method: "POST", 
                 headers: {
                     'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ function Film() {
     useEffect(() => {
         const getFilm = async () => {
             try {
-                const response = await fetch(`${import.meta.env.VITE_API_URL}/films/data`, {
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/films/data`, {
                     method: "POST", 
                     headers: {
                         'Content-Type': 'application/json',
@@ -79,7 +79,7 @@ function Film() {
                 )}
 
                 <div className={styles.filmContainer}>
-                    <video onContextMenu={(e) => e.preventDefault()} controls controlsList="nodownload noremoteplayback noplaybackrate foobar" playsInline poster={`${import.meta.env.VITE_STORAGE_URL}${filmData[0].thumbnail_file_path}`} src={`${import.meta.env.VITE_STORAGE_URL}${filmData[0].trailer_file_path}`} />
+                    <video id={styles.film} onContextMenu={(e) => e.preventDefault()} controls controlsList="nodownload noremoteplayback noplaybackrate foobar" playsInline poster={`${process.env.REACT_APP_STORAGE_URL}${filmData[0].thumbnail_file_path}`} src={`${process.env.REACT_APP_STORAGE_URL}${filmData[0].trailer_file_path}`} />
                     <div className={styles.filmInfo}>
                         <h1>{filmData[0].title}</h1>
                         <h2>{year}, {filmData[0].genre}, {filmData[0].duration}min</h2>

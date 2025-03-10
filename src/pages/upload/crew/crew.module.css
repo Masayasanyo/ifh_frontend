@@ -275,14 +275,16 @@
 
 @media (min-width: 1200px) {
 
-    .crewContainer {
-        padding: 20px;
+    .crewPage {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 30px;
         background-color: #ffffff;
         border-radius: 10px;
         box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
     }
     
-    .crewContainer p {
+    .crewPage p {
         margin: 0px;
     }
     
@@ -290,9 +292,15 @@
         display: flex;
         gap: 20px;
     }
+
+    .crewFormList {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
+        gap: 20px;
+        padding: 0px;
+    }
     
-    .crewInputContainer {
-        width: 220px;
+    .crewForm {
         display: flex;
         flex-direction: column;
         gap: 10px;
@@ -303,21 +311,19 @@
             -2px -2px 4px 1px rgb(0 0 0 / 10%); 
     }
     
-    .crewInputContainer input {
-        width: 200px;
+    .crewForm input {
         height: 25px;
         padding: 3px 7px;
         border-radius: 5px;
         border: 2px solid #ccc;
     }
     
-    .crewInputContainer input:focus {
+    .crewForm input:focus {
         outline: 0;
         border: 2px solid #001F3F;
     }
     
-    .crewInputContainer textarea {
-        width: 200px;
+    .crewForm textarea {
         height: 40px;
         border-radius: 5px;
         padding-left: 10px;
@@ -326,50 +332,41 @@
         resize:none;
     }
     
-    .crewInputContainer button {
-        width: 30px;
-        height: 30px;
+    #cancelButton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
         border-radius: 50%;
-        font-size: 1rem;
         border: none;
         box-shadow: 0 3px #999;
         background-color: #EAD8B1;
         margin: 0px 0px 10px auto
     }
 
-    .crewInputContainer button:hover {
+    #cancelButton:hover {
         background-color: #afa184
     }
 
-    .crewInputContainer button:active {
+    #cancelButton:active {
         background-color: #afa184;
         box-shadow: 0 1px #666;
         transform: translateY(4px);
     }
 
-    
     .crewInput {
         display: flex;
         flex-direction: column;
         gap: 10px;
-        width: 300px;
     }
     
     .crewInput select {
-        width: 220px;
         border-radius: 5px;
         height: 30px;
         padding-left: 5px;
         background-color: white;
         font-family: "Poppins", serif;
         color: #001F3F;
-    }
-    
-    .crewMain {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
-        margin-top: 30px;
     }
     
     .new {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './crew.module.css';
+import Cancel from '../../../components/icons/Cancel';
 
 function Crew({ filmId, formData, setFormData }) {
 
@@ -17,7 +18,7 @@ function Crew({ filmId, formData, setFormData }) {
 
         const getCrew = async (id, data) => {
             try {
-                const response = await fetch(`${import.meta.env.VITE_API_URL}/users/crews`, {
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/users/crews`, {
                     method: "POST", 
                     headers: {
                         'Content-Type': 'application/json',
@@ -72,7 +73,7 @@ function Crew({ filmId, formData, setFormData }) {
         }
         else {
             try {
-                const response = await fetch(`${import.meta.env.VITE_API_URL}/accounts`, {
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/accounts`, {
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json',
@@ -168,15 +169,15 @@ function Crew({ filmId, formData, setFormData }) {
     }
 
     return (
-        <div className={styles.crewContainer}>
+        <div className={styles.crewPage}>
             <div className={styles.crewHeader}>
                 <p>Cast & Crew</p>
                 <button onClick={addCrew} className={styles.new}>+</button>
             </div>
-            <div className={styles.crewMain}>
+            <ul className={styles.crewFormList}>
                 {crewList.map((crew, index) => (
-                <div key={index} className={styles.crewInputContainer}>
-                    <button onClick={(event) => addCancelCrew(event, index)} >×</button>
+                <li key={index} className={styles.crewForm}>
+                    <button id={styles.cancelButton} onClick={(event) => addCancelCrew(event, index)} ><Cancel /></button>
                     <div className={styles.crewInput}>
 
                         <select value={crew.role} name="role" onChange={(e) => crewChange(index, e.target)}>
@@ -210,9 +211,9 @@ function Crew({ filmId, formData, setFormData }) {
                                 crew.suggestionList.map((user) => (
                                 <div key={user.id} onClick={(event) => handleUser(event, index, user)}>
                                     {user.profile_image_url ? (
-                                        <img className={styles.userImage} src={`${import.meta.env.VITE_STORAGE_URL}${user.profile_image_url}`} alt={user.first_name} />
+                                        <img className={styles.userImage} src={`${process.env.REACT_APP_STORAGE_URL}${user.profile_image_url}`} alt={user.first_name} />
                                     ):(
-                                        <img className={styles.userImage} src={`${import.meta.env.VITE_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={user.first_name} />
+                                        <img className={styles.userImage} src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={user.first_name} />
                                     )}
                                     <p>{user.username}</p>
                                 </div>
@@ -243,9 +244,9 @@ function Crew({ filmId, formData, setFormData }) {
                             onChange={(e) => crewChange(index, e.target)}
                         />
                     </div>
-                </div>
+                </li>
                 ))}
-            </div>
+            </ul>
         </div>
     )
 }

@@ -1,4 +1,11 @@
-@media (max-width: 599px) {
+/* Mobile Devices */
+@media (max-width: 480px) {
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+    }
 
     .section {
         display: flex;
@@ -6,12 +13,13 @@
         gap: 20px;
     }
 
-    .account h1 {
-       text-align: center;
+    .account {
+        width: 100%;
     }
 
     .form {
         display: flex;
+        flex-wrap: wrap;
         flex-direction: column;
         gap: 20px;
         background-color: #ffffff;
@@ -20,8 +28,8 @@
     }
 
     .form img {
-        width: 100px;
-        height: 100px;
+        width: 150px;
+        height: 150px;
         border: 2px solid black;
         border-radius: 50%;
         object-fit: cover;
@@ -32,7 +40,7 @@
         font-weight: bold;
         color: white;
         background: #001F3F;
-        font-size: 12px;
+        font-size: 14px;
         border: 0;
         border-radius: 20px;
         padding: 8px 16px;
@@ -51,6 +59,7 @@
     }
     
     .accountInput {
+        width: 40%;
         height: 20px;
         padding: 3px 7px;
         border-radius: 5px;
@@ -73,7 +82,352 @@
 
     .btns {
         display: flex;
-        margin: 0px auto;
+        gap: 50px;
+    }
+    
+    .container button {
+        border-radius: 40px;
+        font-size: 1.2rem;
+        border: none;
+        font-weight: bold;
+        padding: 8px 16px;
+        background-color: #EAD8B1;
+        color: #001F3F;
+        display: block;
+        box-shadow: 0 5px #999;
+    }
+
+    .container button:hover {
+        background-color: #afa184
+    }
+
+
+    .container button:active {
+        background-color: #afa184;
+        box-shadow: 0 3px #666;
+        transform: translateY(4px);
+    }
+
+    #logoutButton {
+        color: red;
+    }
+    
+}
+
+/* Tablets/iPads */
+@media (min-width: 480px) and (max-width: 768px) {
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .section {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .account {
+        width: 100%;
+    }
+
+    .form {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 20px;
+        background-color: #ffffff;
+        border-radius: 20px;
+        padding: 20px;
+    }
+
+    .form img {
+        width: 150px;
+        height: 150px;
+        border: 2px solid black;
+        border-radius: 50%;
+        object-fit: cover;
+        text-align: center;
+    }
+
+    .form input::file-selector-button {
+        font-weight: bold;
+        color: white;
+        background: #001F3F;
+        font-size: 14px;
+        border: 0;
+        border-radius: 20px;
+        padding: 8px 16px;
+        text-align: center;
+    }
+    
+    .form label {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;    
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow:
+            4px 4px 4px 2px rgb(0 0 0 / 20%), 
+            -2px -2px 4px 1px rgb(0 0 0 / 10%); 
+    }
+    
+    .accountInput {
+        width: 40%;
+        height: 20px;
+        padding: 3px 7px;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+    }
+    
+    .form input:focus {
+        outline: 0;
+        border: 2px solid #001F3F;
+    }
+
+    #bio {
+        height: 60px;
+        border-radius: 5px;
+        padding-left: 10px;
+        padding-top: 10px;
+        border: 2px solid #ccc;
+        resize:none;
+    }
+
+    .btns {
+        display: flex;
+        gap: 50px;
+    }
+    
+    .container button {
+        border-radius: 40px;
+        font-size: 1.2rem;
+        border: none;
+        font-weight: bold;
+        padding: 8px 16px;
+        background-color: #EAD8B1;
+        color: #001F3F;
+        display: block;
+        box-shadow: 0 5px #999;
+    }
+
+    .container button:hover {
+        background-color: #afa184
+    }
+
+
+    .container button:active {
+        background-color: #afa184;
+        box-shadow: 0 3px #666;
+        transform: translateY(4px);
+    }
+
+    #logoutButton {
+        color: red;
+    }
+
+}
+
+/* Laptops/Small Screens */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .container {
+        display: flex;
+        gap: 80px;
+    }
+
+    .section {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .account {
+        width: 100%;
+    }
+
+    .form {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 20px;
+        background-color: #ffffff;
+        border-radius: 20px;
+        padding: 20px;
+    }
+
+    .form img {
+        width: 150px;
+        height: 150px;
+        border: 2px solid black;
+        border-radius: 50%;
+        object-fit: cover;
+        text-align: center;
+    }
+
+    .form input::file-selector-button {
+        font-weight: bold;
+        color: white;
+        background: #001F3F;
+        font-size: 14px;
+        border: 0;
+        border-radius: 20px;
+        padding: 8px 16px;
+        text-align: center;
+    }
+    
+    .form label {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;    
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow:
+            4px 4px 4px 2px rgb(0 0 0 / 20%), 
+            -2px -2px 4px 1px rgb(0 0 0 / 10%); 
+    }
+    
+    .accountInput {
+        width: 40%;
+        height: 20px;
+        padding: 3px 7px;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+    }
+    
+    .form input:focus {
+        outline: 0;
+        border: 2px solid #001F3F;
+    }
+
+    #bio {
+        height: 60px;
+        border-radius: 5px;
+        padding-left: 10px;
+        padding-top: 10px;
+        border: 2px solid #ccc;
+        resize:none;
+    }
+
+    .btns {
+        display: flex;
+        gap: 50px;
+    }
+    
+    .container button {
+        border-radius: 40px;
+        font-size: 1.2rem;
+        border: none;
+        font-weight: bold;
+        padding: 8px 16px;
+        background-color: #EAD8B1;
+        color: #001F3F;
+        display: block;
+        box-shadow: 0 5px #999;
+    }
+
+    .container button:hover {
+        background-color: #afa184
+    }
+
+
+    .container button:active {
+        background-color: #afa184;
+        box-shadow: 0 3px #666;
+        transform: translateY(4px);
+    }
+
+    #logoutButton {
+        color: red;
+    }
+
+}
+
+/* Desktops/Large Screens */
+@media (min-width: 1024px) and (max-width: 1200px) {
+
+    .container {
+        display: flex;
+        gap: 80px;
+    }
+
+    .section {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .account {
+        width: 100%;
+    }
+
+    .form {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 20px;
+        background-color: #ffffff;
+        border-radius: 20px;
+        padding: 20px;
+    }
+
+    .form img {
+        width: 150px;
+        height: 150px;
+        border: 2px solid black;
+        border-radius: 50%;
+        object-fit: cover;
+        text-align: center;
+    }
+
+    .form input::file-selector-button {
+        font-weight: bold;
+        color: white;
+        background: #001F3F;
+        font-size: 14px;
+        border: 0;
+        border-radius: 20px;
+        padding: 8px 16px;
+        text-align: center;
+    }
+    
+    .form label {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;    
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow:
+            4px 4px 4px 2px rgb(0 0 0 / 20%), 
+            -2px -2px 4px 1px rgb(0 0 0 / 10%); 
+    }
+    
+    .accountInput {
+        width: 40%;
+        height: 20px;
+        padding: 3px 7px;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+    }
+    
+    .form input:focus {
+        outline: 0;
+        border: 2px solid #001F3F;
+    }
+
+    #bio {
+        height: 60px;
+        border-radius: 5px;
+        padding-left: 10px;
+        padding-top: 10px;
+        border: 2px solid #ccc;
+        resize:none;
+    }
+
+    .btns {
+        display: flex;
         gap: 50px;
     }
     
@@ -105,114 +459,7 @@
     }
 }
 
-
-@media (min-width: 600px) and (max-width: 1199px) {
-
-    .section {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .account h1 {
-       text-align: center;
-    }
-
-    .form {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        background-color: #ffffff;
-        border-radius: 20px;
-        padding: 20px;
-    }
-
-    .form img {
-        width: 100px;
-        height: 100px;
-        border: 2px solid black;
-        border-radius: 50%;
-        object-fit: cover;
-        text-align: center;
-    }
-
-    .form input::file-selector-button {
-        font-weight: bold;
-        color: white;
-        background: #001F3F;
-        font-size: 12px;
-        border: 0;
-        border-radius: 20px;
-        padding: 8px 16px;
-        text-align: center;
-    }
-    
-    .form label {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;    
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow:
-            4px 4px 4px 2px rgb(0 0 0 / 20%), 
-            -2px -2px 4px 1px rgb(0 0 0 / 10%); 
-    }
-    
-    .accountInput {
-        height: 20px;
-        padding: 3px 7px;
-        border-radius: 5px;
-        border: 2px solid #ccc;
-    }
-    
-    .form input:focus {
-        outline: 0;
-        border: 2px solid #001F3F;
-    }
-
-    #bio {
-        height: 60px;
-        border-radius: 5px;
-        padding-left: 10px;
-        padding-top: 10px;
-        border: 2px solid #ccc;
-        resize:none;
-    }
-
-    .btns {
-        display: flex;
-        margin: 0px auto;
-        gap: 50px;
-    }
-    
-    .container button {
-        border-radius: 40px;
-        font-size: 1.2rem;
-        border: none;
-        font-weight: bold;
-        padding: 8px 16px;
-        background-color: #EAD8B1;
-        color: #001F3F;
-        display: block;
-        box-shadow: 0 5px #999;
-    }
-
-    .container button:hover {
-        background-color: #afa184
-    }
-
-
-    .container button:active {
-        background-color: #afa184;
-        box-shadow: 0 3px #666;
-        transform: translateY(4px);
-    }
-
-    #logoutButton {
-        color: red;
-    }
-}
-
+/* Extra-large Devices */
 @media (min-width: 1200px) {
 
     .container {

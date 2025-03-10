@@ -19,17 +19,15 @@ function Theatre() {
         navigate(`/film/${id}`);
     };
     const goToLive = (id, title) => {
-        // navigate(`/live/${id}`);
         setFilmId(id);
         setFilmTitle(title);
         setIsPopup(true);
     };
 
     useEffect(() => {
-        // getWeekDates();
         const fetchFilms = async () => {
             try {
-                const response = await fetch(`${import.meta.env.VITE_API_URL}/films/schedule`, {
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/films/schedule`, {
                     method: "GET",
                 });
 
@@ -57,7 +55,7 @@ function Theatre() {
                     {publishedFilm.length > 0 ? (
                     <div className={styles.movie}>
                         <div>
-                            <img onClick={() => openFilm(publishedFilm[0].film_id)} src={`${import.meta.env.VITE_STORAGE_URL}${publishedFilm[0].thumbnail_file_path}`} alt={publishedFilm[0].title} />
+                            <img onClick={() => openFilm(publishedFilm[0].film_id)} src={`${process.env.REACT_APP_STORAGE_URL}${publishedFilm[0].thumbnail_file_path}`} alt={publishedFilm[0].title} />
                             <button className={styles.toLiveButton} onClick={() => goToLive(publishedFilm[0].film_id, publishedFilm[0].title)} >Watch Now</button>
                         </div>
                         <div className={styles.movieInfo}>
@@ -73,10 +71,10 @@ function Theatre() {
                 </div>
 
                 <div className={`${styles.liveNowContainer} ${styles.section}`} >
-                    {publishedFilm.length > 0 ? (
+                    {publishedFilm.length > 1 ? (
                     <div className={styles.movie}>
                         <div>
-                            <img onClick={() => openFilm(publishedFilm[1].film_id)} src={`${import.meta.env.VITE_STORAGE_URL}${publishedFilm[1].thumbnail_file_path}`} alt={publishedFilm[1].title} />
+                            <img onClick={() => openFilm(publishedFilm[1].film_id)} src={`${process.env.REACT_APP_STORAGE_URL}${publishedFilm[1].thumbnail_file_path}`} alt={publishedFilm[1].title} />
                             <button className={styles.toLiveButton} onClick={() => goToLive(publishedFilm[1].film_id, publishedFilm[1].title)} >Watch Now</button>
                         </div>
                         <div className={styles.movieInfo}>

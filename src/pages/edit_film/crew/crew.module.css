@@ -1,13 +1,16 @@
-@media (max-width: 599px) {
+/* Mobile Devices */
+@media (max-width: 480px) {
 
-    .crewContainer {
-        padding: 20px;
+    .crewPage {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 30px;
         background-color: #ffffff;
         border-radius: 10px;
         box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
     }
     
-    .crewContainer p {
+    .crewPage p {
         margin: 0px;
     }
     
@@ -15,8 +18,15 @@
         display: flex;
         gap: 20px;
     }
+
+    .crewFormList {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(1fr, 1fr));
+        gap: 20px;
+        padding: 0px;
+    }
     
-    .crewInputContainer {
+    .crewForm {
         display: flex;
         flex-direction: column;
         gap: 10px;
@@ -27,19 +37,19 @@
             -2px -2px 4px 1px rgb(0 0 0 / 10%); 
     }
     
-    .crewInputContainer input {
+    .crewForm input {
         height: 25px;
         padding: 3px 7px;
         border-radius: 5px;
         border: 2px solid #ccc;
     }
     
-    .crewInputContainer input:focus {
+    .crewForm input:focus {
         outline: 0;
         border: 2px solid #001F3F;
     }
     
-    .crewInputContainer textarea {
+    .crewForm textarea {
         height: 40px;
         border-radius: 5px;
         padding-left: 10px;
@@ -48,28 +58,28 @@
         resize:none;
     }
     
-    .crewInputContainer button {
-        width: 30px;
-        height: 30px;
+    #cancelButton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
         border-radius: 50%;
-        font-size: 1rem;
         border: none;
         box-shadow: 0 3px #999;
         background-color: #EAD8B1;
         margin: 0px 0px 10px auto
     }
 
-    .crewInputContainer button:hover {
+    #cancelButton:hover {
         background-color: #afa184
     }
 
-    .crewInputContainer button:active {
+    #cancelButton:active {
         background-color: #afa184;
         box-shadow: 0 1px #666;
         transform: translateY(4px);
     }
 
-    
     .crewInput {
         display: flex;
         flex-direction: column;
@@ -83,13 +93,6 @@
         background-color: white;
         font-family: "Poppins", serif;
         color: #001F3F;
-    }
-    
-    .crewMain {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        margin-top: 30px;
     }
     
     .new {
@@ -114,7 +117,7 @@
     
     .suggestionContainer {
         display: flex;
-        gap: 20px;
+        gap: 10px;
         flex-wrap: wrap;
     }
 
@@ -134,16 +137,19 @@
     }
 }
 
+/* Tablets/iPads */
+@media (min-width: 480px) and (max-width: 768px) {
 
-@media (min-width: 600px) and (max-width: 1199px) {
-    .crewContainer {
-        padding: 20px;
+    .crewPage {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 30px;
         background-color: #ffffff;
         border-radius: 10px;
         box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
     }
     
-    .crewContainer p {
+    .crewPage p {
         margin: 0px;
     }
     
@@ -151,8 +157,15 @@
         display: flex;
         gap: 20px;
     }
+
+    .crewFormList {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 220px));
+        gap: 20px;
+        padding: 0px;
+    }
     
-    .crewInputContainer {
+    .crewForm {
         display: flex;
         flex-direction: column;
         gap: 10px;
@@ -163,19 +176,19 @@
             -2px -2px 4px 1px rgb(0 0 0 / 10%); 
     }
     
-    .crewInputContainer input {
+    .crewForm input {
         height: 25px;
         padding: 3px 7px;
         border-radius: 5px;
         border: 2px solid #ccc;
     }
     
-    .crewInputContainer input:focus {
+    .crewForm input:focus {
         outline: 0;
         border: 2px solid #001F3F;
     }
     
-    .crewInputContainer textarea {
+    .crewForm textarea {
         height: 40px;
         border-radius: 5px;
         padding-left: 10px;
@@ -184,28 +197,28 @@
         resize:none;
     }
     
-    .crewInputContainer button {
-        width: 30px;
-        height: 30px;
+    #cancelButton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
         border-radius: 50%;
-        font-size: 1rem;
         border: none;
         box-shadow: 0 3px #999;
         background-color: #EAD8B1;
         margin: 0px 0px 10px auto
     }
 
-    .crewInputContainer button:hover {
+    #cancelButton:hover {
         background-color: #afa184
     }
 
-    .crewInputContainer button:active {
+    #cancelButton:active {
         background-color: #afa184;
         box-shadow: 0 1px #666;
         transform: translateY(4px);
     }
 
-    
     .crewInput {
         display: flex;
         flex-direction: column;
@@ -219,13 +232,6 @@
         background-color: white;
         font-family: "Poppins", serif;
         color: #001F3F;
-    }
-    
-    .crewMain {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        margin-top: 30px;
     }
     
     .new {
@@ -250,7 +256,7 @@
     
     .suggestionContainer {
         display: flex;
-        gap: 20px;
+        gap: 10px;
         flex-wrap: wrap;
     }
 
@@ -270,16 +276,299 @@
     }
 }
 
+/* Laptops/Small Screens */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .crewPage {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 30px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
+    }
+    
+    .crewPage p {
+        margin: 0px;
+    }
+    
+    .crewHeader {
+        display: flex;
+        gap: 20px;
+    }
+
+    .crewFormList {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 220px));
+        gap: 20px;
+        padding: 0px;
+    }
+    
+    .crewForm {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow:
+            4px 4px 4px 2px rgb(0 0 0 / 20%), 
+            -2px -2px 4px 1px rgb(0 0 0 / 10%); 
+    }
+    
+    .crewForm input {
+        height: 25px;
+        padding: 3px 7px;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+    }
+    
+    .crewForm input:focus {
+        outline: 0;
+        border: 2px solid #001F3F;
+    }
+    
+    .crewForm textarea {
+        height: 40px;
+        border-radius: 5px;
+        padding-left: 10px;
+        padding-top: 10px;
+        border: 2px solid #ccc;
+        resize:none;
+    }
+    
+    #cancelButton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        border-radius: 50%;
+        border: none;
+        box-shadow: 0 3px #999;
+        background-color: #EAD8B1;
+        margin: 0px 0px 10px auto
+    }
+
+    #cancelButton:hover {
+        background-color: #afa184
+    }
+
+    #cancelButton:active {
+        background-color: #afa184;
+        box-shadow: 0 1px #666;
+        transform: translateY(4px);
+    }
+
+    .crewInput {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .crewInput select {
+        border-radius: 5px;
+        height: 30px;
+        padding-left: 5px;
+        background-color: white;
+        font-family: "Poppins", serif;
+        color: #001F3F;
+    }
+    
+    .new {
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+        font-size: 1.3rem;
+        border: none;
+        box-shadow: 0 3px #999;
+        background-color: #EAD8B1;
+    }
+
+    .new:hover {
+        background-color: #afa184
+    }
+
+    .new:active {
+        background-color: #afa184;
+        box-shadow: 0 1px #666;
+        transform: translateY(4px);
+    }
+    
+    .suggestionContainer {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .suggestionContainer img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .suggestionContainer p {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+    
+}
+
+/* Desktops/Large Screens */
+@media (min-width: 1024px) and (max-width: 1200px) {
+
+    .crewPage {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 30px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
+    }
+    
+    .crewPage p {
+        margin: 0px;
+    }
+    
+    .crewHeader {
+        display: flex;
+        gap: 20px;
+    }
+
+    .crewFormList {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
+        gap: 20px;
+        padding: 0px;
+    }
+    
+    .crewForm {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow:
+            4px 4px 4px 2px rgb(0 0 0 / 20%), 
+            -2px -2px 4px 1px rgb(0 0 0 / 10%); 
+    }
+    
+    .crewForm input {
+        height: 25px;
+        padding: 3px 7px;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+    }
+    
+    .crewForm input:focus {
+        outline: 0;
+        border: 2px solid #001F3F;
+    }
+    
+    .crewForm textarea {
+        height: 40px;
+        border-radius: 5px;
+        padding-left: 10px;
+        padding-top: 10px;
+        border: 2px solid #ccc;
+        resize:none;
+    }
+    
+    #cancelButton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        border-radius: 50%;
+        border: none;
+        box-shadow: 0 3px #999;
+        background-color: #EAD8B1;
+        margin: 0px 0px 10px auto
+    }
+
+    #cancelButton:hover {
+        background-color: #afa184
+    }
+
+    #cancelButton:active {
+        background-color: #afa184;
+        box-shadow: 0 1px #666;
+        transform: translateY(4px);
+    }
+
+    .crewInput {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .crewInput select {
+        border-radius: 5px;
+        height: 30px;
+        padding-left: 5px;
+        background-color: white;
+        font-family: "Poppins", serif;
+        color: #001F3F;
+    }
+    
+    .new {
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+        font-size: 1.3rem;
+        border: none;
+        box-shadow: 0 3px #999;
+        background-color: #EAD8B1;
+    }
+
+    .new:hover {
+        background-color: #afa184
+    }
+
+    .new:active {
+        background-color: #afa184;
+        box-shadow: 0 1px #666;
+        transform: translateY(4px);
+    }
+    
+    .suggestionContainer {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .suggestionContainer img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .suggestionContainer p {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+}
+
+/* Extra-large Devices */
 @media (min-width: 1200px) {
 
-    .crewContainer {
-        padding: 20px;
+    .crewPage {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 30px;
         background-color: #ffffff;
         border-radius: 10px;
         box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
     }
     
-    .crewContainer p {
+    .crewPage p {
         margin: 0px;
     }
     
@@ -287,9 +576,15 @@
         display: flex;
         gap: 20px;
     }
+
+    .crewFormList {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
+        gap: 20px;
+        padding: 0px;
+    }
     
-    .crewInputContainer {
-        width: 220px;
+    .crewForm {
         display: flex;
         flex-direction: column;
         gap: 10px;
@@ -300,21 +595,19 @@
             -2px -2px 4px 1px rgb(0 0 0 / 10%); 
     }
     
-    .crewInputContainer input {
-        width: 200px;
+    .crewForm input {
         height: 25px;
         padding: 3px 7px;
         border-radius: 5px;
         border: 2px solid #ccc;
     }
     
-    .crewInputContainer input:focus {
+    .crewForm input:focus {
         outline: 0;
         border: 2px solid #001F3F;
     }
     
-    .crewInputContainer textarea {
-        width: 200px;
+    .crewForm textarea {
         height: 40px;
         border-radius: 5px;
         padding-left: 10px;
@@ -323,50 +616,41 @@
         resize:none;
     }
     
-    .crewInputContainer button {
-        width: 30px;
-        height: 30px;
+    #cancelButton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
         border-radius: 50%;
-        font-size: 1rem;
         border: none;
         box-shadow: 0 3px #999;
         background-color: #EAD8B1;
         margin: 0px 0px 10px auto
     }
 
-    .crewInputContainer button:hover {
+    #cancelButton:hover {
         background-color: #afa184
     }
 
-    .crewInputContainer button:active {
+    #cancelButton:active {
         background-color: #afa184;
         box-shadow: 0 1px #666;
         transform: translateY(4px);
     }
 
-    
     .crewInput {
         display: flex;
         flex-direction: column;
         gap: 10px;
-        width: 300px;
     }
     
     .crewInput select {
-        width: 220px;
         border-radius: 5px;
         height: 30px;
         padding-left: 5px;
         background-color: white;
         font-family: "Poppins", serif;
         color: #001F3F;
-    }
-    
-    .crewMain {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
-        margin-top: 30px;
     }
     
     .new {

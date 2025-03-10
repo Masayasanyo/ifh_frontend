@@ -66,11 +66,12 @@ function Header() {
                         {user ? (
                             <div   className={`${styles.user} ${styles.link} ${location.pathname === '/account' ? styles.active : ''}`}>
                                 {user.profile_image_url ? (
-                                <img id={styles.profileImage} src={`${import.meta.env.VITE_STORAGE_URL}${user.profile_image_url}`} alt={user.first_name} />
+                                <img id={styles.profileImage} src={`${process.env.REACT_APP_STORAGE_URL}${user.profile_image_url}`} alt={user.first_name} />
                                 ):(
-                                <img id={styles.profileImage} src={`${import.meta.env.VITE_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={user.first_name} />
+                                <img id={styles.profileImage} src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={user.first_name} />
                                 )}
-                                <h2 id={styles.username}>{user.username}</h2>
+                                {/* <h2 id={styles.username}>{user.username}</h2> */}
+                                <h2 id={styles.username}>Account</h2>
                             </div>
                         ):(
                             <div  className={`${styles.user} ${styles.link} ${location.pathname === '/account' ? styles.active : ''}`}>

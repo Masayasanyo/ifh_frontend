@@ -36,9 +36,9 @@ function FilmCrew({crew}) {
                 {directorList.map((member, index) => (
                     <li key={index} className={styles.member} onClick={() => openUser(member.account_id)}>
                         {member.profile_image_url ? (
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
                         ):
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
                         }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
@@ -54,9 +54,9 @@ function FilmCrew({crew}) {
                 {producerList.map((member, index) => (
                     <li key={index} className={styles.member} onClick={() => openUser(member.account_id)}>
                         {member.profile_image_url ? (
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
                         ):
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
                         }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
@@ -72,9 +72,9 @@ function FilmCrew({crew}) {
                 {screenwriterList.map((member, index) => (
                     <li key={index} className={styles.member} onClick={() => openUser(member.account_id)}>
                         {member.profile_image_url ? (
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
                         ):
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
                         }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
@@ -90,9 +90,9 @@ function FilmCrew({crew}) {
                 {actorList.map((member, index) => (
                     <li key={index} className={styles.member} onClick={() => openUser(member.account_id)}>
                         {member.profile_image_url ? (
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
                         ):
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
                         }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
@@ -108,9 +108,9 @@ function FilmCrew({crew}) {
                 {cinematographerList.map((member, index) => (
                     <li key={index} className={styles.member} onClick={() => openUser(member.account_id)}>
                         {member.profile_image_url ? (
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
                         ):
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
                         }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
@@ -126,9 +126,9 @@ function FilmCrew({crew}) {
                 {editorList.map((member, index) => (
                     <li key={index} className={styles.member} onClick={() => openUser(member.account_id)}>
                         {member.profile_image_url ? (
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
                         ):
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
                         }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
@@ -144,9 +144,9 @@ function FilmCrew({crew}) {
                 {cameraList.map((member, index) => (
                     <li key={index} className={styles.member} onClick={() => openUser(member.account_id)}>
                         {member.profile_image_url ? (
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
                         ):
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
                         }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
@@ -162,9 +162,9 @@ function FilmCrew({crew}) {
                 {gafferList.map((member, index) => (
                     <li key={index} className={styles.member} onClick={() => openUser(member.account_id)}>
                         {member.profile_image_url ? (
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
                         ):
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
                         }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
@@ -180,9 +180,9 @@ function FilmCrew({crew}) {
                 {soundList.map((member, index) => (
                     <li key={index} className={styles.member} onClick={() => openUser(member.account_id)}>
                         {member.profile_image_url ? (
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
                         ):
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
                         }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
@@ -198,9 +198,9 @@ function FilmCrew({crew}) {
                 {makeupList.map((member, index) => (
                     <li key={index} className={styles.member} onClick={() => openUser(member.account_id)}>
                         {member.profile_image_url ? (
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
                         ):
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
                         }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
@@ -216,9 +216,9 @@ function FilmCrew({crew}) {
                 {costumeList.map((member, index) => (
                     <li key={index} className={styles.member} onClick={() => openUser(member.account_id)}>
                         {member.profile_image_url ? (
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
                         ):
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
                         }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
@@ -234,9 +234,9 @@ function FilmCrew({crew}) {
                 {vfxList.map((member, index) => (
                     <li key={index} className={styles.member} onClick={() => openUser(member.account_id)}>
                         {member.profile_image_url ? (
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
                         ):
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
                         }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
@@ -252,9 +252,9 @@ function FilmCrew({crew}) {
                 {stuntList.map((member, index) => (
                     <li key={index} className={styles.member} onClick={() => openUser(member.account_id)}>
                         {member.profile_image_url ? (
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
                         ):
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
                         }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
@@ -270,9 +270,9 @@ function FilmCrew({crew}) {
                 {composerList.map((member, index) => (
                     <li key={index} className={styles.member} onClick={() => openUser(member.account_id)}>
                         {member.profile_image_url ? (
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
                         ):
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
                         }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>
@@ -288,9 +288,9 @@ function FilmCrew({crew}) {
                 {otherList.map((member, index) => (
                     <li key={index} className={styles.member} onClick={() => openUser(member.account_id)}>
                         {member.profile_image_url ? (
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${member.profile_image_url}`} alt={member.first_name} />
                         ):
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}/storage/profile_images/anonymous_person.png`} alt={member.first_name}/>
                         }
                         <p>{member.first_name} {member.family_name}</p>
                     </li>

@@ -1,105 +1,26 @@
-@media (max-width: 599px) {
+/* Mobile Devices */
+@media (max-width: 480px) {
 
     .filmContainer {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
         gap: 20px;
         list-style: none;
         padding: 0px;
-        justify-content: center;
+        width: 100%;
     }
     
     .filmContainer img {
-        width: 160px;
-        height: 90px;
+        width: 100%;
+        aspect-ratio: 16 / 9;
         object-fit: contain;
-        border-radius: 10px;
     }
     
     .film {
-        padding: 0px;
-        width: 160px;
-        border-radius: 20px;
-    }
-    
-    .film:hover {
-        transition: 0.6s ease;
-        transform: scale(1.1);
-        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
-    }
-    
-    .film p {
-        text-align: center;
-    }
-    
-    .filmmakerContainer {
         display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        list-style: none;
-        padding: 0px;
-        justify-content: center;
-    }
-    
-    .filmmaker {
+        flex-direction: column;
+        align-items: center;
         padding: 10px;
-        width: 100px;
-        text-align: center;
-        border-radius: 20px;
-    }
-    
-    .filmmaker:hover {
-        transition: 0.6s ease;
-        transform: scale(1.1);
-        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
-    }
-    
-    .filmmaker img {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        background-color: aliceblue;
-        object-fit: cover;
-        text-align: center;
-        margin: 0px auto;
-    }
-    
-    .section {
-        background-color: #ffffff;
-        border-radius: 20px;
-        padding: 10px 20px;
-        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
-    }
-    
-    .section h2 {
-        margin-bottom: 40px;
-        text-align: center;
-    }
-
-}
-
-
-@media (min-width: 600px) and (max-width: 1199px) {
-
-    .filmContainer {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        list-style: none;
-        padding: 0px;
-        justify-content: center;
-    }
-    
-    .filmContainer img {
-        width: 160px;
-        height: 90px;
-        object-fit: contain;
-        border-radius: 10px;
-    }
-    
-    .film {
-        padding: 0px;
-        width: 160px;
         border-radius: 20px;
     }
     
@@ -114,88 +35,8 @@
     }
     
     .filmmakerContainer {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        list-style: none;
-        padding: 0px;
-        justify-content: center;
-    }
-    
-    .filmmaker {
-        padding: 10px;
-        width: 100px;
-        text-align: center;
-        border-radius: 20px;
-    }
-    
-    .filmmaker:hover {
-        transition: 0.6s ease;
-        transform: scale(1.1);
-        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
-    }
-    
-    .filmmaker img {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        background-color: aliceblue;
-        object-fit: cover;
-        text-align: center;
-        margin: 0px auto;
-    }
-    
-    .section {
-        background-color: #ffffff;
-        border-radius: 20px;
-        padding: 10px 20px;
-        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
-    }
-    
-    .section h2 {
-        margin-bottom: 40px;
-        text-align: center;
-    }
-}
-
-@media (min-width: 1200px) {
-
-    .filmContainer {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        list-style: none;
-        padding: 0px;
-    }
-    
-    .filmContainer img {
-        width: 160px;
-        height: 90px;
-        width: 240px;
-        height: 135px;
-        object-fit: contain;
-        border-radius: 10px;
-    }
-    
-    .film {
-        padding: 0px;
-        width: 240px;
-        border-radius: 20px;
-    }
-    
-    .film:hover {
-        transition: 0.6s ease;
-        transform: scale(1.1);
-        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
-    }
-    
-    .film p {
-        text-align: center;
-    }
-    
-    .filmmakerContainer {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         list-style: none;
         padding: 0px;
     }
@@ -205,9 +46,7 @@
         flex-wrap: wrap;
         flex-direction: column;
         justify-content: center;
-        padding: 0px;
         padding: 10px;
-        width: 250px;
         text-align: center;
         border-radius: 20px;
         justify-content: flex-start;
@@ -220,10 +59,8 @@
     }
     
     .filmmaker img {
-        width: 100px;
-        height: 100px;
-        /* width: 200px;
-        height: 200px; */
+        max-width: 70px;
+        max-height: 70px;
         border-radius: 50%;
         background-color: aliceblue;
         object-fit: cover;
@@ -235,7 +72,339 @@
     .section {
         background-color: #ffffff;
         border-radius: 20px;
-        padding: 20px;
+        padding: 10px 50px 30px 50px;
+        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
+    }
+    
+    .section h2 {
+        margin-bottom: 40px;
+    }
+}
+
+/* Tablets/iPads */
+@media (min-width: 480px) and (max-width: 768px) {
+
+    .filmContainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+        list-style: none;
+        padding: 0px;
+        width: 100%;
+    }
+    
+    .filmContainer img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: contain;
+    }
+    
+    .film {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        border-radius: 20px;
+    }
+    
+    .film:hover {
+        transition: 0.6s ease;
+        transform: scale(1.1);
+        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
+    }
+    
+    .film p {
+        text-align: center;
+    }
+    
+    .filmmakerContainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        list-style: none;
+        padding: 0px;
+    }
+    
+    .filmmaker {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px;
+        text-align: center;
+        border-radius: 20px;
+        justify-content: flex-start;
+    }
+    
+    .filmmaker:hover {
+        transition: 0.6s ease;
+        transform: scale(1.05);
+        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
+    }
+    
+    .filmmaker img {
+        max-width: 70px;
+        max-height: 70px;
+        border-radius: 50%;
+        background-color: aliceblue;
+        object-fit: cover;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .section {
+        background-color: #ffffff;
+        border-radius: 20px;
+        padding: 10px 50px 30px 50px;
+        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
+    }
+    
+    .section h2 {
+        margin-bottom: 40px;
+    }
+}
+
+/* Laptops/Small Screens */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .filmContainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+        list-style: none;
+        padding: 0px;
+        width: 100%;
+    }
+    
+    .filmContainer img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: contain;
+    }
+    
+    .film {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        border-radius: 20px;
+    }
+    
+    .film:hover {
+        transition: 0.6s ease;
+        transform: scale(1.1);
+        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
+    }
+    
+    .film p {
+        text-align: center;
+    }
+    
+    .filmmakerContainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        list-style: none;
+        padding: 0px;
+    }
+    
+    .filmmaker {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px;
+        text-align: center;
+        border-radius: 20px;
+        justify-content: flex-start;
+    }
+    
+    .filmmaker:hover {
+        transition: 0.6s ease;
+        transform: scale(1.05);
+        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
+    }
+    
+    .filmmaker img {
+        max-width: 70px;
+        max-height: 70px;
+        border-radius: 50%;
+        background-color: aliceblue;
+        object-fit: cover;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .section {
+        background-color: #ffffff;
+        border-radius: 20px;
+        padding: 10px 50px 30px 50px;
+        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
+    }
+    
+    .section h2 {
+        margin-bottom: 40px;
+    }
+}
+
+/* Desktops/Large Screens */
+@media (min-width: 1024px) and (max-width: 1200px) {
+
+    .filmContainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+        list-style: none;
+        padding: 0px;
+        width: 100%;
+    }
+    
+    .filmContainer img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: contain;
+    }
+    
+    .film {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        border-radius: 20px;
+    }
+    
+    .film:hover {
+        transition: 0.6s ease;
+        transform: scale(1.1);
+        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
+    }
+    
+    .film p {
+        text-align: center;
+    }
+    
+    .filmmakerContainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        list-style: none;
+        padding: 0px;
+    }
+    
+    .filmmaker {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px;
+        text-align: center;
+        border-radius: 20px;
+        justify-content: flex-start;
+    }
+    
+    .filmmaker:hover {
+        transition: 0.6s ease;
+        transform: scale(1.05);
+        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
+    }
+    
+    .filmmaker img {
+        max-width: 100px;
+        max-height: 100px;
+        border-radius: 50%;
+        background-color: aliceblue;
+        object-fit: cover;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .section {
+        background-color: #ffffff;
+        border-radius: 20px;
+        padding: 10px 50px 30px 50px;
+        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
+    }
+    
+    .section h2 {
+        margin-bottom: 40px;
+    }
+
+}
+
+/* Extra-large Devices */
+@media (min-width: 1200px) {
+
+    .filmContainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+        list-style: none;
+        padding: 0px;
+        width: 100%;
+    }
+    
+    .filmContainer img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: contain;
+    }
+    
+    .film {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        border-radius: 20px;
+    }
+    
+    .film:hover {
+        transition: 0.6s ease;
+        transform: scale(1.1);
+        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
+    }
+    
+    .film p {
+        text-align: center;
+    }
+    
+    .filmmakerContainer {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        list-style: none;
+        padding: 0px;
+    }
+    
+    .filmmaker {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px;
+        text-align: center;
+        border-radius: 20px;
+        justify-content: flex-start;
+    }
+    
+    .filmmaker:hover {
+        transition: 0.6s ease;
+        transform: scale(1.05);
+        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
+    }
+    
+    .filmmaker img {
+        max-width: 100px;
+        max-height: 100px;
+        border-radius: 50%;
+        background-color: aliceblue;
+        object-fit: cover;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .section {
+        background-color: #ffffff;
+        border-radius: 20px;
         padding: 10px 50px 30px 50px;
         box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
     }

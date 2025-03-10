@@ -1,0 +1,45 @@
+@media (max-width: 599px) {
+}
+
+@media (min-width: 600px) and (max-width: 1199px) {
+}
+
+@media (min-width: 1200px) {
+
+    .section {
+        background-color: #ffffff;
+        padding: 20px 30px;
+        border-radius: 20px;
+        box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 20%);
+        margin-bottom: 100px;
+    }
+
+    .filmsList {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: 1fr 1fr;
+        list-style: none;
+        padding: 0px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        border: 5px solid #001F3F;
+        border-radius: 20px;
+        padding: 20px;
+    }
+
+    .film {
+        display: flex;
+        gap: 20px;
+    }
+
+    #image {
+        max-width: 320px;
+        max-height: 180px;
+        object-fit: contain;
+    }
+    
+}

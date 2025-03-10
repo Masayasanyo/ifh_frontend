@@ -1,26 +1,5 @@
-@media (max-width: 599px) {
-
-    .container h1 {
-        text-align: center;
-    }
-    
-    .home {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 50px;
-    }
-
-    .hero {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .buttons {
-        display: flex;
-        justify-content: center;
-    }
+/* Mobile Devices */
+@media (max-width: 480px) {
 
     .buttons {
         display: flex;
@@ -45,40 +24,23 @@
         background-color: #afa184
     }
 
-
     .btn:active {
         background-color: #afa184;
         box-shadow: 0 3px #666;
         transform: translateY(4px);
     }
     
+    .home {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
     
+   
 }
 
-
-@media (min-width: 600px) and (max-width: 1199px) {
-
-    .container h1 {
-        text-align: center;
-    }
-    
-    .home {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 50px;
-    }
-
-    .hero {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .buttons {
-        display: flex;
-        justify-content: center;
-    }
+/* Tablets/iPads */
+@media (min-width: 480px) and (max-width: 768px) {
 
     .buttons {
         display: flex;
@@ -103,16 +65,22 @@
         background-color: #afa184
     }
 
-
     .btn:active {
         background-color: #afa184;
         box-shadow: 0 3px #666;
         transform: translateY(4px);
+    }
+    
+    .home {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
     }
    
 }
 
-@media (min-width: 1200px) {
+/* Laptops/Small Screens */
+@media (min-width: 768px) and (max-width: 1024px) {
 
     .buttons {
         display: flex;
@@ -137,6 +105,85 @@
         background-color: #afa184
     }
 
+    .btn:active {
+        background-color: #afa184;
+        box-shadow: 0 3px #666;
+        transform: translateY(4px);
+    }
+    
+    .home {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+   
+}
+
+/* Desktops/Large Screens */
+@media (min-width: 1024px) and (max-width: 1200px) {
+
+    .buttons {
+        display: flex;
+        gap: 30px;
+    }
+
+    .btn {
+        text-decoration: none;
+        border-radius: 40px;
+        font-size: 1.2rem;
+        border: none;
+        margin: 10px 0px 0px 0px;
+        font-weight: bold;
+        padding: 10px 20px;
+        background-color: #EAD8B1;
+        color: #001F3F;
+        display: block;
+        box-shadow: 0 5px #999;
+    }
+
+    .btn:hover {
+        background-color: #afa184
+    }
+
+    .btn:active {
+        background-color: #afa184;
+        box-shadow: 0 3px #666;
+        transform: translateY(4px);
+    }
+    
+    .home {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+   
+}
+
+/* Extra-large Devices */
+@media (min-width: 1200px) {
+
+    .buttons {
+        display: flex;
+        gap: 30px;
+    }
+
+    .btn {
+        text-decoration: none;
+        border-radius: 40px;
+        font-size: 1.2rem;
+        border: none;
+        margin: 10px 0px 0px 0px;
+        font-weight: bold;
+        padding: 10px 20px;
+        background-color: #EAD8B1;
+        color: #001F3F;
+        display: block;
+        box-shadow: 0 5px #999;
+    }
+
+    .btn:hover {
+        background-color: #afa184
+    }
 
     .btn:active {
         background-color: #afa184;

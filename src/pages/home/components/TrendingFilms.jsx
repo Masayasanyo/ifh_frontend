@@ -14,7 +14,7 @@ function TrendingFilms() {
     useEffect(() => {
         const fetchFilms = async () => {
             try {
-                const response = await fetch(`${import.meta.env.VITE_API_URL}/films/trending`, {
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/films/trending`, {
                     method: "GET",
                 });
     
@@ -35,7 +35,7 @@ function TrendingFilms() {
                 {films.length > 0 ? (
                     films.map((film, index) => (
                         <li key={film.id} onClick={() => openFilm(film.id)} className={styles.film}>
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}${film.thumbnail_file_path}`} alt={film.title} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${film.thumbnail_file_path}`} alt={film.title} />
                             <p>{film.title}</p>
                         </li>
                     ))

@@ -1,5 +1,6 @@
-@media (max-width: 599px) {
-
+/* Mobile Devices */
+@media (max-width: 480px) {
+   
     html[lang="ja"] {
         font-optical-sizing: auto;
         font-family: "Sawarabi Mincho", serif;
@@ -13,7 +14,7 @@
         font-weight: 800;
         font-style: normal;
     }
-
+      
     body {
         margin: 0px;
         background-color: #6A9AB0;
@@ -22,21 +23,68 @@
     
     .app {
         display: flex;
-        flex-direction: column;
         min-height: 100vh;
     }
-
+    
     .main {
         display: flex;
         flex-direction: column;
         gap: 50px;
-        margin: 0px 20px;
+        position: absolute;
+        top: 10px;
+        left: 100px;
+        right: 10px;
+        bottom: 10px;
+        margin-bottom: 0px;
+        color: #001F3F;
+    }
+
+}
+
+/* Tablets/iPads */
+@media (min-width: 480px) and (max-width: 768px) {
+    
+    html[lang="ja"] {
+        font-optical-sizing: auto;
+        font-family: "Sawarabi Mincho", serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+    
+    html[lang="en"] {
+        font-optical-sizing: auto;
+        font-family: "Poppins", serif;
+        font-weight: 800;
+        font-style: normal;
+    }
+      
+    body {
+        margin: 0px;
+        background-color: #6A9AB0;
+        box-sizing: border-box;
+    }
+    
+    .app {
+        display: flex;
+        min-height: 100vh;
+    }
+    
+    .main {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        position: absolute;
+        top: 10px;
+        left: 120px;
+        right: 20px;
+        bottom: 10px;
+        margin-bottom: 0px;
         color: #001F3F;
     }
 }
 
-
-@media (min-width: 600px) and (max-width: 1199px) {
+/* Laptops/Small Screens */
+@media (min-width: 768px) and (max-width: 1024px) {
 
     html[lang="ja"] {
         font-optical-sizing: auto;
@@ -51,7 +99,7 @@
         font-weight: 800;
         font-style: normal;
     }
-
+      
     body {
         margin: 0px;
         background-color: #6A9AB0;
@@ -60,20 +108,67 @@
     
     .app {
         display: flex;
-        flex-direction: column;
         min-height: 100vh;
     }
-
+    
     .main {
         display: flex;
         flex-direction: column;
         gap: 50px;
-        margin: 0px 20px;
+        position: absolute;
+        top: 20px;
+        left: 210px;
+        right: 20px;
+        bottom: 20px;
+        margin-bottom: 0px;
+        color: #001F3F;
+    }
+}
+
+/* Desktops/Large Screens */
+@media (min-width: 1024px) and (max-width: 1200px) {
+
+    html[lang="ja"] {
+        font-optical-sizing: auto;
+        font-family: "Sawarabi Mincho", serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+    
+    html[lang="en"] {
+        font-optical-sizing: auto;
+        font-family: "Poppins", serif;
+        font-weight: 800;
+        font-style: normal;
+    }
+      
+    body {
+        margin: 0px;
+        background-color: #6A9AB0;
+        box-sizing: border-box;
+    }
+    
+    .app {
+        display: flex;
+        min-height: 100vh;
+    }
+    
+    .main {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        position: absolute;
+        top: 30px;
+        left: 300px;
+        right: 50px;
+        bottom: 30px;
+        margin-bottom: 0px;
         color: #001F3F;
     }
    
 }
 
+/* Extra-large Devices */
 @media (min-width: 1200px) {
 
     html[lang="ja"] {
@@ -107,21 +202,11 @@
         gap: 50px;
         position: absolute;
         top: 30px;
-        left: 320px;
-        right: 30px;
+        left: 340px;
+        right: 50px;
         bottom: 30px;
         margin-bottom: 0px;
         color: #001F3F;
     }
    
-}
-
-
-@media (max-width: 599px) {
-}
-
-@media (min-width: 600px) and (max-width: 1199px) {
-}
-
-@media (min-width: 1200px) {
 }

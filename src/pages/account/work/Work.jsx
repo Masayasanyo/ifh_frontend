@@ -22,7 +22,7 @@ function Work() {
     useEffect(() => {
         const getWork = async () => {
             try {
-                const response = await fetch(`${import.meta.env.VITE_STORAGE_URL}/films/works`, {
+                const response = await fetch(`${process.env.REACT_APP_STORAGE_URL}/films/works`, {
                     method: "POST", 
                     headers: {
                         'Content-Type': 'application/json',
@@ -50,7 +50,7 @@ function Work() {
                     <ul className={styles.filmList}>
                     {works.map((work, index) => (
                         <li key={work.film_id} onClick={() => openFilm(work.film_id)} className={styles.film}>
-                            <img src={`${import.meta.env.VITE_STORAGE_URL}${work.thumbnail_file_path}`} alt={work.title} />
+                            <img src={`${process.env.REACT_APP_STORAGE_URL}${work.thumbnail_file_path}`} alt={work.title} />
                             <p>{work.title}</p>
                         </li>
                     ))}

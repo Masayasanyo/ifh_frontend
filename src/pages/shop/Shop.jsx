@@ -16,7 +16,7 @@ function Shop() {
 
     const getSingleTicket = async () => {
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/tickets/get/single`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/tickets/get/single`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ function Shop() {
 
     const getBundleTicket = async () => {
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/tickets/get/bundle`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/tickets/get/bundle`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -91,10 +91,6 @@ function Shop() {
                     </div>
 
                 </div>
-
-                {/* <div className={styles.section}>
-                    <h2>Food & Drinks</h2>
-                </div> */}
 
             </div>
             

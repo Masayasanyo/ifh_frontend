@@ -127,8 +127,9 @@
     }
     
     .userInfo img {
-        width: 200px;
-        height: 200px;
+        max-height: 200px;
+        max-height: 200px;
+        border-radius: 10px;
         border-radius: 50%;
         background-color: aliceblue;
         object-fit: cover;
@@ -136,22 +137,22 @@
     }
     
     .movieContainer {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
         list-style: none;
         gap: 20px;
         background-color: #ffffff;
-        padding: 30px 50px 30px 50px;
+        padding: 30px 50px;
         border-radius: 20px;
-        margin-bottom: 30px;
     }
     
     .movie {
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
         gap: 20px;
-        width: 320px;
-        padding: 10px;
+        padding: 20px;
         border-radius: 20px;
     }
 
@@ -168,10 +169,9 @@
     }
     
     .movie img { 
-        width: 320px;
-        height: 180px;
+        width: 100%;
+        aspect-ratio: 16 / 9;
         object-fit: contain;
-        border-radius: 20px;
     }
     
 }

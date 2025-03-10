@@ -26,7 +26,7 @@ function Login() {
         event.preventDefault();
         if (formData.email !== '' && formData.password !== '') {
             try {
-                const response = await fetch(`${import.meta.env.VITE_API_URL}/accounts/login`, {
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/accounts/login`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
